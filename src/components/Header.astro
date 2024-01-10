@@ -99,7 +99,7 @@ import logoMenu from "../img/common/logoMenu.webp";
     background: var(--color-primary);
     box-shadow: 0 4px 8px 0 var(--color-primary-box-shadow);
     padding: 2rem 0;
-    transition: top 0.35s;
+    transition: top 0.5s;
   }
 
   .nav__menu--show {
@@ -117,27 +117,34 @@ import logoMenu from "../img/common/logoMenu.webp";
     font-size: 1.2rem;
   }
 
-  .nav__close, .nav__open {
+  .nav__close,
+  .nav__open {
     width: 2rem;
     background: transparent;
     border: none;
     cursor: pointer;
-    }
+  }
 
-    
   .nav__close {
     position: absolute;
-    top: 1.15rem;
-    right: 1.5rem;
+    top: 1.16rem;
+    right: 1rem;
     color: var(--color-text-ligth);
   }
 
   .nav__open {
     color: var(--color-text-ligth);
-    cur
   }
 
   /* LARGE DEVICES */
   @media screen and (min-width: 768px) {
+    .nav__menu {
+      margin-left: auto;
+    }
+
+    .nav__close,
+    .nav__toggle {
+      display: none;
+    }
   }
 </style>

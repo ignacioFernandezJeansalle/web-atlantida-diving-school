@@ -30,7 +30,9 @@ const { title, description } = Astro.props;
   <body>
     <Header />
     <main>
-      <h1>PROBANDO FUENTE DE ATLANTIDA</h1>
+      <h1>FUENTE ATLANTIDA H1</h1>
+      <h2>FUENTE ATLANTIDA H2</h2>
+      <h3>FUENTE ATLANTIDA H3</h3>
       <slot />
     </main>
     <Footer />
@@ -39,21 +41,16 @@ const { title, description } = Astro.props;
 
 <style is:global>
   :root {
-    --header-height: 3.5rem;
-
-    --color-primary: #006878;
-    --color-secondary: #dc0054;
-    --color-text-ligth: rgb(245, 245, 245); /* tailwindcss.com text-neutral-100*/
-    --color-text-dark: rgb(23, 23, 23); /* tailwindcss.com text-neutral-900*/
+    --color-primary: rgb(0, 104, 120);
+    --color-secondary: rgb(220, 0, 84);
+    --color-primary-box-shadow: rgba(0, 104, 120, 0.35);
+    --color-secondary-box-shadow: rgba(220, 0, 84, 0.35);
+    --color-text-ligth: rgb(245, 245, 245);
+    --color-text-dark: rgb(23, 23, 23);
     --color-primary-body: #f2f2f2;
     --color-secondary-body: #eaeaea;
 
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
-
-    --height-navbar: 64px;
+    --height-nav: 4rem;
   }
 
   * {
@@ -64,9 +61,8 @@ const { title, description } = Astro.props;
 
   body {
     font-family: "Nunito Variable", sans-serif;
+    font-size: 16px;
     background: var(--color-primary-body);
-
-    background-size: 224px;
   }
 
   @font-face {
@@ -74,10 +70,38 @@ const { title, description } = Astro.props;
     src: url("/fonts/OstrichSans-Heavy.otf");
   }
 
-  h1 {
+  main {
+    margin-top: var(--height-nav);
+  }
+
+  h1,
+  h2,
+  h3 {
     font-family: "OstrichSans-Heavy";
+    text-align: center;
+  }
+
+  h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
-    text-align: center;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  h3 {
+    font-size: 2.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-text-ligth);
   }
 </style>

@@ -1,3 +1,143 @@
 ---
 import logoMenu from "../img/common/logoMenu.webp";
 ---
+
+<header class="header">
+  <nav class="nav">
+    <a class="nav__logo" href="/">
+      <img src="/logoMenu.webp" alt="Logo Atlántida Diving School" />
+    </a>
+
+    <div class="nav__menu" id="navMenu">
+      <ul class="nav__list">
+        <li><a class="nav__link" href="/">Inicio</a></li>
+        <li><a class="nav__link" href="/cursos">Cursos</a></li>
+        <li><a class="nav__link" href="/buda">El Buda</a></li>
+        <li><a class="nav__link" href="/viajes">Viajes</a></li>
+        <li><a class="nav__link" href="/nosotros">Nosotros</a></li>
+        <li><a class="nav__link" href="/contacto">Contacto</a></li>
+      </ul>
+      <button class="nav__close" id="navClose">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M18 6l-12 12"></path><path d="M6 6l12 12"
+          ></path></svg
+        >
+      </button>
+    </div>
+
+    <button class="nav__open" id="navOpen">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 6l16 0"></path><path d="M4 12l16 0"
+        ></path><path d="M4 18l16 0"></path></svg
+      >
+    </button>
+  </nav>
+</header>
+
+<script>
+  const navMenu = document.getElementById("navMenu");
+  const navOpen = document.getElementById("navOpen");
+  const navClose = document.getElementById("navClose");
+
+  navOpen?.addEventListener("click", () => {
+    navMenu?.classList.add("nav__menu--show");
+  });
+
+  navClose?.addEventListener("click", () => {
+    navMenu?.classList.remove("nav__menu--show");
+  });
+</script>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-primary);
+    box-shadow: 0 4px 8px 0 var(--color-primary-box-shadow);
+    z-index: 100;
+  }
+
+  .nav {
+    height: var(--height-nav);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 1rem;
+  }
+
+  .nav__logo img {
+    display: block;
+    height: var(--height-nav);
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  /* SMALL DEVICES */
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    background: var(--color-primary);
+    box-shadow: 0 4px 8px 0 var(--color-primary-box-shadow);
+    padding: 2rem 0;
+    transition: top 0.35s;
+  }
+
+  .nav__menu--show {
+    top: 0;
+  }
+
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    text-align: center;
+  }
+
+  .nav__link {
+    font-size: 1.2rem;
+  }
+
+  .nav__close, .nav__open {
+    width: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    }
+
+    
+  .nav__close {
+    position: absolute;
+    top: 1.15rem;
+    right: 1.5rem;
+    color: var(--color-text-ligth);
+  }
+
+  .nav__open {
+    color: var(--color-text-ligth);
+    cur
+  }
+
+  /* LARGE DEVICES */
+  @media screen and (min-width: 768px) {
+  }
+</style>

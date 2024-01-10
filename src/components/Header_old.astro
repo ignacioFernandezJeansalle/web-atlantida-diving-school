@@ -1,0 +1,187 @@
+---
+import logoMenu from "../img/common/logoMenu.webp";
+---
+
+<header>
+  <nav class="navbar">
+    <a class="navbar__logo" href="/">
+      <img src={logoMenu.src} alt="Logo Atlántida Diving School" />
+    </a>
+    <button id="navbarBtnToggler" class="navbar__toggler">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 6l16 0"></path><path d="M4 12l16 0"
+        ></path><path d="M4 18l16 0"></path></svg
+      >
+      <!--<svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M18 6l-12 12"></path><path d="M6 6l12 12"
+        ></path></svg
+      > -->
+    </button>
+    <ul id="navbarLinks" class="navbar__links navbar__links--hide">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/cursos">Cursos</a></li>
+      <li><a href="/buda">El Buda</a></li>
+      <li><a href="/viajes">Viajes</a></li>
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+  </nav>`;
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbarBtnToggler = document.getElementById("navbarBtnToggler");
+    const navbarLinks = document.getElementById("navbarLinks");
+
+    document.getElementById("navbarBtnToggler")?.addEventListener("click", () => {
+      /*navbarBtnToggler?.classList.toggle("header__nav--togglerClose");*/
+      navbarLinks?.classList.toggle("navbar__links--hide");
+    });
+  });
+</script>
+
+<style>
+  .navbar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: var(--heightNavbar);
+    padding: 0px 20px;
+    background: var(--colorPrimary);
+  }
+
+  .navbar__logo {
+    display: grid;
+    place-content: center;
+    height: var(--heightNavbar);
+    border: 1px solid yellow;
+  }
+
+  .navbar__logo img {
+    width: 100%;
+    max-height: var(--heightNavbar);
+    padding: 10px 0;
+  }
+
+  .navbar__toggler {
+    background: transparent;
+    border: 1px solid yellow;
+    width: 64px;
+  }
+
+  .navbar__toggler:hover {
+    cursor: pointer;
+  }
+
+  .navbar__toggler svg {
+    color: white;
+    width: 32px;
+    height: 32px;
+    stroke-width: 1.5;
+  }
+
+  .navbar__links {
+    position: absolute;
+    left: 0px;
+    top: var(--heightNavbar);
+    width: 100%;
+    list-style: none;
+    background: var(--colorPrimary);
+  }
+
+  .navbar__links li {
+    border: 1px solid red;
+    margin-bottom: 10px;
+  }
+
+  .navbar__links li a {
+    display: block;
+    border: 1px solid yellow;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .navbar__links--hide {
+    display: none;
+  }
+  /*
+    
+    .header__nav--toggler {
+        display: none;
+        position: relative;
+        width: 25px;
+        height: 19px;
+        cursor: pointer;
+    }
+    .header__nav--toggler span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #f2f2f2;
+    transition: all 0.3s;
+    }
+    .header__nav--toggler span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+    }
+    .header__nav--toggler span:nth-child(2) {
+    top: 8px;
+    left: 0px;
+    opacity: 1;
+    }
+    .header__nav--toggler span:nth-child(3) {
+    bottom: 0px;
+    left: 0px;
+    }
+    .header__nav--togglerClose span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px;
+    }
+    .header__nav--togglerClose span:nth-child(2) {
+    opacity: 0;
+    }
+    .header__nav--togglerClose span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 8px;
+    }
+    .header__nav--links {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    }
+    .header__nav--links li {
+    transition: all 0.25s;
+    }
+    .header__nav--links li a {
+    color: #ffffff;
+    text-decoration: none;
+    }
+    .header__nav--links li:hover {
+    transform: translateY(-5px);
+    transition: all 0.25s;
+    }
+*/
+</style>

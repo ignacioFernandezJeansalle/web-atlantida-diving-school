@@ -1,7 +1,3 @@
----
-import logoMenu from "../img/common/logoMenu.webp";
----
-
 <header class="header">
   <nav class="nav">
     <a class="nav__logo" href="/">
@@ -85,21 +81,23 @@ import logoMenu from "../img/common/logoMenu.webp";
 
   .nav__logo img {
     display: block;
-    height: var(--height-nav);
     width: 100%;
+    height: var(--height-nav);
     padding: 0.5rem 0;
   }
 
-  /* SMALL DEVICES */
-  .nav__menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    background: var(--color-primary);
-    box-shadow: 0 4px 8px 0 var(--color-primary-box-shadow);
-    padding: 2rem 0;
-    transition: top 0.5s;
+  /********** MD **********/
+  @media screen and (max-width: 768px) {
+    .nav__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      background: var(--color-primary);
+      box-shadow: 0 4px 8px 0 var(--color-primary-box-shadow);
+      padding: 2rem 0;
+      transition: top 0.5s;
+    }
   }
 
   .nav__menu--show {
@@ -123,28 +121,44 @@ import logoMenu from "../img/common/logoMenu.webp";
     background: transparent;
     border: none;
     cursor: pointer;
+    color: var(--color-text-ligth);
   }
 
   .nav__close {
     position: absolute;
     top: 1.16rem;
     right: 1rem;
-    color: var(--color-text-ligth);
   }
 
-  .nav__open {
-    color: var(--color-text-ligth);
+  :is(.nav__link, .nav__close, .nav__open):hover {
+    color: red;
   }
 
-  /* LARGE DEVICES */
-  @media screen and (min-width: 768px) {
+  /********** xl **********/
+  @media screen and (min-width: 769px) {
+    .nav {
+      max-width: 1280px;
+    }
+
     .nav__menu {
+      box-shadow: none;
       margin-left: auto;
     }
 
+    .nav__list {
+      flex-direction: row;
+      column-gap: 1.2rem;
+    }
+
     .nav__close,
-    .nav__toggle {
+    .nav__open {
       display: none;
+    }
+  }
+
+  @media screen and (min-width: 1312px) {
+    .nav {
+      margin-inline: auto;
     }
   }
 </style>

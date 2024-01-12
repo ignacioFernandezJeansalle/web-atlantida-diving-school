@@ -5,7 +5,7 @@
     </a>
 
     <div class="nav__menu" id="navMenu">
-      <ul class="nav__list">
+      <ul class="nav__list" id="navList">
         <li><a class="nav__link" href="/">Inicio</a></li>
         <li><a class="nav__link" href="/cursos">Cursos</a></li>
         <li><a class="nav__link" href="/buda">El Buda</a></li>
@@ -51,12 +51,24 @@
   const navOpen = document.getElementById("navOpen");
   const navClose = document.getElementById("navClose");
 
-  navOpen?.addEventListener("click", () => {
+  navOpen?.addEventListener("click", (event) => {
+    event.stopPropagation();
     navMenu?.classList.add("nav__menu--show");
   });
 
-  navClose?.addEventListener("click", () => {
+  navClose?.addEventListener("click", (event) => {
+    event.stopPropagation();
     navMenu?.classList.remove("nav__menu--show");
+  });
+
+  document.addEventListener("click", (event) => {
+    const evento = event as Event;
+    evento.stopPropagation();
+
+    const e = event.target as HTMLElement;
+    if (navMenu?.classList.contains("nav__menu--show") && !navMenu.contains(e)) {
+      navMenu?.classList.remove("nav__menu--show");
+    }
   });
 </script>
 
@@ -112,6 +124,7 @@
   }
 
   .nav__link {
+    color: var(--color-text-ligth);
     font-size: 1.2rem;
   }
 
@@ -131,7 +144,7 @@
   }
 
   :is(.nav__link, .nav__close, .nav__open):hover {
-    color: red;
+    color: var(--color-text-ligth-hover);
   }
 
   /********** xl **********/

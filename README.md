@@ -1,6 +1,8 @@
 # create a new project with npm
 
+```sh
 npm create astro@latest
+```
 
 ## 🧞 Commands
 
@@ -19,4 +21,6 @@ All commands are run from the root of the project, from a terminal:
 
 https://fontsource.org/
 
-npm install @fontsource-variable/fontName
+```sh
+npm install @fontsource-variable/nunito
+```

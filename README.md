@@ -29,4 +29,6 @@ npm install @fontsource-variable/nunito
 
 https://tabler.io/icons
 
+# logos
+
 https://svgl.vercel.app/

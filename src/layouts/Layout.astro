@@ -4,6 +4,7 @@ import "@fontsource-variable/nunito";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import WhatsappIcon from "../components/WhatsappIcon.astro";
 
 interface Props {
   title: string;
@@ -32,9 +33,7 @@ const year = new Date().getFullYear();
   <body>
     <Header />
     <main>
-      <h1>FUENTE ATLANTIDA H1</h1>
-      <h2>FUENTE ATLANTIDA H2</h2>
-      <h3>FUENTE ATLANTIDA H3</h3>
+      <WhatsappIcon />
       <slot />
     </main>
     <Footer year={year} />

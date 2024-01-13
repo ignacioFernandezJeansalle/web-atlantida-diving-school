@@ -1,19 +1,40 @@
-<header class="header">
-  <nav class="nav xlContainer">
-    <a class="nav__logo" href="/">
-      <img src="/logo-menu.webp" alt="Logo Atlántida Diving School" />
-    </a>
+---
+import SectionContainer from "./SectionContainer.astro";
+---
 
-    <div class="nav__menu" id="navMenu">
-      <ul class="nav__list" id="navList">
-        <li><a class="nav__link" href="/">Inicio</a></li>
-        <li><a class="nav__link" href="/cursos">Cursos</a></li>
-        <li><a class="nav__link" href="/buda">El Buda</a></li>
-        <li><a class="nav__link" href="/viajes">Viajes</a></li>
-        <li><a class="nav__link" href="/nosotros">Nosotros</a></li>
-        <li><a class="nav__link" href="/contacto">Contacto</a></li>
-      </ul>
-      <button class="nav__close" id="navClose">
+<header class="header">
+  <SectionContainer>
+    <nav class="nav">
+      <a class="nav__logo" href="/">
+        <img src="/logo-menu.webp" alt="Logo Atlántida Diving School" />
+      </a>
+
+      <div class="nav__menu" id="navMenu">
+        <ul class="nav__list" id="navList">
+          <li><a class="nav__link" href="/">Inicio</a></li>
+          <li><a class="nav__link" href="/cursos">Cursos</a></li>
+          <li><a class="nav__link" href="/buda">El Buda</a></li>
+          <li><a class="nav__link" href="/viajes">Viajes</a></li>
+          <li><a class="nav__link" href="/nosotros">Nosotros</a></li>
+          <li><a class="nav__link" href="/contacto">Contacto</a></li>
+        </ul>
+        <button class="nav__close" id="navClose">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M18 6l-12 12"></path><path d="M6 6l12 12"
+            ></path></svg
+          >
+        </button>
+      </div>
+
+      <button class="nav__open" id="navOpen">
         <svg
           width="24"
           height="24"
@@ -23,27 +44,12 @@
           fill="none"
           stroke-linecap="round"
           stroke-linejoin="round"
-          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M18 6l-12 12"></path><path d="M6 6l12 12"
-          ></path></svg
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 6l16 0"></path><path d="M4 12l16 0"
+          ></path><path d="M4 18l16 0"></path></svg
         >
       </button>
-    </div>
-
-    <button class="nav__open" id="navOpen">
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        stroke-width="2"
-        stroke="currentColor"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 6l16 0"></path><path d="M4 12l16 0"
-        ></path><path d="M4 18l16 0"></path></svg
-      >
-    </button>
-  </nav>
+    </nav>
+  </SectionContainer>
 </header>
 
 <script>

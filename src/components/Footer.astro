@@ -1,4 +1,6 @@
 ---
+import SectionContainer from "./SectionContainer.astro";
+
 const INSTAGRAM_LINK = "https://www.instagram.com/buceo_atlantida/";
 const FACEBOOK_LINK = "https://www.facebook.com/BuceoAtlantida/";
 const TWITTER_LINK = "https://twitter.com/buceoDS";
@@ -14,7 +16,7 @@ const { year } = Astro.props;
 ---
 
 <footer class="footer">
-  <div class="xlContainer">
+  <SectionContainer>
     <section class="footer__row">
       <h4 class="footer__divecenter">PADI Dive Center S#19636</h4>
       <div class="footer__social-networks">
@@ -100,7 +102,7 @@ const { year } = Astro.props;
         por la ley.
       </p>
     </section>
-  </div>
+  </SectionContainer>
 </footer>
 
 <style>
@@ -125,6 +127,10 @@ const { year } = Astro.props;
     align-items: center;
     padding-block: 1.5rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .footer__divecenter {
+    text-align: center;
   }
 
   .footer__social-networks {

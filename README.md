@@ -17,4 +17,6 @@ All commands are run from the root of the project, from a terminal:
 
 # install fonts fontsource
 
-npm install @fontsource-variable/font
+https://fontsource.org/
+
+npm install @fontsource-variable/fontName

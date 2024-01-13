@@ -11,6 +11,8 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+const year = new Date().getFullYear();
 ---
 
 <!doctype html>
@@ -35,7 +37,7 @@ const { title, description } = Astro.props;
       <h3>FUENTE ATLANTIDA H3</h3>
       <slot />
     </main>
-    <Footer />
+    <Footer year={year} />
   </body>
 </html>
 
@@ -51,6 +53,7 @@ const { title, description } = Astro.props;
     --color-text-dark-hover: var(--color-primary);
     --color-primary-body: #f2f2f2;
     --color-secondary-body: #eaeaea;
+    --color-footer: #d9d9d9;
 
     --height-nav: 4rem;
   }

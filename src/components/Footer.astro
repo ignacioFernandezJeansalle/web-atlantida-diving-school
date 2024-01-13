@@ -4,7 +4,13 @@ const FACEBOOK_LINK = "https://www.facebook.com/BuceoAtlantida/";
 const TWITTER_LINK = "https://twitter.com/buceoDS";
 const YOUTUBE_LINK = "https://www.youtube.com/channel/UCoyCRFvtQJpkyWX3rAUg5Ig";
 const GOOGLE_MAPS_LINK = "https://goo.gl/maps/vCSu5ATBH3A2";
-const YEAR = new Date().getFullYear();
+const DEVELOPER_LINK = "https://www.linkedin.com/in/ignaciofernandezjeansalle/";
+
+interface Props {
+  year: number;
+}
+
+const { year } = Astro.props;
 ---
 
 <footer class="footer">
@@ -76,33 +82,30 @@ const YEAR = new Date().getFullYear();
     <section class="footer__row">
       <div class="footer__contact-info">
         <a href={GOOGLE_MAPS_LINK} target="_blank">
-          <span>CLUB JOSE HERNANDEZ | Bragado 5950, Mataderos, C.A.B.A. Argentina</span>
+          <span>CLUB JOSE HERNANDEZ<br />Bragado 5950, Mataderos, C.A.B.A. Argentina</span>
         </a>
         <p>Tel.: (+54)11.4939.6268 / (+54)11.5979.0203</p>
         <p>info@divingschool.com.ar</p>
       </div>
-      <div class="footer__logo-Padi">
-        <a href="https://www.padi.com/" target="_blank">
-          <img src="/logo-padi-transp-black.webp" alt="Logo PADI" title="Logo PADI" />
-        </a>
-      </div>
+
+      <a class="footer__logo-Padi" href="https://www.padi.com/" target="_blank">
+        <img src="/logo-padi-transp-black.webp" alt="Logo PADI" title="Logo PADI" />
+      </a>
     </section>
 
-    <section class="footer__row">
-      <div class="footer__row--legal">
-        <p>
-          Copyright &copy {YEAR} - <a href="https://www.instagram.com/nacho.fj/" target="_blank">[ Nacho FJ ]</a> - Todas
-          las fotografías utilizadas en esta página son propiedad exclusiva de Atlantida Diving School, el uso no autorizado
-          de las mismas está penado por la ley.
-        </p>
-      </div>
+    <section class="footer__legal">
+      <p>
+        Copyright &copy {year} - <a href={DEVELOPER_LINK} target="_blank">[ Nacho FJ ]</a> - Todas las fotografías utilizadas
+        en esta página son propiedad exclusiva de Atlantida Diving School, el uso no autorizado de las mismas está penado
+        por la ley.
+      </p>
     </section>
   </div>
 </footer>
 
 <style>
   .footer {
-    background: #d9d9d9;
+    background: var(--color-footer);
     color: var(--color-text-dark);
   }
 
@@ -111,7 +114,7 @@ const YEAR = new Date().getFullYear();
   }
 
   .footer a:hover {
-    color: var(--color-text-dark-hover);
+    opacity: 0.7;
   }
 
   .footer__row {
@@ -141,6 +144,11 @@ const YEAR = new Date().getFullYear();
 
   .footer__contact-info {
     text-align: center;
+  }
+
+  .footer__legal {
+    padding: 1.5rem 0 4rem 0;
+    font-size: 0.8rem;
   }
 
   /********** large **********/

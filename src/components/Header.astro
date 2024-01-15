@@ -4,7 +4,7 @@ import MenuOpenIcon from "./icons/MenuOpenIcon.astro";
 import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
 ---
 
-<header class="header">
+<header class="header fixed top-0 left-0 w-full bg-yellow-400 shadow-yellow-400 z-50">
   <SectionContainer>
     <nav class="nav">
       <a class="nav__logo" href="/">
@@ -59,6 +59,7 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
 </script>
 
 <style>
+  /*
   .header {
     position: fixed;
     top: 0;
@@ -68,7 +69,7 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
     box-shadow: 0 4px 8px 0 var(--color-primary-box-shadow);
     z-index: 100;
   }
-
+*/
   .nav {
     height: var(--height-nav);
     display: flex;
@@ -84,6 +85,7 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
   }
 
   /********** small **********/
+
   @media screen and (max-width: 768px) {
     .nav__menu {
       position: fixed;

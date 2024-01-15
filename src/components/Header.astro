@@ -4,11 +4,11 @@ import MenuOpenIcon from "./icons/MenuOpenIcon.astro";
 import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
 ---
 
-<header class="header fixed top-0 left-0 w-full bg-yellow-400 shadow-yellow-400 z-50">
+<header class="fixed top-0 left-0 w-full bg-primary shadow-md shadow-primary/50 z-50">
   <SectionContainer>
-    <nav class="nav">
-      <a class="nav__logo" href="/">
-        <img src="/logo-menu.webp" alt="Logo Atlántida Diving School" />
+    <nav class="flex justify-between items-center h-16">
+      <a href="/">
+        <img class="w-48 h-auto py-2" src="/logo-menu.webp" alt="Logo Atlántida Diving School" />
       </a>
 
       <div class="nav__menu" id="navMenu">
@@ -59,31 +59,6 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
 </script>
 
 <style>
-  /*
-  .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--color-primary);
-    box-shadow: 0 4px 8px 0 var(--color-primary-box-shadow);
-    z-index: 100;
-  }
-*/
-  .nav {
-    height: var(--height-nav);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .nav__logo img {
-    display: block;
-    width: 100%;
-    height: var(--height-nav);
-    padding: 0.5rem 0;
-  }
-
   /********** small **********/
 
   @media screen and (max-width: 768px) {

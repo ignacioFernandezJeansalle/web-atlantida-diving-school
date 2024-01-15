@@ -17,6 +17,12 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+# install Tailwind CSS
+
+```sh
+npx astro add tailwind
+```
+
 # install fonts fontsource
 
 https://fontsource.org/

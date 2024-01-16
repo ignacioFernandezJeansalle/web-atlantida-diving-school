@@ -6,13 +6,17 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
 
 <header class="fixed top-0 left-0 w-full bg-primary shadow-md shadow-primary/50 z-50">
   <SectionContainer>
-    <nav class="flex justify-between items-center h-16">
+    <nav class="flex justify-between items-center h-navbar">
       <a href="/">
-        <img class="w-48 h-auto py-2" src="/logo-menu.webp" alt="Logo Atlántida Diving School" />
+        <img class="h-navbar w-auto py-2" src="/logo-menu.webp" alt="Logo Atlántida Diving School" />
       </a>
 
-      <div class="nav__menu" id="navMenu">
-        <ul class="nav__list" id="navList">
+      <div
+        id="navMenu"
+        class="-md:fixed -md:-top-full -md:left-0 -md:w-full -md:bg-primary -md:shadow-md -md:shadow-primary/50 -md:py-8 -md:transition-[top] -md:duration-500)
+           md:ml-auto md:shadow-none"
+      >
+        <ul class="flex flex-col gap-y-4 text-center md:flex-row md:gap-x-5">
           <li><a class="nav__link" href="/">Inicio</a></li>
           <li><a class="nav__link" href="/cursos">Cursos</a></li>
           <li><a class="nav__link" href="/buda">El Buda</a></li>
@@ -59,21 +63,6 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
 </script>
 
 <style>
-  /********** small **********/
-
-  @media screen and (max-width: 768px) {
-    .nav__menu {
-      position: fixed;
-      top: -100%;
-      left: 0;
-      width: 100%;
-      background: var(--color-primary);
-      box-shadow: 0 4px 8px 0 var(--color-primary-box-shadow);
-      padding: 2rem 0;
-      transition: top 0.5s;
-    }
-  }
-
   .nav__menu--show {
     top: 0;
   }
@@ -111,11 +100,6 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
 
   /********** large **********/
   @media screen and (min-width: 769px) {
-    .nav__menu {
-      box-shadow: none;
-      margin-left: auto;
-    }
-
     .nav__list {
       flex-direction: row;
       column-gap: 1.2rem;

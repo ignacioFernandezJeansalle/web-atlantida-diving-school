@@ -8,7 +8,11 @@ export default {
         secondary: "#dc0054",
       },
       spacing: {
-        header: "4rem",
+        navbar: "4rem",
+      },
+      screens: {
+        "-md": { max: "767px" },
+        // => @media (max-width: 767px) { ... }
       },
     },
   },

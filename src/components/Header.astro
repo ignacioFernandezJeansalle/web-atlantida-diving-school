@@ -14,10 +14,10 @@ import HeaderNavLink from "./HeaderNavLink.astro";
 
       <div
         id="navMenu"
-        class="-md:fixed -md:-top-full -md:left-0 -md:w-full -md:bg-primary -md:shadow-md -md:shadow-primary/50 -md:py-8 -md:transition-[top] -md:duration-500)
-           md:ml-auto md:shadow-none"
+        class="-md:fixed -md:-top-full -md:left-0 -md:w-full -md:bg-primary -md:shadow-md -md:shadow-primary/50 -md:py-8
+               -md:transition-[top] -md:duration-500 md:ml-auto md:shadow-none"
       >
-        <ul class="flex flex-col gap-y-4 text-center md:flex-row md:gap-x-5">
+        <ul class="flex flex-col gap-y-4 text-center md:flex-row md:gap-x-4 lg:gap-x-8">
           <li><HeaderNavLink href="/" label="Inicio" /></li>
           <li><HeaderNavLink href="/cursos" label="Cursos" /></li>
           <li><HeaderNavLink href="/buda" label="El Buda" /></li>
@@ -25,12 +25,18 @@ import HeaderNavLink from "./HeaderNavLink.astro";
           <li><HeaderNavLink href="/nosotros" label="Nosotros" /></li>
           <li><HeaderNavLink href="/contacto" label="Contacto" /></li>
         </ul>
-        <button class="nav__close" id="navClose">
+        <button
+          class="absolute top-[1.16rem] right-4 w-8 bg-transparent border-none cursor-pointer text-tcligth hover:text-tcligth-h md:hidden"
+          id="navClose"
+        >
           <MenuCloseIcon />
         </button>
       </div>
 
-      <button class="nav__open" id="navOpen">
+      <button
+        class="w-8 bg-transparent border-none cursor-pointer text-tcligth hover:text-tcligth-h md:hidden"
+        id="navOpen"
+      >
         <MenuOpenIcon />
       </button>
     </nav>
@@ -44,12 +50,14 @@ import HeaderNavLink from "./HeaderNavLink.astro";
 
   navOpen?.addEventListener("click", (event) => {
     event.stopPropagation();
-    navMenu?.classList.add("nav__menu--show");
+    navMenu?.classList.remove("-md:-top-full");
+    navMenu?.classList.add("-md:top-0");
   });
 
   navClose?.addEventListener("click", (event) => {
     event.stopPropagation();
-    navMenu?.classList.remove("nav__menu--show");
+    navMenu?.classList.remove("-md:top-0");
+    navMenu?.classList.add("-md:-top-full");
   });
 
   document.addEventListener("click", (event) => {
@@ -57,63 +65,9 @@ import HeaderNavLink from "./HeaderNavLink.astro";
     evento.stopPropagation();
 
     const e = event.target as HTMLElement;
-    if (navMenu?.classList.contains("nav__menu--show") && !navMenu.contains(e)) {
-      navMenu?.classList.remove("nav__menu--show");
+    if (navMenu?.classList.contains("-md:top-0") && !navMenu.contains(e)) {
+      navMenu?.classList.remove("-md:top-0");
+      navMenu?.classList.add("-md:-top-full");
     }
   });
 </script>
-
-<style>
-  .nav__menu--show {
-    top: 0;
-  }
-
-  /*
-  .nav__list {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    text-align: center;
-  }
-  */
-  /*
-  .nav__link {
-    color: var(--color-text-ligth);
-    font-size: 1.2rem;
-  }
-  */
-
-  .nav__close,
-  .nav__open {
-    width: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: var(--color-text-ligth);
-  }
-
-  .nav__close {
-    position: absolute;
-    top: 1.16rem;
-    right: 1rem;
-  }
-
-  :is(.nav__link, .nav__close, .nav__open):hover {
-    color: var(--color-text-ligth-hover);
-  }
-
-  /********** large **********/
-  @media screen and (min-width: 769px) {
-    /*
-    .nav__list {
-      flex-direction: row;
-      column-gap: 1.2rem;
-    }
-    */
-
-    .nav__close,
-    .nav__open {
-      display: none;
-    }
-  }
-</style>

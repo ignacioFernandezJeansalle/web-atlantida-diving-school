@@ -2,6 +2,7 @@
 import SectionContainer from "./SectionContainer.astro";
 import MenuOpenIcon from "./icons/MenuOpenIcon.astro";
 import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
+import HeaderNavLink from "./HeaderNavLink.astro";
 ---
 
 <header class="fixed top-0 left-0 w-full bg-primary shadow-md shadow-primary/50 z-50">
@@ -17,12 +18,12 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
            md:ml-auto md:shadow-none"
       >
         <ul class="flex flex-col gap-y-4 text-center md:flex-row md:gap-x-5">
-          <li><a class="nav__link" href="/">Inicio</a></li>
-          <li><a class="nav__link" href="/cursos">Cursos</a></li>
-          <li><a class="nav__link" href="/buda">El Buda</a></li>
-          <li><a class="nav__link" href="/viajes">Viajes</a></li>
-          <li><a class="nav__link" href="/nosotros">Nosotros</a></li>
-          <li><a class="nav__link" href="/contacto">Contacto</a></li>
+          <li><HeaderNavLink href="/" label="Inicio" /></li>
+          <li><HeaderNavLink href="/cursos" label="Cursos" /></li>
+          <li><HeaderNavLink href="/buda" label="El Buda" /></li>
+          <li><HeaderNavLink href="/viajes" label="Viajes" /></li>
+          <li><HeaderNavLink href="/nosotros" label="Nosotros" /></li>
+          <li><HeaderNavLink href="/contacto" label="Contacto" /></li>
         </ul>
         <button class="nav__close" id="navClose">
           <MenuCloseIcon />
@@ -67,17 +68,20 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
     top: 0;
   }
 
+  /*
   .nav__list {
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
     text-align: center;
   }
-
+  */
+  /*
   .nav__link {
     color: var(--color-text-ligth);
     font-size: 1.2rem;
   }
+  */
 
   .nav__close,
   .nav__open {
@@ -100,10 +104,12 @@ import MenuCloseIcon from "./icons/MenuCloseIcon.astro";
 
   /********** large **********/
   @media screen and (min-width: 769px) {
+    /*
     .nav__list {
       flex-direction: row;
       column-gap: 1.2rem;
     }
+    */
 
     .nav__close,
     .nav__open {

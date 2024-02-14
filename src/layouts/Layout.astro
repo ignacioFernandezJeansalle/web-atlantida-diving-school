@@ -1,6 +1,6 @@
 ---
-// Supports weights 200-900
-import "@fontsource-variable/nunito";
+import "@fontsource-variable/nunito"; // Supports weights 200-900
+import "../styles/global.scss";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -10,7 +10,6 @@ interface Props {
   title: string;
   description: string;
 }
-
 const { title, description } = Astro.props;
 
 const year = new Date().getFullYear();
@@ -22,8 +21,8 @@ const year = new Date().getFullYear();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
-    <meta name="author" content="Ignacio Fernández Jeansalle" />
     <meta name="description" content={description} />
+    <meta name="author" content="Ignacio Fernández Jeansalle" />
     <meta
       name="keywords"
       content="BUCEO, BUCEO PADI ARGENTINA, Cursos de Buceo, Viajes de Buceo, Escuela de Buceo PADI en Capital Federal, Clases de Buceo, Buceo en Argentina, Open Water Diver, PADI Dive Center, Atlantida Diving School, SCUBA, centro internacional de buceo, cursos, viajes buceo, salidas, diving, dive, divecenter, buenos aires buceo, puerto madryn, buceo en patagonia, argentina, buceo en caribe, buceo en brasil, equipos de buceo, tanque, chalecos, trajes, neoprene, reguladores, buzo, bucear, aprender, la cuba de campo de mayo, buceo profesional, advanced, rescate, divemaster, instructor, nitrox, buceo profundo, experiencia, videosub, fotosub, efr, primeros auxilio, canteras salto uruguay, el terrible, padi divecheck, orca, ballenas, cozumel, submarinismo, agua, pileta climatizada, temporada verano, oxigeno, camara hiperbarica"
@@ -39,73 +38,3 @@ const year = new Date().getFullYear();
     <Footer year={year} />
   </body>
 </html>
-
-<style is:global>
-  :root {
-    --color-primary: rgb(0, 104, 120); /* #006878 */
-    --color-secondary: rgb(220, 0, 84);
-    --color-primary-box-shadow: rgba(0, 104, 120, 0.35);
-    --color-secondary-box-shadow: rgba(220, 0, 84, 0.35);
-    --color-text-ligth: rgb(250, 250, 250);
-    --color-text-ligth-hover: rgb(229, 229, 229);
-    --color-text-dark: rgb(10, 10, 10);
-    --color-text-dark-hover: var(--color-primary);
-    --color-primary-body: #f2f2f2;
-    --color-secondary-body: #eaeaea;
-    --color-footer: #d9d9d9;
-
-    --height-nav: 4rem;
-    --max-width-section: 1280px;
-  }
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: "Nunito Variable", sans-serif;
-    font-size: 16px;
-    background: var(--color-primary-body);
-  }
-
-  @font-face {
-    font-family: "OstrichSans-Heavy";
-    src: url("/fonts/OstrichSans-Heavy.otf");
-  }
-
-  main {
-    margin-top: var(--height-nav);
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-family: "OstrichSans-Heavy";
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-
-  h2 {
-    font-size: 2.4rem;
-    margin-bottom: 0.4rem;
-  }
-
-  h3 {
-    font-size: 2.1rem;
-    margin-bottom: 0.3rem;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-</style>

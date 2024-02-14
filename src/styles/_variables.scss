@@ -1,0 +1,68 @@
+/*********************/
+/***** Generales *****/
+/*********************/
+
+// screen
+$screen-xl-max-width: 1200px;
+$screen-xl-padding-inline: 100px;
+$screen-xl-margin: 0 auto;
+
+// font
+$font-family: "Nunito Variable", sans-serif;
+$font-style: normal;
+$font-letter-spacing: normal;
+$font-size: 16px;
+
+//titles
+$h1-font-size: $font-size * 3;
+$h2-font-size: $h1-font-size * 0.85;
+$h3-font-size: $h1-font-size * 0.7;
+$h1-margin-bottom: $h1-font-size * 0.2;
+$h2-margin-bottom: $h2-font-size * 0.2;
+$h3-margin-bottom: $h3-font-size * 0.2;
+
+// font-colors
+$font-color-max: #333333;
+$font-color-mid: #666666;
+$font-color-min: #999999;
+
+// colors
+$color-primary: rgb(0, 104, 120);
+$color-secondary: rgb(220, 0, 84);
+$color-body-primary: #f2f2f2;
+$color-body-secondary: #eeeeee;
+$color-footer: #d9d9d9;
+
+//shadow
+$box-shadow-primary: 0 1px 2px 0 rgba(0, 104, 120, 0.35);
+$box-shadow-secondary: 0 1px 2px 0 rgba(220, 0, 84, 0.35);
+
+//layout
+$nav-height: 4rem;
+
+//--color-text-ligth: rgb(250, 250, 250);
+//--color-text-ligth-hover: rgb(229, 229, 229);
+//--color-text-dark: rgb(10, 10, 10);
+//--color-text-dark-hover: var(--color-primary);
+//--color-primary-body: #f2f2f2;
+//--color-secondary-body: #eaeaea;
+//--color-footer: #d9d9d9;
+
+/************* HASTA ACA *****************/
+$box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+
+/***** form *****/
+$form-font-family: $font-family;
+$form-font-style: $font-style;
+$form-font-weight: 300;
+$form-letter-spacing: $font-letter-spacing;
+$form-color: $font-color-max;
+
+//placeholder
+$form-placeholder-font-weight: 200;
+
+//focus
+$form-focus-outline: $color-secondary solid thin;
+
+/***** button *****/
+$button-bg-color: $color-secondary;

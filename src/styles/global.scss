@@ -1,0 +1,54 @@
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-family;
+  font-style: $font-style;
+  letter-spacing: $font-letter-spacing;
+  font-size: $font-size;
+  background: $color-body-primary;
+}
+
+@font-face {
+  font-family: "OstrichSans-Heavy";
+  src: url("/fonts/OstrichSans-Heavy.otf");
+}
+
+/* REVISAR */
+main {
+  margin-top: $nav-height;
+}
+/* REVISAR */
+
+:is(h1, h2, h3) {
+  font-family: "OstrichSans-Heavy";
+  text-align: center;
+}
+
+h1 {
+  font-size: $h1-font-size;
+  margin-bottom: $h1-margin-bottom;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  margin-bottom: $h2-margin-bottom;
+}
+
+h3 {
+  font-size: $h3-font-size;
+  margin-bottom: $h3-margin-bottom;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

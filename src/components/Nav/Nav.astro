@@ -2,6 +2,10 @@
 import "./Nav.scss";
 import MenuOpenIcon from "../icons/MenuOpenIcon.astro";
 import MenuCloseIcon from "../icons/MenuCloseIcon.astro";
+
+interface Props {
+  class: string;
+}
 const { class: className } = Astro.props;
 ---
 

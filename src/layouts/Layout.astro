@@ -1,21 +1,19 @@
 ---
 import "@fontsource-variable/nunito"; // Supports weights 200-900
 import "../styles/globals.scss";
+import { links } from "../data/data.json";
 
 import Nav from "../components/Nav/Nav.astro";
-import WhatsappLink from "../components/WhatsappLink/WhatsappLink.astro";
-import Footer from "../components/Footer.astro";
+import WhatsappButton from "../components/WhatsappButton/WhatsappButton.astro";
+import Footer from "../components/Footer/Footer.astro";
 
 interface Props {
   title: string;
   description: string;
 }
-
 const { title, description } = Astro.props;
 
 const year = new Date().getFullYear();
-
-const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=5491159790203";
 ---
 
 <!doctype html>
@@ -37,7 +35,7 @@ const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=5491159790203";
       <Nav class="container" />
     </header>
     <main class="main container">
-      <WhatsappLink url={WHATSAPP_URL} />
+      <WhatsappButton url={links.whatsapp} />
       <slot />
     </main>
     <Footer year={year} />

@@ -1,9 +1,11 @@
 ---
-import SectionContainer from "./SectionContainer.astro";
-import InstagramIcon from "./icons/InstagramIcon.astro";
-import YoutubeIcon from "./icons/YoutubeIcon.astro";
-import FacebookIcon from "./icons/FacebookIcon.astro";
-import XIcon from "./icons/XIcon.astro";
+import "./Footer.scss";
+
+import SectionContainer from "../SectionContainer.astro";
+import InstagramIcon from "../icons/InstagramIcon.astro";
+import YoutubeIcon from "../icons/YoutubeIcon.astro";
+import FacebookIcon from "../icons/FacebookIcon.astro";
+import XIcon from "../icons/XIcon.astro";
 
 const INSTAGRAM_LINK = "https://www.instagram.com/buceo_atlantida/";
 const FACEBOOK_LINK = "https://www.facebook.com/BuceoAtlantida/";
@@ -13,6 +15,7 @@ const GOOGLE_MAPS_LINK = "https://goo.gl/maps/vCSu5ATBH3A2";
 const DEVELOPER_LINK = "https://www.linkedin.com/in/ignaciofernandezjeansalle/";
 
 interface Props {
+  //class: string;
   year: number;
 }
 
@@ -62,69 +65,3 @@ const { year } = Astro.props;
     </section>
   </SectionContainer>
 </footer>
-
-<style>
-  .footer {
-    background: var(--color-footer);
-    color: var(--color-text-dark);
-  }
-
-  .footer a {
-    color: var(--color-text-dark);
-  }
-
-  .footer a:hover {
-    opacity: 0.7;
-  }
-
-  .footer__row {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1rem;
-    justify-content: space-between;
-    align-items: center;
-    padding-block: 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  }
-
-  .footer__divecenter {
-    text-align: center;
-  }
-
-  .footer__social-networks {
-    display: flex;
-    column-gap: 1rem;
-    align-items: center;
-  }
-
-  .footer__social-networks a {
-    text-align: center;
-  }
-
-  .footer__social-networks--icons {
-    width: 24px;
-    height: auto;
-    fill: var(--color-text-dark);
-  }
-
-  .footer__contact-info {
-    text-align: center;
-  }
-
-  .footer__legal {
-    padding: 1.5rem 0 5rem 0;
-    font-size: 0.8rem;
-  }
-
-  /********** large **********/
-  @media screen and (min-width: 769px) {
-    .footer__row {
-      flex-direction: row;
-      /*column-gap: 1rem;*/
-    }
-
-    .footer__contact-info {
-      text-align: left;
-    }
-  }
-</style>

@@ -1,10 +1,11 @@
 ---
+import { info } from "../data/data.json";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Nosotros ATLANTIDA Diving School"
-  description="Formación y experiencia del staff de ATLANTIDA Diving School, Centro Internacional de Buceo, Bragado 5950 CABA, Mataderos, tel.: 1559790203 / 1549396268, mail: info@divingschool.com.ar"
+  title=`Nosotros ${info.name}`
+  description=`Formación y experiencia del staff de ${info.name}, Centro Internacional de Buceo, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
   <section>
     <h1>NOSOTROS</h1>

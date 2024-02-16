@@ -1,9 +1,11 @@
 {
   "info": {
+    "name": "ATLANTIDA Diving School",
     "location": "CLUB JOSE HERNANDEZ",
     "address": "Bragado 5950, Mataderos, C.A.B.A. Argentina",
     "phone": "(+54)11.5979.0203",
-    "email": "info@divingschool.com.ar"
+    "email": "info@divingschool.com.ar",
+    "divecenter": "PADI Dive Center #19636"
   },
   "links": {
     "whatsapp": "https://api.whatsapp.com/send?phone=5491159790203",

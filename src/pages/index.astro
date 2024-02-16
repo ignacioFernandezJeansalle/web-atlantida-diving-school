@@ -1,10 +1,11 @@
 ---
+import { info } from "../data/data.json";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Buceo ATLANTIDA Diving School"
-  description="Primer PADI Dive Center (#19636) de la Argentina, Centro Internacional de Buceo, Bragado 5950 CABA, Mataderos, tel.: 1559790203 / 1549396268, mail: info@divingschool.com.ar"
+  title=`Buceo ${info.name}`
+  description=`Primer ${info.divecenter} de la Argentina, Centro Internacional de Buceo, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
   <!-- Sección de bienvenida -->
   <section>Sección de bienvenida / FOTO DE BIENVENIDA + SLIDER</section>

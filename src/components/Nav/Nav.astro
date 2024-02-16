@@ -1,0 +1,56 @@
+---
+import "./Nav.scss";
+import MenuOpenIcon from "../icons/MenuOpenIcon.astro";
+import MenuCloseIcon from "../icons/MenuCloseIcon.astro";
+const { class: className } = Astro.props;
+---
+
+<nav class:list={["nav", className]}>
+  <a class="nav__logo" href="/">
+    <img src="/logo-menu.webp" alt="Logo Atlántida Diving School" />
+  </a>
+
+  <div class="nav__menu" id="navMenu">
+    <ul class="nav__list">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/cursos">Cursos</a></li>
+      <li><a href="/buda">El Buda</a></li>
+      <li><a href="/viajes">Viajes</a></li>
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+    <button class="nav__btn--close" id="navBtnClose">
+      <MenuCloseIcon />
+    </button>
+  </div>
+
+  <button class="nav__btn--open" id="navBtnOpen">
+    <MenuOpenIcon />
+  </button>
+</nav>
+
+<script>
+  const navMenu = document.getElementById("navMenu");
+  const navBtnOpen = document.getElementById("navBtnOpen");
+  const navBtnClose = document.getElementById("navBtnClose");
+
+  navBtnOpen?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    navMenu?.classList.add("nav__menu--show");
+  });
+
+  navBtnClose?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    navMenu?.classList.remove("nav__menu--show");
+  });
+
+  document.addEventListener("click", (event) => {
+    const evento = event as Event;
+    evento.stopPropagation();
+
+    const e = event.target as HTMLElement;
+    if (navMenu?.classList.contains("nav__menu--show") && !navMenu.contains(e)) {
+      navMenu?.classList.remove("nav__menu--show");
+    }
+  });
+</script>

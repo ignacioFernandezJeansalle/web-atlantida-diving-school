@@ -1,8 +1,9 @@
 ---
 import "@fontsource-variable/nunito"; // Supports weights 200-900
-import "../styles/global.scss";
+import "../styles/globals.scss";
 
-import Header from "../components/Header.astro";
+import Nav from "../components/Nav/Nav.astro";
+
 import Footer from "../components/Footer.astro";
 import WhatsappIcon from "../components/WhatsappIcon.astro";
 
@@ -30,7 +31,9 @@ const year = new Date().getFullYear();
     <link rel="icon" href="/favicon.png" />
   </head>
   <body>
-    <Header />
+    <header class="header">
+      <Nav class="container" />
+    </header>
     <main>
       <WhatsappIcon />
       <slot />

@@ -3,9 +3,14 @@
 /*********************/
 
 // screen
-$screen-xl-max-width: 1200px;
-$screen-xl-padding-inline: 100px;
-$screen-xl-margin: 0 auto;
+$screen-max-width: 1400px;
+$screen-padding-inline: 16px;
+$screen-margin: 0 auto;
+
+//layout => nav
+$nav-height: 64px;
+$nav-padding-block: 6px;
+$nav-height-content: $nav-height - $nav-padding-block * 2;
 
 // font
 $font-family: "Nunito Variable", sans-serif;
@@ -22,9 +27,9 @@ $h2-margin-bottom: $h2-font-size * 0.2;
 $h3-margin-bottom: $h3-font-size * 0.2;
 
 // font-colors
-$font-color-max: #333333;
+$font-color-max: #111111;
 $font-color-mid: #666666;
-$font-color-min: #999999;
+$font-color-min: #eeeeee;
 
 // colors
 $color-primary: rgb(0, 104, 120);
@@ -34,11 +39,8 @@ $color-body-secondary: #eeeeee;
 $color-footer: #d9d9d9;
 
 //shadow
-$box-shadow-primary: 0 1px 2px 0 rgba(0, 104, 120, 0.35);
-$box-shadow-secondary: 0 1px 2px 0 rgba(220, 0, 84, 0.35);
-
-//layout
-$nav-height: 4rem;
+$box-shadow-primary: 0 4px 8px 0 rgba(0, 104, 120, 0.35);
+$box-shadow-secondary: 0 4px 8px 0 rgba(220, 0, 84, 0.35);
 
 //--color-text-ligth: rgb(250, 250, 250);
 //--color-text-ligth-hover: rgb(229, 229, 229);
@@ -49,7 +51,6 @@ $nav-height: 4rem;
 //--color-footer: #d9d9d9;
 
 /************* HASTA ACA *****************/
-$box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
 
 /***** form *****/
 $form-font-family: $font-family;

@@ -19,11 +19,11 @@ body {
   src: url("/fonts/OstrichSans-Heavy.otf");
 }
 
-/* REVISAR */
+/*
 main {
   margin-top: $nav-height;
 }
-/* REVISAR */
+*/
 
 :is(h1, h2, h3) {
   font-family: "OstrichSans-Heavy";
@@ -51,4 +51,20 @@ ul {
 
 a {
   text-decoration: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $color-primary;
+  box-shadow: $box-shadow-primary;
+  z-index: 100;
+}
+
+.container {
+  max-width: $screen-max-width;
+  padding-inline: $screen-padding-inline;
+  margin: $screen-margin;
 }

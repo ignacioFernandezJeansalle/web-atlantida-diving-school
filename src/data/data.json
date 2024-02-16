@@ -1,4 +1,10 @@
 {
+  "info": {
+    "location": "CLUB JOSE HERNANDEZ",
+    "address": "Bragado 5950, Mataderos, C.A.B.A. Argentina",
+    "phone": "(+54)11.5979.0203",
+    "email": "info@divingschool.com.ar"
+  },
   "links": {
     "whatsapp": "https://api.whatsapp.com/send?phone=5491159790203",
     "instagram": "https://www.instagram.com/buceo_atlantida/",
@@ -6,6 +12,7 @@
     "twitter": "https://twitter.com/buceoDS",
     "youtube": "https://www.youtube.com/channel/UCoyCRFvtQJpkyWX3rAUg5Ig",
     "maps": "https://goo.gl/maps/vCSu5ATBH3A2",
-    "developer": "https://www.linkedin.com/in/ignaciofernandezjeansalle/"
+    "developer": "https://www.linkedin.com/in/ignaciofernandezjeansalle/",
+    "padi": "https://www.padi.com"
   }
 }

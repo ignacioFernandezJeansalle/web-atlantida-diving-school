@@ -1,67 +1,57 @@
 ---
 import "./Footer.scss";
+import { info, links } from "../../data/data.json";
 
-import SectionContainer from "../SectionContainer.astro";
 import InstagramIcon from "../icons/InstagramIcon.astro";
 import YoutubeIcon from "../icons/YoutubeIcon.astro";
 import FacebookIcon from "../icons/FacebookIcon.astro";
-import XIcon from "../icons/XIcon.astro";
-
-const INSTAGRAM_LINK = "https://www.instagram.com/buceo_atlantida/";
-const FACEBOOK_LINK = "https://www.facebook.com/BuceoAtlantida/";
-const TWITTER_LINK = "https://twitter.com/buceoDS";
-const YOUTUBE_LINK = "https://www.youtube.com/channel/UCoyCRFvtQJpkyWX3rAUg5Ig";
-const GOOGLE_MAPS_LINK = "https://goo.gl/maps/vCSu5ATBH3A2";
-const DEVELOPER_LINK = "https://www.linkedin.com/in/ignaciofernandezjeansalle/";
+import TwitterIcon from "../icons/TwitterIcon.astro";
 
 interface Props {
-  //class: string;
+  class: string;
   year: number;
 }
-
-const { year } = Astro.props;
+const { class: className, year } = Astro.props;
 ---
 
 <footer class="footer">
-  <SectionContainer>
-    <section class="footer__row">
-      <h4 class="footer__divecenter">PADI Dive Center S#19636</h4>
-      <div class="footer__social-networks">
-        <a href={INSTAGRAM_LINK} target="_blank" aria-label="Instagram">
-          <InstagramIcon class="footer__social-networks--icons" />
-        </a>
-        <a href={YOUTUBE_LINK} target="_blank" aria-label="Youtube">
-          <YoutubeIcon class="footer__social-networks--icons" />
-        </a>
-        <a href={FACEBOOK_LINK} target="_blank" aria-label="Facebook">
-          <FacebookIcon class="footer__social-networks--icons" />
-        </a>
-        <a href={TWITTER_LINK} target="_blank" aria-label="Twitter">
-          <XIcon class="footer__social-networks--icons" />
-        </a>
-      </div>
-    </section>
-
-    <section class="footer__row">
-      <div class="footer__contact-info">
-        <a href={GOOGLE_MAPS_LINK} target="_blank">
-          <span>CLUB JOSE HERNANDEZ<br />Bragado 5950, Mataderos, C.A.B.A. Argentina</span>
-        </a>
-        <p>Tel.: (+54)11.4939.6268 / (+54)11.5979.0203</p>
-        <p>info@divingschool.com.ar</p>
-      </div>
-
-      <a class="footer__logo-Padi" href="https://www.padi.com/" target="_blank">
-        <img src="/logo-padi-transp-black.webp" alt="Logo PADI" title="Logo PADI" />
+  <section class=`footer__row ${className}`>
+    <h4>PADI Dive Center S#19636</h4>
+    <div class="footer__social-networks">
+      <a href={links.instagram} target="_blank" aria-label="Instagram">
+        <InstagramIcon class="footer__social-networks--icons" />
       </a>
-    </section>
+      <a href={links.youtube} target="_blank" aria-label="Youtube">
+        <YoutubeIcon class="footer__social-networks--icons" />
+      </a>
+      <a href={links.facebook} target="_blank" aria-label="Facebook">
+        <FacebookIcon class="footer__social-networks--icons" />
+      </a>
+      <a href={links.twitter} target="_blank" aria-label="Twitter">
+        <TwitterIcon class="footer__social-networks--icons" />
+      </a>
+    </div>
+  </section>
 
-    <section class="footer__legal">
-      <p>
-        Copyright &copy {year} - <a href={DEVELOPER_LINK} target="_blank">[ Nacho FJ ]</a> - Todas las fotografías utilizadas
-        en esta página son propiedad exclusiva de Atlantida Diving School, el uso no autorizado de las mismas está penado
-        por la ley.
-      </p>
-    </section>
-  </SectionContainer>
+  <section class=`footer__row ${className}`>
+    <div class="footer__contact-info">
+      <a href={links.maps} target="_blank">
+        <span>{info.location}<br />{info.address}</span>
+      </a>
+      <p>Tel.: {info.phone}</p>
+      <p>{info.email}</p>
+    </div>
+
+    <a class="footer__logo-Padi" href={links.padi} target="_blank">
+      <img src="/logo-padi-transp-black.webp" alt="Logo PADI" title="Logo PADI" />
+    </a>
+  </section>
+
+  <section class=`footer__legal ${className}`>
+    <p>
+      Copyright &copy {year} - <a href={links.developer} target="_blank">[ Nacho FJ ]</a> - Todas las fotografías utilizadas
+      en esta página son propiedad exclusiva de Atlantida Diving School, el uso no autorizado de las mismas está penado por
+      la ley.
+    </p>
+  </section>
 </footer>

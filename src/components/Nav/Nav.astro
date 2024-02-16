@@ -9,7 +9,7 @@ interface Props {
 const { class: className } = Astro.props;
 ---
 
-<nav class:list={["nav", className]}>
+<nav class=`nav ${className}`>
   <a class="nav__logo" href="/">
     <img src="/logo-menu.webp" alt="Logo Atlántida Diving School" />
   </a>

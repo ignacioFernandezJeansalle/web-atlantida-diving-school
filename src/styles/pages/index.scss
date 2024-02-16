@@ -1,0 +1,52 @@
+@import "../variables";
+
+.welcome {
+  position: relative;
+
+  &__background {
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__links {
+    position: absolute;
+    left: 33%;
+    right: 16px;
+    bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &--padi {
+      width: 18%;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+
+    &--dan {
+      width: 27%;
+
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  &__carousel {
+    position: absolute;
+    top: 16px;
+    bottom: 16px;
+    left: 16px;
+    width: 29%;
+    padding: 16px;
+    color: $font-color-min;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

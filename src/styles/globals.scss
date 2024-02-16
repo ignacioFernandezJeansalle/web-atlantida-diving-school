@@ -63,6 +63,10 @@ a {
   z-index: 100;
 }
 
+.main {
+  padding-top: $nav-height;
+}
+
 .container {
   max-width: $screen-max-width;
   padding-inline: $screen-padding-inline;

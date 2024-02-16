@@ -1,0 +1,15 @@
+---
+import "./WhatsappLink.scss";
+
+interface Props {
+  url: string;
+}
+
+const { url } = Astro.props;
+---
+
+<section class="whatsapp-link">
+  <a href={url} target="_blank">
+    <img src="/logo-whatsapp.webp" alt="Link a WhatsApp" />
+  </a>
+</section>

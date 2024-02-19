@@ -1,0 +1,49 @@
+---
+import "./CarouselHome.scss";
+const year = new Date().getFullYear();
+---
+
+<div class="carousel__container">
+  <ul class="carousel__content">
+    <li class="carousel__item active">
+      <h2 class="carousel__item--title">EXPERIENCIA</h2>
+      <p class="carousel__item--description">
+        Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br /> Desde 1986, {
+          year - 1986
+        } años ininterrumpidos dictando cursos de buceo. Más de 6000 alumnos certificados.
+      </p>
+    </li>
+    <li class="carousel__item">
+      <h2 class="carousel__item--title">DISPONIBILIDAD</h2>
+      <p class="carousel__item--description">
+        Programá el curso de buceo según tu disponibilidad. Con nosotros podés elegir día, horario y cantidad de clases
+        semanales. Lunes a Sábados.
+      </p>
+    </li>
+    <li class="carousel__item">
+      <h2 class="carousel__item--title">COMODIDAD</h2>
+      <p class="carousel__item--description">
+        Cursos de buceo totalmente personalizados de 1 a 6 alumnos como máximo. Nuestro objetivo es tu comodidad y que
+        te sientas seguro y sin presiones. Siempre hay un instructor para vos.
+      </p>
+    </li>
+    <li class="carousel__item">
+      <h2 class="carousel__item--title">PROMOCION</h2>
+      <p class="carousel__item--description">
+        Inscribite AHORA con un 2x1. Uno paga y dos hacen el curso de buceo Open Water Diver.
+      </p>
+    </li>
+  </ul>
+  <nav class="carousel__pagination">
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+  </nav>
+  <div class="carousel__controls">
+    <button id="carousel__controls-next">NEXT</button>
+    <button id="carousel__controls-prev">PREV</button>
+  </div>
+</div>
+
+<script src="./CarouselHome.ts"></script>

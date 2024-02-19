@@ -2,30 +2,7 @@
 import "../styles/pages/index.scss";
 import { info, links } from "../data/data.json";
 import Layout from "../layouts/Layout.astro";
-
-const year = new Date().getFullYear();
-
-const CAROUSEL = [
-  {
-    title: "EXPERIENCIA",
-    description:
-      "Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br /> Desde 1986, {year - 1986} años ininterrumpidos dictando cursos de buceo. Más de 6000 alumnos certificados.",
-  },
-  {
-    title: "DISPONIBILIDAD",
-    description:
-      "Programá el curso de buceo según tu disponibilidad. Con nosotros podés elegir día, horario y cantidad de clases semanales. Lunes a Sábados.",
-  },
-  {
-    title: "COMODIDAD",
-    description:
-      "Cursos de buceo totalmente personalizados de 1 a 6 alumnos como máximo. Nuestro objetivo es tu comodidad y que te sientas seguro y sin presiones. Siempre hay un instructor para vos.",
-  },
-  {
-    title: "PROMOCION",
-    description: "Inscribite AHORA con un 2x1. Uno paga y dos hacen el curso de buceo Open Water Diver.",
-  },
-];
+import CarouselHome from "../components/CarouselHome/CarouselHome.astro";
 ---
 
 <Layout
@@ -47,22 +24,7 @@ const CAROUSEL = [
         <img src="https://media.dan.org/logos/referral/dan_join_std.png" alt="Logo DAN" />
       </a>
     </div>
-    <ul class="welcome__carousel">
-      {
-        CAROUSEL.map((item) => (
-          <li class="welcome__carousel-item">
-            <h2 class="welcome__carousel-item--title">{item.title}</h2>
-            <p class="welcome__carousel-item--description">{item.description}</p>
-          </li>
-        ))
-      }
-    </ul>
-    <ul>
-      <li><button>1</button></li>
-      <li><button>2</button></li>
-      <li><button>3</button></li>
-      <li><button>4</button></li>
-    </ul>
+    <div class="welcome__carousel"><CarouselHome /></div>
   </section>
 
   <!-- Sección de presentación de nuestro centro de buceo -->
@@ -84,3 +46,4 @@ const CAROUSEL = [
 
   <style></style>
 </Layout>
+../components/CarouselHome/CarouselText.astro

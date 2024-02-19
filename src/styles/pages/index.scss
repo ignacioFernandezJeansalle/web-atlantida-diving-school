@@ -12,12 +12,12 @@
 
   &__links {
     position: absolute;
-    left: 33%;
+    left: 16px;
     right: 16px;
-    bottom: 16px;
+    top: 16px;
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: flex-start;
 
     &--padi {
       width: 18%;
@@ -40,13 +40,31 @@
 
   &__carousel {
     position: absolute;
-    top: 16px;
-    bottom: 16px;
-    left: 16px;
-    width: 29%;
+    top: 45%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     padding: 16px;
     color: $font-color-min;
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (width > 768px) {
+  .welcome {
+    &__links {
+      left: 33%;
+      right: 16px;
+      bottom: 16px;
+      align-items: flex-end;
+    }
+
+    &__carousel {
+      top: 16px;
+      bottom: 16px;
+      left: 16px;
+      width: 29%;
+    }
   }
 }

@@ -27,6 +27,7 @@ let intervalId: number;
 let orderIndex = -1;
 let isMoving = false;
 const numberOfItems = items.length;
+const withPagination = pagination.length > 0 && pagination[0].children.length > 0;
 
 /**********/
 /* Events */
@@ -34,7 +35,7 @@ const numberOfItems = items.length;
 
 // Pagination
 
-if (pagination.length > 0 && pagination[0].children.length > 0) {
+if (withPagination) {
   for (let i = 0; i < pagination[0].children.length; i++) {
     pagination[0].children[i].addEventListener("click", (event) => {
       event.preventDefault();
@@ -83,6 +84,16 @@ const reflow = (element: HTMLElement) => {
   element.offsetHeight;
 };
 
+const setActivePagination = (n: number) => {
+  for (let i = 0; i < pagination[0].children.length; i++) {
+    if (n === i) {
+      pagination[0].children[i].classList.add(CLASS_NAME_ACTIVE);
+    } else {
+      pagination[0].children[i].classList.remove(CLASS_NAME_ACTIVE);
+    }
+  }
+};
+
 const move = (index: number) => {
   const activeItemIndex = getActive();
 
@@ -106,6 +117,9 @@ const move = (index: number) => {
     items[activeItemIndex].classList.remove(CLASS_NAME_ACTIVE, directionalClassName);
     items[orderIndex].classList.remove(orderClassName, directionalClassName);
     items[orderIndex].classList.add(CLASS_NAME_ACTIVE);
+    if (withPagination) {
+      setActivePagination(orderIndex);
+    }
     isMoving = false; // Unblock buttons
   }, 600);
 };

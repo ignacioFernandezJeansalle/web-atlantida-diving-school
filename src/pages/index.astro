@@ -2,7 +2,7 @@
 import "../styles/pages/index.scss";
 import { info, links } from "../data/data.json";
 import Layout from "../layouts/Layout.astro";
-import CarouselHome from "../components/CarouselHome/CarouselHome.astro";
+import CarouselHome from "../components/CarouselHome.astro";
 ---
 
 <Layout
@@ -25,7 +25,9 @@ import CarouselHome from "../components/CarouselHome/CarouselHome.astro";
         <img src="https://media.dan.org/logos/referral/dan_join_std.png" alt="Logo DAN" />
       </a>
     </div>
-    <div class="welcome__carousel"><CarouselHome /></div>
+    <div class="welcome__carousel">
+      <CarouselHome />
+    </div>
   </section>
 
   <!-- Sección de presentación de nuestro centro de buceo -->
@@ -45,6 +47,21 @@ import CarouselHome from "../components/CarouselHome/CarouselHome.astro";
   <!-- Sección de contacto -->
   <section class="container__main intro__contacto">Sección de contacto</section>
 
-  <style></style>
+  <div class="cuadrado"></div>
 </Layout>
-../components/CarouselHome/CarouselText.astro
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    // Loop over the entries
+    entries.forEach((entry) => {
+      // If the element is visible
+      if (entry.isIntersecting) {
+        // Add the animation class
+        entry.target.classList.add("square-animation");
+      }
+    });
+  });
+
+  const SELECTOR = document.querySelector(".cuadrado") as HTMLElement;
+  observer.observe(SELECTOR);
+</script>

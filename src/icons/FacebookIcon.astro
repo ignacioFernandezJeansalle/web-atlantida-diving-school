@@ -2,10 +2,10 @@
 interface Props {
   class: string;
 }
-const { class: className } = Astro.props;
+const { class: className, ...rest } = Astro.props;
 ---
 
-<svg class={className} viewBox="0 0 36 36" height="40" width="40">
+<svg class={className} {...rest} viewBox="0 0 36 36" height="40" width="40">
   <defs>
     <linearGradient x1="50%" x2="50%" y1="97.078%" y2="0%" id="a">
       <stop offset="0%" stop-color="#0062E0"></stop>

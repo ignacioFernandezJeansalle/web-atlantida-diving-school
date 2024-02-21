@@ -1,0 +1,163 @@
+---
+import MenuOpenIcon from "../icons/MenuOpenIcon.astro";
+import MenuCloseIcon from "../icons/MenuCloseIcon.astro";
+
+interface Props {
+  class: string;
+}
+const { class: className } = Astro.props;
+---
+
+<nav class=`nav ${className}`>
+  <a class="nav__logo" href="/">
+    <img src="/img/logo-menu.webp" alt="Logo Atlántida Diving School" />
+  </a>
+
+  <div class="nav__menu" id="navMenu">
+    <ul class="nav__list">
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/cursos">Cursos</a></li>
+      <li><a href="/buda">El Buda</a></li>
+      <li><a href="/viajes">Viajes</a></li>
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+
+    <button class="nav__btn--close" id="navBtnClose">
+      <MenuCloseIcon />
+    </button>
+  </div>
+
+  <button class="nav__btn--open" id="navBtnOpen">
+    <MenuOpenIcon />
+  </button>
+</nav>
+
+<style lang="scss">
+  @import "../styles/variables";
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: $nav-padding-block;
+
+    &__logo {
+      img {
+        display: block;
+        width: 100%;
+        height: $nav-height-content;
+      }
+    }
+
+    &__menu {
+      position: fixed;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      background: $color-primary;
+      box-shadow: $box-shadow-primary;
+      padding: 48px 0;
+      transition: top 0.5s;
+
+      &--show {
+        top: 0;
+      }
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      text-align: center;
+
+      li {
+        a {
+          color: $font-color-min;
+          font-size: 20px;
+        }
+      }
+    }
+
+    &__btn {
+      &--close,
+      &--open {
+        width: 32px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        color: $font-color-min;
+      }
+
+      &--close {
+        position: absolute;
+        top: 18px;
+        right: 16px;
+      }
+    }
+  }
+
+  @media (width > 768px) {
+    .nav {
+      &__menu {
+        position: static;
+        width: auto;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      &__list {
+        flex-direction: row;
+
+        li {
+          a {
+            display: block;
+            height: $nav-height-content * 0.75;
+            line-height: $nav-height-content * 0.75;
+            padding-inline: 12px;
+            border-radius: 2px;
+            font-size: 18px;
+
+            &:hover {
+              color: $color-primary;
+              background: $font-color-min;
+            }
+          }
+        }
+      }
+
+      &__btn {
+        &--close,
+        &--open {
+          display: none;
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+  const navMenu = document.getElementById("navMenu");
+  const navBtnOpen = document.getElementById("navBtnOpen");
+  const navBtnClose = document.getElementById("navBtnClose");
+
+  navBtnOpen?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    navMenu?.classList.add("nav__menu--show");
+  });
+
+  navBtnClose?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    navMenu?.classList.remove("nav__menu--show");
+  });
+
+  document.addEventListener("click", (event) => {
+    const iEvent = event as Event;
+    iEvent.stopPropagation();
+
+    const eTarget = event.target as HTMLElement;
+    if (navMenu?.classList.contains("nav__menu--show") && !navMenu.contains(eTarget)) {
+      navMenu?.classList.remove("nav__menu--show");
+    }
+  });
+</script>

@@ -68,3 +68,30 @@
     }
   }
 }
+
+.cuadrado {
+  width: 200px;
+  height: 200px;
+  background: red;
+}
+
+.cuadrado {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .square-animation {
+    animation: wipe-enter 1s 1;
+  }
+}
+
+@keyframes wipe-enter {
+  0% {
+    transform: scale(0, 0.025);
+  }
+  50% {
+    transform: scale(1, 0.025);
+  }
+}

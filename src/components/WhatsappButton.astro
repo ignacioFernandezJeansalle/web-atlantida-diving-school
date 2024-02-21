@@ -1,0 +1,36 @@
+---
+interface Props {
+  url: string;
+}
+const { url } = Astro.props;
+---
+
+<section class="whatsapp-button">
+  <a href={url} target="_blank">
+    <img src="/img/logo-whatsapp.webp" alt="Link a WhatsApp" />
+  </a>
+</section>
+
+<style lang="scss">
+  .whatsapp-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+
+    a {
+      display: block;
+      padding: 8px;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      &:hover img {
+        transform: translateY(-5px);
+      }
+    }
+  }
+</style>

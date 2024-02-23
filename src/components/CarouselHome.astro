@@ -8,7 +8,7 @@ const CAROUSEL = [
 ];
 ---
 
-<div class="carousel__container">
+<div id="carousel1" class="carousel__container">
   <ul class="carousel__content">
     <li class="carousel__item active">
       <h2 class="carousel__item--title">{CAROUSEL[0].title}</h2>
@@ -219,6 +219,14 @@ const CAROUSEL = [
   const btnNext = document.getElementById(SELECTOR_BTN_NEXT);
   const btnPrev = document.getElementById(SELECTOR_BTN_PREV);
 
+  /* const x = document.getElementsByClassName("carousel__container") as HTMLCollectionOf<HTMLElement>;
+  console.log(x);
+  const y = x[0].getElementsByClassName(SELECTOR_ITEM) as HTMLCollectionOf<HTMLElement>;
+  console.log(y); */
+
+  // Evaluar si la longitud es 1 o mayor
+  //console.log(x[0].children[0]);
+
   /*************/
   /* Variables */
   /*************/
@@ -331,10 +339,39 @@ const CAROUSEL = [
 
   loop();
 
-  class Carousel {
-    constructor(alto: number, ancho: number) {
-      this.alto = alto;
-      this.ancho = ancho;
+  /* class Carousel {
+    id = "";
+    intervalId = 0;
+    orderIndex = -1;
+    isMoving = false;
+    numberOfItems = 0; //items.length;
+    withPagination = false; //pagination.length > 0 && pagination[0].children.length > 0;
+
+    constructor(
+      id: string,
+      intervalId: number,
+      orderIndex: number,
+      isMoving: boolean,
+      numberOfItems: number,
+      withPagination: boolean
+    ) {
+      this.id = id;
+      this.intervalId = intervalId;
+      this.orderIndex = orderIndex;
+      this.isMoving = isMoving;
+      this.numberOfItems = numberOfItems;
+      this.withPagination = withPagination;
+
+      //this.loop();
     }
+
+    loop = () => {
+      clearInterval(this.intervalId);
+      console.log(this.id + "-" + (this.orderIndex += 1));
+      this.intervalId = setInterval(this.loop, 1000);
+    };
   }
+
+  const carousel1 = new Carousel(x[0].id, 0, -1, false, 0, false);
+  const carousel2 = new Carousel(x[1].id, 0, -1, false, 0, false); */
 </script>

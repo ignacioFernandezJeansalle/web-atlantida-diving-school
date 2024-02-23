@@ -12,10 +12,13 @@ import CarouselHome from "../components/CarouselHome.astro";
   <!-- Sección de bienvenida -->
   <section class="welcome">
     <picture class="welcome__background">
-      <source media="(max-width: 500px)" srcset="/img/home/slide-background-mobile.webp" />
-      <source media="(max-width: 768px)" srcset="/img/home/slide-background-mobile-lg.webp" />
-      <source media="(min-width: 769px)" srcset="/img/home/slide-background-desktop.webp" />
-      <img src="/img/home/slide-background-mobile.webp" alt="Chris standing up holding his daughter Elva" />
+      <source media="(max-width: 576px)" srcset="/img/home/slide-background-mobile.webp" />
+      <source media="(max-width: 768px)" srcset="/img/home/slide-background-mobile-sm.webp" />
+      <source media="(max-width: 992px)" srcset="/img/home/slide-background-desktop-md.webp" />
+      <source media="(max-width: 1200px)" srcset="/img/home/slide-background-desktop-lg.webp" />
+      <source media="(max-width: 1400px)" srcset="/img/home/slide-background-desktop-xl.webp" />
+      <source media="(min-width: 1401px)" srcset="/img/home/slide-background-desktop-xxl.webp" />
+      <img src="/img/home/slide-background-mobile.webp" alt="Instructor de Atlántida, Leo Cuneo, buceando" />
     </picture>
     <div class="welcome__links">
       <a class="welcome__links--padi" href={links.padi} target="_blank">

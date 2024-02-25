@@ -1,14 +1,9 @@
 ---
 import MenuOpenIcon from "../icons/MenuOpenIcon.astro";
 import MenuCloseIcon from "../icons/MenuCloseIcon.astro";
-
-interface Props {
-  class: string;
-}
-const { class: className } = Astro.props;
 ---
 
-<nav class=`nav ${className}`>
+<nav class="nav container">
   <a class="nav__logo" href="/">
     <img src="/img/logo-menu.webp" alt="Logo Atlántida Diving School" />
   </a>

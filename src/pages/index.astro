@@ -1,17 +1,21 @@
 ---
 import "../styles/pages/index.scss";
-import { info, links } from "../data/data.json";
+import { info, links, cursos } from "../data/data.json";
+
 import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import CarouselHome from "../components/CarouselHome.astro";
+import LinkButton from "../components/LinkButton.astro";
+import ArrowNarrowRight from "../icons/ArrowNarrowRight.astro";
 ---
 
 <Layout
   title=`Buceo ${info.name}`
   description=`Primer ${info.divecenter} de la Argentina, Centro Internacional de Buceo, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <!-- Sección de bienvenida -->
-  <section class="welcome">
-    <picture class="welcome__background">
+  <!-- Sección hero -->
+  <section class="homepage-hero__container">
+    <picture class="homepage-hero__background">
       <source media="(max-width: 576px)" srcset="/img/home/slide-background-mobile.webp" />
       <source media="(max-width: 768px)" srcset="/img/home/slide-background-mobile-sm.webp" />
       <source media="(max-width: 992px)" srcset="/img/home/slide-background-desktop-md.webp" />
@@ -20,35 +24,92 @@ import CarouselHome from "../components/CarouselHome.astro";
       <source media="(min-width: 1401px)" srcset="/img/home/slide-background-desktop-xxl.webp" />
       <img src="/img/home/slide-background-mobile.webp" alt="Instructor de Atlántida, Leo Cuneo, buceando" />
     </picture>
-    <div class="welcome__links">
-      <a class="welcome__links--padi" href={links.padi} target="_blank">
+    <div class="homepage-hero__links">
+      <a class="homepage-hero__links--padi" href={links.padi} target="_blank">
         <img src="/img/logo-padi-transp-color.webp" alt="Logo PADI" />
       </a>
-      <a class="welcome__links--dan" href={links.dan} target="_blank">
+      <a class="homepage-hero__links--dan" href={links.dan} target="_blank">
         <img src="https://media.dan.org/logos/referral/dan_join_std.png" alt="Logo DAN" />
       </a>
     </div>
-    <div class="welcome__carousel">
+    <div class="homepage-hero__carousel">
       <CarouselHome />
     </div>
   </section>
 
   <!-- Sección de presentación de nuestro centro de buceo -->
-  <section class="container__main intro__escuela">Sección de presentación de nuestro centro de buceo</section>
+  <SectionContainer>
+    <div class="homepage-school__container">
+      <div class="homepage-school__title">
+        <h1>ATLANTIDA</h1>
+        <h2>Escuela de buceo</h2>
+        <div>
+          <LinkButton href="/cursos/open-water-diver" colorPrimary={false}>
+            Conocé la escuela<ArrowNarrowRight />
+          </LinkButton>
+        </div>
+      </div>
+      <div class="homepage-school__video">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/jYtcw44LoO0?si=2vbJtbUOd8WQ_kos"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        >
+        </iframe>
+      </div>
+    </div>
+  </SectionContainer>
 
   <!-- Sección de introducción a los cursos y especialidades -->
-  <section class="container__main bkgATLBodyCont intro__cursos">
-    Sección de introducción a los cursos y especialidades
-  </section>
+  <SectionContainer class="highlight-background">
+    <div class="homepage-courses__container">
+      <h2>Cursos de buceo & especialidades</h2>
+      <div class="homepage-courses__links">
+        <a href="/cursos/open-water-diver">
+          <img class="linkCurso" src="./img/cursos/OWD.jpg" alt={cursos.owd.name + " - " + cursos.owd.description} />
+        </a>
+        <a href="/cursos/rescue-diver">
+          <img class="linkCurso" src="./img/cursos/RD.jpg" alt={cursos.rd.name + " - " + cursos.rd.description} />
+        </a>
+        <a href="/cursos/traje-seco">
+          <img
+            class="linkCurso"
+            src="./img/cursos/trajeSeco.jpg"
+            alt={cursos.ts.name + " - " + cursos.ts.description}
+          />
+        </a>
+        <a href="/cursos/enriched-air-nitrox-diver">
+          <img
+            class="linkCurso"
+            src="./img/cursos/nitrox.jpg"
+            alt={cursos.eand.name + " - " + cursos.eand.description}
+          />
+        </a>
+      </div>
+      <div class="btnATL btnATL--rojo">
+        <a href="./cursos.html">Todos los cursos<i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </SectionContainer>
 
   <!-- Sección de intro al Buda -->
-  <section class="container__main intro__buda">Sección de intro al Buda</section>
+  <SectionContainer>
+    <div class="homepage-checkout__container"><h2>Espejo de agua<br />EL BUDA</h2></div>
+  </SectionContainer>
 
   <!-- Sección de intro a viajes -->
-  <section class="container__main bkgATLBodyCont intro__viajes">Sección de intro a viajes</section>
+  <SectionContainer class="highlight-background">
+    <div class="homepage-trips__container"><h2>Viajes y salidas de buceo</h2></div>
+  </SectionContainer>
 
   <!-- Sección de contacto -->
-  <section class="container__main intro__contacto">Sección de contacto</section>
+  <SectionContainer>
+    <div class="homepage-contact__container"><h2 class="mb-4">ESTUDIA CON NOSOTROS</h2></div>
+  </SectionContainer>
 
   <div class="cuadrado"></div>
 </Layout>

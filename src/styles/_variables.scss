@@ -12,6 +12,9 @@ $nav-height: 64px;
 $nav-padding-block: 6px;
 $nav-height-content: $nav-height - $nav-padding-block * 2;
 
+//layout => sections
+$section-padding-block: 64px;
+
 // font
 $font-family: "Nunito Variable", sans-serif;
 $font-style: normal;
@@ -22,9 +25,9 @@ $font-size: 16px;
 $h1-font-size: $font-size * 3;
 $h2-font-size: $h1-font-size * 0.85;
 $h3-font-size: $h1-font-size * 0.7;
-$h1-margin-bottom: $h1-font-size * 0.2;
-$h2-margin-bottom: $h2-font-size * 0.2;
-$h3-margin-bottom: $h3-font-size * 0.2;
+$h1-margin-bottom: $h1-font-size * 0.8;
+$h2-margin-bottom: $h2-font-size * 0.7;
+$h3-margin-bottom: $h3-font-size * 0.7;
 
 // font-colors
 $font-color-max: #111111;
@@ -35,7 +38,7 @@ $font-color-min: #eeeeee;
 $color-primary: rgb(0, 104, 120);
 $color-secondary: rgb(220, 0, 84);
 $color-body-primary: #f2f2f2;
-$color-body-secondary: #eeeeee;
+$color-body-secondary: #eaeaea;
 $color-footer: #d9d9d9;
 
 //shadow

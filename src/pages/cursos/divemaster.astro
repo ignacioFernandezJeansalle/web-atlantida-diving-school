@@ -1,0 +1,13 @@
+---
+import { info, cursos } from "../../data/data.json";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title=`${cursos.dm.name} | ${info.name}`
+  description=`Curso ${cursos.dm.name} - ${cursos.dm.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+>
+  <section>
+    <h1>DIVEMASTER</h1>
+  </section>
+</Layout>

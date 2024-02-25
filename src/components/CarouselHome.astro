@@ -1,53 +1,48 @@
 ---
 const year = new Date().getFullYear();
-const CAROUSEL = [
+const CAROUSEL_HERO = [
   {
     title: "EXPERIENCIA",
-    paragraph: `Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br />Desde 1986, ${year - 1986} años ininterrumpidos dictando cursos de buceo. Más de 6000 alumnos certificados.`,
+    description: `Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br />Desde 1986, ${year - 1986} años ininterrumpidos dictando cursos de buceo. Más de 6000 alumnos certificados.`,
+  },
+  {
+    title: "DISPONIBILIDAD",
+    description:
+      "Programá el curso de buceo según tu disponibilidad. Con nosotros podés elegir día, horario y cantidad de clases semanales. Lunes a Sábados.",
+  },
+  {
+    title: "COMODIDAD",
+    description:
+      "Cursos de buceo totalmente personalizados de 1 a 6 alumnos como máximo. Nuestro objetivo es tu comodidad y que te sientas seguro y sin presiones. Siempre hay un instructor para vos.",
+  },
+  {
+    title: "PROMOCION",
+    description: "Inscribite AHORA con un 2x1. Uno paga y dos hacen el curso de buceo Open Water Diver.",
   },
 ];
 ---
 
-<div id="carousel1" class="carousel__container">
+<div class="carousel__container">
   <ul class="carousel__content">
-    <li class="carousel__item active">
-      <h2 class="carousel__item--title">{CAROUSEL[0].title}</h2>
-      <p class="carousel__item--description" set:html={CAROUSEL[0].paragraph} />
-    </li>
-    <!-- <li class="carousel__item active">
-      <h2 class="carousel__item--title">EXPERIENCIA</h2>
-      <p class="carousel__item--description">
-        Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br /> Desde 1986, {
-          year - 1986
-        } años ininterrumpidos dictando cursos de buceo. Más de 6000 alumnos certificados.
-      </p>
-    </li> -->
-    <li class="carousel__item">
-      <h2 class="carousel__item--title">DISPONIBILIDAD</h2>
-      <p class="carousel__item--description">
-        Programá el curso de buceo según tu disponibilidad. Con nosotros podés elegir día, horario y cantidad de clases
-        semanales. Lunes a Sábados.
-      </p>
-    </li>
-    <li class="carousel__item">
-      <h2 class="carousel__item--title">COMODIDAD</h2>
-      <p class="carousel__item--description">
-        Cursos de buceo totalmente personalizados de 1 a 6 alumnos como máximo. Nuestro objetivo es tu comodidad y que
-        te sientas seguro y sin presiones. Siempre hay un instructor para vos.
-      </p>
-    </li>
-    <li class="carousel__item">
-      <h2 class="carousel__item--title">PROMOCION</h2>
-      <p class="carousel__item--description">
-        Inscribite AHORA con un 2x1. Uno paga y dos hacen el curso de buceo Open Water Diver.
-      </p>
-    </li>
+    {
+      CAROUSEL_HERO.map((item, index) => {
+        const classItem = index === 0 ? "carousel__item active" : "carousel__item";
+        return (
+          <li class={classItem}>
+            <h2 class="carousel__item--title">{item.title}</h2>
+            <p class="carousel__item--description" set:html={item.description} />
+          </li>
+        );
+      })
+    }
   </ul>
   <nav class="carousel__pagination">
-    <button class="active"></button>
-    <button></button>
-    <button></button>
-    <button></button>
+    {
+      CAROUSEL_HERO.map((item, index) => {
+        const classButton = index === 0 ? "active" : "";
+        return <button class={classButton} />;
+      })
+    }
   </nav>
   {
     /*
@@ -110,11 +105,11 @@ const CAROUSEL = [
     &__item {
       position: relative;
       display: none;
-      float: left; /* REVISAR */
+      float: left;
       width: 100%;
       margin-right: -100%;
       -webkit-backface-visibility: hidden;
-      backface-visibility: hidden; /* REVISAR */
+      backface-visibility: hidden;
       transition: transform 0.6s ease-in-out;
 
       &.active,
@@ -187,11 +182,11 @@ const CAROUSEL = [
 
   @media (width > 768px) {
     .carousel__item--title {
-      font-size: clamp(38px, 3.5vw, 56px);
+      font-size: clamp(38px, 3vw, 56px);
     }
 
     .carousel__item--description {
-      font-size: clamp(16px, 2vw, 28px);
+      font-size: clamp(16px, 1.5vw, 28px);
     }
   }
 </style>

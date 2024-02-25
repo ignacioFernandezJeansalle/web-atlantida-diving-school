@@ -7,6 +7,40 @@
     "email": "info@divingschool.com.ar",
     "divecenter": "PADI Dive Center #19636"
   },
+  "cursos": {
+    "owd": {
+      "name": "Open Water Diver",
+      "description": "El curso inicial de buceo más popular del mundo"
+    },
+    "aowd": {
+      "name": "Advanced Open Water Diver",
+      "description": "Inmersiones de aventura"
+    },
+    "efr": {
+      "name": "Emergency First Response",
+      "description": "Primeros auxilios"
+    },
+    "rd": {
+      "name": "Rescue Diver",
+      "description": "Técnicas de rescate y asistencia"
+    },
+    "dm": {
+      "name": "Divemaster",
+      "description": "Primer nivel profesional"
+    },
+    "ts": {
+      "name": "Traje seco",
+      "description": "Disfrutá de tus buceos en agua fría"
+    },
+    "eand": {
+      "name": "Enriched Air Nitrox Diver",
+      "description": "Buceo con aire enriquecido"
+    },
+    "apnea": {
+      "name": "Apnea",
+      "description": "Técnicas de relajación y respiración"
+    }
+  },
   "links": {
     "whatsapp": "https://api.whatsapp.com/send?phone=5491159790203",
     "instagram": "https://www.instagram.com/buceo_atlantida/",

@@ -1,10 +1,11 @@
 ---
+import { info, cursos } from "../../data/data.json";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout
-  title="Open Water Diver ATLANTIDA Diving School"
-  description="Curso Open Water Diver, Bragado 5950 CABA, Mataderos, tel.: 1559790203 / 1549396268, mail: info@divingschool.com.ar"
+  title=`${cursos.owd.name} | ${info.name}`
+  description=`Curso ${cursos.owd.name} - ${cursos.owd.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
   <section>
     <h1>OPEN WATER DIVER</h1>

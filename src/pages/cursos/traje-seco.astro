@@ -1,0 +1,13 @@
+---
+import { info, cursos } from "../../data/data.json";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title=`${cursos.ts.name} | ${info.name}`
+  description=`Especialidad ${cursos.ts.name} - ${cursos.ts.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+>
+  <section>
+    <h1>TRAJE SECO</h1>
+  </section>
+</Layout>

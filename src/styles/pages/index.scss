@@ -1,7 +1,11 @@
 @import "../variables";
 
-.welcome {
-  position: relative;
+.homepage-hero {
+  &__container {
+    position: relative;
+    max-width: 1920px;
+    margin-inline: auto;
+  }
 
   &__background {
     img {
@@ -52,7 +56,7 @@
 }
 
 @media (width > 768px) {
-  .welcome {
+  .homepage-hero {
     &__links {
       left: 33%;
       right: 16px;
@@ -69,6 +73,65 @@
   }
 }
 
+/***********************************/
+
+.homepage-school {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 48px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    h1 {
+      margin: 0 0 8px 0;
+      font-size: 94px;
+      line-height: 65px;
+    }
+
+    h2 {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__video {
+    display: flex;
+    align-content: flex-end;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: $box-shadow-primary;
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+  }
+}
+
+@media (width > 768px) {
+  .homepage-school {
+    &__container {
+      flex-direction: row;
+      column-gap: 72px;
+    }
+  }
+}
+
+/***********************************/
+
+/***********************************/
+
+/* REVISAR ANIMACIONEES */
 .cuadrado {
   width: 200px;
   height: 200px;

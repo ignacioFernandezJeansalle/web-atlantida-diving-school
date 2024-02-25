@@ -1,0 +1,13 @@
+---
+import { info, cursos } from "../../data/data.json";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout
+  title=`${cursos.aowd.name} | ${info.name}`
+  description=`Curso ${cursos.aowd.name} - ${cursos.aowd.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+>
+  <section>
+    <h1>ADVANCED OPEN WATER DIVER</h1>
+  </section>
+</Layout>

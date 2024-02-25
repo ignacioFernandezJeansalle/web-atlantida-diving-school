@@ -1,21 +1,14 @@
 ---
-//import "./Footer.scss";
 import { info, links } from "../data/data.json";
 
 import InstagramIcon from "../icons/InstagramIcon.astro";
 import YoutubeIcon from "../icons/YoutubeIcon.astro";
 import FacebookIcon from "../icons/FacebookIcon.astro";
 import TwitterIcon from "../icons/TwitterIcon.astro";
-
-interface Props {
-  class: string;
-  year: number;
-}
-const { class: className, year } = Astro.props;
 ---
 
 <footer class="footer">
-  <section class=`footer__row ${className}`>
+  <div class="footer__row container">
     <h4>{info.divecenter}</h4>
     <div class="footer__social-networks">
       <a href={links.instagram} target="_blank" aria-label="Instagram">
@@ -31,9 +24,9 @@ const { class: className, year } = Astro.props;
         <TwitterIcon class="footer__social-networks--icons" />
       </a>
     </div>
-  </section>
+  </div>
 
-  <section class=`footer__row ${className}`>
+  <div class="footer__row container">
     <div class="footer__contact-info">
       <a href={links.maps} target="_blank">
         <span>{info.location}<br />{info.address}</span>
@@ -45,15 +38,15 @@ const { class: className, year } = Astro.props;
     <a class="footer__logo-Padi" href={links.padi} target="_blank">
       <img src="/img/logo-padi-transp-black.webp" alt="Logo PADI" title="Logo PADI" />
     </a>
-  </section>
+  </div>
 
-  <section class=`footer__legal ${className}`>
+  <div class="footer__legal container">
     <p>
-      Copyright &copy {year} - <a href={links.developer} target="_blank">[ Nacho FJ ]</a> - Todas las fotografías utilizadas
-      en esta página son propiedad exclusiva de Atlantida Diving School, el uso no autorizado de las mismas está penado por
-      la ley.
+      Copyright &copy {new Date().getFullYear()} - <a href={links.developer} target="_blank">[ Nacho FJ ]</a> - Todas las
+      fotografías utilizadas en esta página son propiedad exclusiva de Atlantida Diving School, el uso no autorizado de las
+      mismas está penado por la ley.
     </p>
-  </section>
+  </div>
 </footer>
 
 <style lang="scss">

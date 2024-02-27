@@ -7,11 +7,13 @@ const { href, colorPrimary } = Astro.props;
 const color = colorPrimary ? "primary" : "secondary";
 ---
 
-<a class={color} href={href}>
-  <span>
-    <slot />
-  </span>
-</a>
+<div>
+  <a class={color} href={href}>
+    <span>
+      <slot />
+    </span>
+  </a>
+</div>
 
 <style lang="scss">
   @import "../styles/_variables.scss";

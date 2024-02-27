@@ -131,6 +131,50 @@
 
 /***********************************/
 
+.homepage-courses {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 32px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 24px;
+    margin-bottom: 16px;
+
+    a {
+      display: inline-block;
+
+      img {
+        display: block;
+        width: 100%;
+        border-radius: 4px;
+        transition: 0.25s;
+
+        &:hover {
+          box-shadow: $box-shadow-primary;
+        }
+      }
+    }
+  }
+}
+
+@media (width > 768px) {
+  .homepage-courses {
+    &__links {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 32px;
+    }
+  }
+}
 /* REVISAR ANIMACIONEES */
 .cuadrado {
   width: 200px;

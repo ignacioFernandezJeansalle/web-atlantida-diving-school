@@ -43,11 +43,9 @@ import ArrowNarrowRight from "../icons/ArrowNarrowRight.astro";
       <div class="homepage-school__title">
         <h1>ATLANTIDA</h1>
         <h2>Escuela de buceo</h2>
-        <div>
-          <LinkButton href="/cursos/open-water-diver" colorPrimary={false}>
-            Conocé la escuela<ArrowNarrowRight />
-          </LinkButton>
-        </div>
+        <LinkButton href="/cursos/open-water-diver" colorPrimary={false}>
+          Conocé la escuela <ArrowNarrowRight />
+        </LinkButton>
       </div>
       <div class="homepage-school__video">
         <iframe
@@ -67,32 +65,40 @@ import ArrowNarrowRight from "../icons/ArrowNarrowRight.astro";
   <!-- Sección de introducción a los cursos y especialidades -->
   <SectionContainer class="highlight-background">
     <div class="homepage-courses__container">
-      <h2>Cursos de buceo & especialidades</h2>
+      <h2 class="homepage-courses__title">Cursos de buceo & especialidades</h2>
       <div class="homepage-courses__links">
         <a href="/cursos/open-water-diver">
-          <img class="linkCurso" src="./img/cursos/OWD.jpg" alt={cursos.owd.name + " - " + cursos.owd.description} />
+          <img
+            class="linkCurso"
+            src="/img/cursos/open-water-diver.webp"
+            alt={cursos.owd.name + " - " + cursos.owd.description}
+          />
         </a>
         <a href="/cursos/rescue-diver">
-          <img class="linkCurso" src="./img/cursos/RD.jpg" alt={cursos.rd.name + " - " + cursos.rd.description} />
+          <img
+            class="linkCurso"
+            src="/img/cursos/rescue-diver.webp"
+            alt={cursos.rd.name + " - " + cursos.rd.description}
+          />
         </a>
         <a href="/cursos/traje-seco">
           <img
             class="linkCurso"
-            src="./img/cursos/trajeSeco.jpg"
+            src="/img/cursos/traje-seco.webp"
             alt={cursos.ts.name + " - " + cursos.ts.description}
           />
         </a>
         <a href="/cursos/enriched-air-nitrox-diver">
           <img
             class="linkCurso"
-            src="./img/cursos/nitrox.jpg"
+            src="/img/cursos/enriched-air-nitrox-diver.webp"
             alt={cursos.eand.name + " - " + cursos.eand.description}
           />
         </a>
       </div>
-      <div class="btnATL btnATL--rojo">
-        <a href="./cursos.html">Todos los cursos<i class="bi bi-arrow-right"></i></a>
-      </div>
+      <LinkButton href="/cursos" colorPrimary={false}>
+        Todos los cursos <ArrowNarrowRight />
+      </LinkButton>
     </div>
   </SectionContainer>
 

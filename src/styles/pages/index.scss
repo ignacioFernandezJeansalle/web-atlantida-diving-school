@@ -129,8 +129,6 @@
 
 /***********************************/
 
-/***********************************/
-
 .homepage-courses {
   &__container {
     display: flex;
@@ -175,6 +173,61 @@
     }
   }
 }
+
+/***********************************/
+.homepage-checkout {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 48px;
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+
+    h2 {
+      font-size: 72px;
+      line-height: 52px;
+      margin: 0;
+    }
+
+    h3 {
+      margin: 0 0 32px 0;
+    }
+  }
+
+  &__video {
+    display: flex;
+    align-content: flex-end;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: $box-shadow-primary;
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+  }
+}
+
+@media (width > 768px) {
+  .homepage-checkout {
+    &__container {
+      flex-direction: row;
+      column-gap: 72px;
+    }
+  }
+}
+
+/***********************************/
 /* REVISAR ANIMACIONEES */
 .cuadrado {
   width: 200px;

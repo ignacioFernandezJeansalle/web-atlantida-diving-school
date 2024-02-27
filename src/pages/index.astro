@@ -104,7 +104,25 @@ import ArrowNarrowRight from "../icons/ArrowNarrowRight.astro";
 
   <!-- Sección de intro al Buda -->
   <SectionContainer>
-    <div class="homepage-checkout__container"><h2>Espejo de agua<br />EL BUDA</h2></div>
+    <div class="homepage-checkout__container">
+      <div class="homepage-checkout__video">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/ldvs8O1WYXQ?si=CwCnnpLauleW1Q2-"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="homepage-checkout__title">
+        <h2>EL BUDA</h2>
+        <h3>Espejo de agua</h3>
+        <LinkButton href="/buda" colorPrimary={false}>
+          Conocé El Buda <ArrowNarrowRight />
+        </LinkButton>
+      </div>
+    </div>
   </SectionContainer>
 
   <!-- Sección de intro a viajes -->

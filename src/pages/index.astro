@@ -1,6 +1,9 @@
 ---
 import "../styles/pages/index.scss";
-import { info, links, cursos } from "../data/data.json";
+import { info, links, cursos, trips } from "../data/data.json";
+const filterTrips = trips.filter((trip, index) => {
+  return index <= 5;
+});
 
 import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
@@ -23,13 +26,17 @@ import ScubaMask from "../icons/ScubaMask.astro";
       <source media="(max-width: 1200px)" srcset="/img/home/slide-background-desktop-lg.webp" />
       <source media="(max-width: 1400px)" srcset="/img/home/slide-background-desktop-xl.webp" />
       <source media="(min-width: 1401px)" srcset="/img/home/slide-background-desktop-xxl.webp" />
-      <img src="/img/home/slide-background-mobile.webp" alt="Instructor de Atlántida, Leo Cuneo, buceando" />
+      <img
+        src="/img/home/slide-background-mobile.webp"
+        alt="Instructor de Atlántida, Leo Cuneo, buceando"
+        loading="eager"
+      />
     </picture>
     <div class="homepage-hero__links">
-      <a class="homepage-hero__links--padi" href={links.padi} target="_blank">
+      <a class="homepage-hero__links--padi" href={links.padi} target="_blank" aria-label="PADI" rel="noopener">
         <img src="/img/logo-padi-transp-color.webp" alt="Logo PADI" />
       </a>
-      <a class="homepage-hero__links--dan" href={links.dan} target="_blank">
+      <a class="homepage-hero__links--dan" href={links.dan} target="_blank" aria-label="DAN" rel="noopener">
         <img src="https://media.dan.org/logos/referral/dan_join_std.png" alt="Logo DAN" />
       </a>
     </div>
@@ -57,6 +64,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen
+          loading="lazy"
         >
         </iframe>
       </div>
@@ -73,6 +81,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
             class="linkCurso"
             src="/img/cursos/open-water-diver.webp"
             alt={cursos.owd.name + " - " + cursos.owd.description}
+            loading="lazy"
           />
         </a>
         <a href="/cursos/rescue-diver">
@@ -80,6 +89,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
             class="linkCurso"
             src="/img/cursos/rescue-diver.webp"
             alt={cursos.rd.name + " - " + cursos.rd.description}
+            loading="lazy"
           />
         </a>
         <a href="/cursos/traje-seco">
@@ -87,6 +97,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
             class="linkCurso"
             src="/img/cursos/traje-seco.webp"
             alt={cursos.ts.name + " - " + cursos.ts.description}
+            loading="lazy"
           />
         </a>
         <a href="/cursos/enriched-air-nitrox-diver">
@@ -94,6 +105,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
             class="linkCurso"
             src="/img/cursos/enriched-air-nitrox-diver.webp"
             alt={cursos.eand.name + " - " + cursos.eand.description}
+            loading="lazy"
           />
         </a>
       </div>
@@ -114,7 +126,10 @@ import ScubaMask from "../icons/ScubaMask.astro";
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+          allowfullscreen
+          loading="lazy"
+        >
+        </iframe>
       </div>
       <div class="homepage-checkout__title">
         <h2>EL BUDA</h2>
@@ -128,7 +143,21 @@ import ScubaMask from "../icons/ScubaMask.astro";
 
   <!-- Sección de intro a viajes -->
   <SectionContainer class="highlight-background">
-    <div class="homepage-trips__container"><h2>Viajes y salidas de buceo</h2></div>
+    <div class="homepage-trips__container">
+      <h2 class="homepage-trips__title">Viajes y salidas de buceo</h2>
+      <div class="homepage-trips__gallery">
+        {
+          filterTrips.map((trip) => {
+            const src = `/img/viajes/${trip.img}`;
+            const alt = `${trip.city}, ${trip.country}`;
+            return <img src={src} alt={alt} loading="lazy" />;
+          })
+        }
+      </div>
+      <LinkButton href="/viajes" colorPrimary={false}>
+        + Viajes <ArrowNarrowRight />
+      </LinkButton>
+    </div>
   </SectionContainer>
 
   <!-- Sección de contacto -->

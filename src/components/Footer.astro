@@ -11,16 +11,16 @@ import TwitterIcon from "../icons/TwitterIcon.astro";
   <div class="footer__row container">
     <h4>{info.divecenter}</h4>
     <div class="footer__social-networks">
-      <a href={links.instagram} target="_blank" aria-label="Instagram">
+      <a href={links.instagram} target="_blank" aria-label="Instagram" rel="noopener">
         <InstagramIcon class="footer__social-networks--icons" />
       </a>
-      <a href={links.youtube} target="_blank" aria-label="Youtube">
+      <a href={links.youtube} target="_blank" aria-label="Youtube" rel="noopener">
         <YoutubeIcon class="footer__social-networks--icons" />
       </a>
-      <a href={links.facebook} target="_blank" aria-label="Facebook">
+      <a href={links.facebook} target="_blank" aria-label="Facebook" rel="noopener">
         <FacebookIcon class="footer__social-networks--icons" />
       </a>
-      <a href={links.twitter} target="_blank" aria-label="Twitter">
+      <a href={links.twitter} target="_blank" aria-label="Twitter" rel="noopener">
         <TwitterIcon class="footer__social-networks--icons" />
       </a>
     </div>
@@ -28,23 +28,27 @@ import TwitterIcon from "../icons/TwitterIcon.astro";
 
   <div class="footer__row container">
     <div class="footer__contact-info">
-      <a href={links.maps} target="_blank">
+      <a href={links.maps} target="_blank" aria-label="Google Maps" rel="noopener">
         <span>{info.location}<br />{info.address}</span>
       </a>
       <p>Tel.: {info.phone}</p>
       <p>{info.email}</p>
     </div>
 
-    <a class="footer__logo-Padi" href={links.padi} target="_blank">
+    <a class="footer__logo-Padi" href={links.padi} target="_blank" aria-label="PADI" rel="noopener">
       <img src="/img/logo-padi-transp-black.webp" alt="Logo PADI" title="Logo PADI" />
     </a>
   </div>
 
   <div class="footer__legal container">
     <p>
-      Copyright &copy {new Date().getFullYear()} - <a href={links.developer} target="_blank">[ Nacho FJ ]</a> - Todas las
-      fotografías utilizadas en esta página son propiedad exclusiva de Atlantida Diving School, el uso no autorizado de las
-      mismas está penado por la ley.
+      Copyright &copy {new Date().getFullYear()} - <a
+        href={links.developer}
+        target="_blank"
+        aria-label="Linkedin"
+        rel="noopener">[ Nacho FJ ]</a
+      > - Todas las fotografías utilizadas en esta página son propiedad exclusiva de Atlantida Diving School, el uso no autorizado
+      de las mismas está penado por la ley.
     </p>
   </div>
 </footer>

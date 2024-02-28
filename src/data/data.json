@@ -51,5 +51,43 @@
     "developer": "https://www.linkedin.com/in/ignaciofernandezjeansalle/",
     "padi": "https://www.padi.com",
     "dan": "https://apps.dan.org/join-dan/?do=dw&rc=w36730"
-  }
+  },
+  "trips": [
+    {
+      "country": "Brasil",
+      "city": "Angra Dos Reis",
+      "img": "202206-angra-dos-reis.webp",
+      "facebookAlbum": ""
+    },
+    {
+      "country": "Brasil",
+      "city": "Ilha Bela",
+      "img": "202204-ilha-bela.webp",
+      "facebookAlbum": ""
+    },
+    {
+      "country": "Argentina",
+      "city": "Ezeiza",
+      "img": "202203-cantera-ezeiza.webp",
+      "facebookAlbum": ""
+    },
+    {
+      "country": "Argentina",
+      "city": "Tandil",
+      "img": "202112-cantera-tandil-2.webp",
+      "facebookAlbum": ""
+    },
+    {
+      "country": "Argentina",
+      "city": "Tandil",
+      "img": "202112-cantera-tandil-1.webp",
+      "facebookAlbum": ""
+    },
+    {
+      "country": "Brasil",
+      "city": "Angra Dos Reis",
+      "img": "202112-angra-dos-reis.webp",
+      "facebookAlbum": ""
+    }
+  ]
 }

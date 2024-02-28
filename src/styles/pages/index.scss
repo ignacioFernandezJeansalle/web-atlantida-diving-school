@@ -175,6 +175,7 @@
 }
 
 /***********************************/
+
 .homepage-checkout {
   &__container {
     display: flex;
@@ -228,30 +229,37 @@
 }
 
 /***********************************/
-/* REVISAR ANIMACIONEES */
-.cuadrado {
-  width: 200px;
-  height: 200px;
-  background: red;
-}
 
-.cuadrado {
-  width: 100px;
-  height: 100px;
-  background: red;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .square-animation {
-    animation: wipe-enter 1s 1;
+.homepage-contact {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 48px;
   }
-}
 
-@keyframes wipe-enter {
-  0% {
-    transform: scale(0, 0.025);
+  &__title {
+    margin: 0;
   }
-  50% {
-    transform: scale(1, 0.025);
+
+  &__info {
+    max-width: 700px;
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    ul {
+      padding-left: 8px;
+
+      li span {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 8px;
+        height: 100%;
+      }
+    }
   }
 }

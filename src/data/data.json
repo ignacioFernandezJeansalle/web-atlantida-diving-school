@@ -10,35 +10,51 @@
   "cursos": {
     "owd": {
       "name": "Open Water Diver",
-      "description": "El curso inicial de buceo más popular del mundo"
+      "description": "El curso inicial de buceo más popular del mundo",
+      "page": "open-water-diver",
+      "thumbnail": "open-water-diver.webp"
     },
     "aowd": {
       "name": "Advanced Open Water Diver",
-      "description": "Inmersiones de aventura"
+      "description": "Inmersiones de aventura",
+      "page": "advanced-open-water-diver",
+      "thumbnail": "advanced-open-water-diver.webp"
     },
     "efr": {
       "name": "Emergency First Response",
-      "description": "Primeros auxilios"
+      "description": "Primeros auxilios",
+      "page": "emergency-first-response",
+      "thumbnail": "emergency-first-response.webp"
     },
     "rd": {
       "name": "Rescue Diver",
-      "description": "Técnicas de rescate y asistencia"
+      "description": "Técnicas de rescate y asistencia",
+      "page": "rescue-diver",
+      "thumbnail": "rescue-diver.webp"
     },
     "dm": {
       "name": "Divemaster",
-      "description": "Primer nivel profesional"
+      "description": "Primer nivel profesional",
+      "page": "divemaster",
+      "thumbnail": "divemaster.webp"
     },
     "ts": {
       "name": "Traje seco",
-      "description": "Disfrutá de tus buceos en agua fría"
+      "description": "Disfrutá de tus buceos en agua fría",
+      "page": "traje-seco",
+      "thumbnail": "traje-seco.webp"
     },
     "eand": {
       "name": "Enriched Air Nitrox Diver",
-      "description": "Buceo con aire enriquecido"
+      "description": "Buceo con aire enriquecido",
+      "page": "enriched-air-nitrox-diver",
+      "thumbnail": "enriched-air-nitrox-diver.webp"
     },
     "apnea": {
       "name": "Apnea",
-      "description": "Técnicas de relajación y respiración"
+      "description": "Técnicas de relajación y respiración",
+      "page": "apnea",
+      "thumbnail": "apnea.webp"
     }
   },
   "links": {

@@ -19,12 +19,6 @@ body {
   src: url("/fonts/OstrichSans-Heavy.otf");
 }
 
-/*
-main {
-  margin-top: $nav-height;
-}
-*/
-
 :is(h1, h2, h3) {
   font-family: "OstrichSans-Heavy";
   text-align: center;
@@ -75,4 +69,13 @@ a {
 
 .highlight-background {
   background: $color-body-secondary;
+}
+
+.section-padding-block {
+  padding-block: $section-padding-block;
+
+  &--first {
+    padding-top: $section-padding-top;
+    padding-bottom: $section-padding-block;
+  }
 }

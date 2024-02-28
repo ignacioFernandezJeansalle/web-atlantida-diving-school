@@ -1,0 +1,35 @@
+---
+interface Props {
+  course: {
+    name: string;
+    description: string;
+    page: string;
+    thumbnail: string;
+  };
+}
+const { course } = Astro.props;
+---
+
+<a href=`/cursos/${course.page}`>
+  <img src=`/img/cursos/${course.thumbnail}` alt={course.name + " - " + course.description} loading="lazy" />
+</a>
+
+<style lang="scss">
+  @import "../styles/_variables";
+
+  a {
+    display: inline-block;
+
+    img {
+      display: block;
+      width: 100%;
+      border-radius: 4px;
+      box-shadow: $box-shadow-primary;
+      transition: 0.25s;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+    }
+  }
+</style>

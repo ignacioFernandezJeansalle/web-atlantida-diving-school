@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import CarouselHome from "../components/CarouselHome.astro";
 import LinkButton from "../components/LinkButton.astro";
+import LinkCourse from "../components/LinkCourse.astro";
 import ArrowNarrowRight from "../icons/ArrowNarrowRight.astro";
 import ScubaMask from "../icons/ScubaMask.astro";
 ---
@@ -43,7 +44,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
   </section>
 
   <!-- Sección de presentación de nuestro centro de buceo -->
-  <SectionContainer>
+  <SectionContainer class="section-padding-block">
     <div class="homepage-school__container">
       <div class="homepage-school__title">
         <h1>ATLANTIDA</h1>
@@ -69,42 +70,14 @@ import ScubaMask from "../icons/ScubaMask.astro";
   </SectionContainer>
 
   <!-- Sección de introducción a los cursos y especialidades -->
-  <SectionContainer class="highlight-background">
+  <SectionContainer class="section-padding-block highlight-background">
     <div class="homepage-courses__container">
       <h2 class="homepage-courses__title">Cursos de buceo & especialidades</h2>
       <div class="homepage-courses__links">
-        <a href="/cursos/open-water-diver">
-          <img
-            class="linkCurso"
-            src="/img/cursos/open-water-diver.webp"
-            alt={cursos.owd.name + " - " + cursos.owd.description}
-            loading="lazy"
-          />
-        </a>
-        <a href="/cursos/rescue-diver">
-          <img
-            class="linkCurso"
-            src="/img/cursos/rescue-diver.webp"
-            alt={cursos.rd.name + " - " + cursos.rd.description}
-            loading="lazy"
-          />
-        </a>
-        <a href="/cursos/traje-seco">
-          <img
-            class="linkCurso"
-            src="/img/cursos/traje-seco.webp"
-            alt={cursos.ts.name + " - " + cursos.ts.description}
-            loading="lazy"
-          />
-        </a>
-        <a href="/cursos/enriched-air-nitrox-diver">
-          <img
-            class="linkCurso"
-            src="/img/cursos/enriched-air-nitrox-diver.webp"
-            alt={cursos.eand.name + " - " + cursos.eand.description}
-            loading="lazy"
-          />
-        </a>
+        <LinkCourse course={cursos.owd} />
+        <LinkCourse course={cursos.rd} />
+        <LinkCourse course={cursos.ts} />
+        <LinkCourse course={cursos.eand} />
       </div>
       <LinkButton href="/cursos" colorPrimary={false}>
         Todos los cursos <ArrowNarrowRight />
@@ -113,7 +86,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
   </SectionContainer>
 
   <!-- Sección de intro al Buda -->
-  <SectionContainer>
+  <SectionContainer class="section-padding-block">
     <div class="homepage-checkout__container">
       <div class="homepage-checkout__video">
         <iframe
@@ -139,7 +112,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
   </SectionContainer>
 
   <!-- Sección de intro a viajes -->
-  <SectionContainer class="highlight-background">
+  <SectionContainer class="section-padding-block highlight-background">
     <div class="homepage-trips__container">
       <h2 class="homepage-trips__title">Viajes y salidas de buceo</h2>
       <div class="homepage-trips__gallery">
@@ -158,7 +131,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
   </SectionContainer>
 
   <!-- Sección de contacto -->
-  <SectionContainer>
+  <SectionContainer class="section-padding-block">
     <div class="homepage-contact__container">
       <h2 class="homepage-contact__title">ESTUDIA CON NOSOTROS</h2>
       <div class="homepage-contact__info">

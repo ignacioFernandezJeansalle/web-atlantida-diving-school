@@ -1,16 +1,25 @@
 ---
-import { info } from "../../data/data.json";
+import { info, cursos } from "../../data/data.json";
 import Layout from "../../layouts/Layout.astro";
+import SectionContainer from "../../components/SectionContainer.astro";
+import LinkCourse from "../../components/LinkCourse.astro";
 ---
 
 <Layout
   title=`Cursos ${info.name}`
   description=`Todos los cursos de buceo PADI en un solo lugar, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>CURSOS</h1>
-    <a href="/cursos/open-water-diver">Open Water Diver</a>
-  </section>
+  <SectionContainer class="section-padding-block--first">
+    <h1>Cursos PADI</h1>
+    <h2>La certificadora de buceo más grande del mundo</h2>
+    <LinkCourse course={cursos.owd} />
+    <LinkCourse course={cursos.aowd} />
+    <LinkCourse course={cursos.efr} />
+    <LinkCourse course={cursos.rd} />
+    <LinkCourse course={cursos.dm} />
+    <LinkCourse course={cursos.ts} />
+    <LinkCourse course={cursos.eand} />
+  </SectionContainer>
 </Layout>
 
 <style></style>

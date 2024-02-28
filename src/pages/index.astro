@@ -1,9 +1,6 @@
 ---
 import "../styles/pages/index.scss";
 import { info, links, cursos, trips } from "../data/data.json";
-const filterTrips = trips.filter((trip, index) => {
-  return index <= 5;
-});
 
 import Layout from "../layouts/Layout.astro";
 import SectionContainer from "../components/SectionContainer.astro";
@@ -147,7 +144,7 @@ import ScubaMask from "../icons/ScubaMask.astro";
       <h2 class="homepage-trips__title">Viajes y salidas de buceo</h2>
       <div class="homepage-trips__gallery">
         {
-          filterTrips.map((trip) => {
+          trips.slice(0, 6).map((trip) => {
             const src = `/img/viajes/${trip.img}`;
             const alt = `${trip.city}, ${trip.country}`;
             return <img src={src} alt={alt} loading="lazy" />;

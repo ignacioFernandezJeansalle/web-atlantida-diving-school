@@ -1,25 +1,58 @@
 ---
-import { info, cursos } from "../../data/data.json";
-import Layout from "../../layouts/Layout.astro";
-import SectionContainer from "../../components/SectionContainer.astro";
-import LinkCourse from "../../components/LinkCourse.astro";
+import "@styles/pages/cursos/index.scss";
+import { info, cursos } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import LinkCourse from "@components/LinkCourse.astro";
+import ListItemCourse from "@components/ListItemCourse.astro";
+
+const COURSES_DESCRIPTION = [
+  `<strong>Nuestros cursos no dependen como la mayoría de otras escuelas de un día especifico o numero mínimo de candidatos para comenzar, los días y horarios son programados en función de la disponibilidad del alumno y de acuerdo con la agenda del día.</strong>`,
+  `Cursos totalmente personalizados, no mas de 6 alumnos por grupo. Nuestro objetivo, que te sientas comodo, seguro y sin presiones.`,
+  `Aprenderás en una secuencia que fija las técnicas y conocimientos partiendo de los mas simples y llegando a los mas complejos.`,
+  `Todos los cursos aplican el concepto de aprendizaje basado en el rendimiento, que significa que progresas bastándote en cumplir requisitos de ejecución concretos bajo la guía de un instructor.`,
+  `<strong>La gente difiere en sus capacidades, de fuerza, limites y debilidades, nuestro cursos son flexibles para adaptarse a estas diferencias.</strong>`,
+  `Coordiná con nosotros fecha de inicio, días, horario y cantidad de clases semanales.`,
+  `<strong>Horarios:<br />Lunes a Viernes de 10 a 22:00 hs.<br />Sábados 10 a 18 hs.<br />Domingos consultar.</strong>`,
+  `<strong>IMPORTANTE:</strong> Los cursos pueden ser intensivos, extendidos, teniendo todas las modalidades el mismo costo.`,
+  `<strong>Hacé con nosotros toda la carrera como buceador PADI.</strong>`,
+];
 ---
 
 <Layout
-  title=`Cursos ${info.name}`
-  description=`Todos los cursos de buceo PADI en un solo lugar, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  title=`Cursos y especialidades ${info.name}`
+  description=`Todos los cursos y especialidades de buceo PADI en un solo lugar, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
   <SectionContainer class="section-padding-block--first">
-    <h1>Cursos PADI</h1>
-    <h2>La certificadora de buceo más grande del mundo</h2>
-    <LinkCourse course={cursos.owd} />
-    <LinkCourse course={cursos.aowd} />
-    <LinkCourse course={cursos.efr} />
-    <LinkCourse course={cursos.rd} />
-    <LinkCourse course={cursos.dm} />
-    <LinkCourse course={cursos.ts} />
-    <LinkCourse course={cursos.eand} />
+    <div class="courses__wrapper">
+      <div class="courses__title">
+        <h1>Cursos PADI</h1>
+        <h2>La certificadora de buceo más grande del mundo</h2>
+      </div>
+      <div class="courses__details">
+        <h3>Programá el curso a tu medida</h3>
+        <ul>
+          {
+            COURSES_DESCRIPTION.map((item) => (
+              <ListItemCourse>
+                <span set:html={item} />
+              </ListItemCourse>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="courses__media">
+        <h3>Cursos & Especialidades</h3>
+        <ul>
+          <li><LinkCourse course={cursos.owd} /></li>
+          <li><LinkCourse course={cursos.aowd} /></li>
+          <li><LinkCourse course={cursos.efr} /></li>
+          <li><LinkCourse course={cursos.rd} /></li>
+          <li><LinkCourse course={cursos.dm} /></li>
+          <li><LinkCourse course={cursos.ts} /></li>
+          <li><LinkCourse course={cursos.eand} /></li>
+        </ul>
+      </div>
+    </div>
   </SectionContainer>
 </Layout>
-
-<style></style>

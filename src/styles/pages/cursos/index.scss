@@ -1,0 +1,99 @@
+@import "../../variables";
+
+$h1-font-size: 54px;
+$h1-font-size-md: 64px;
+$max-width: 480px;
+
+.courses {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      "title"
+      "details"
+      "media";
+    justify-items: center;
+    row-gap: 48px;
+    column-gap: 48px;
+  }
+
+  &__title {
+    grid-area: title;
+
+    h1 {
+      font-size: $h1-font-size;
+      text-wrap: balance;
+    }
+
+    h2 {
+      font-size: $h1-font-size * 0.5;
+      text-wrap: balance;
+    }
+  }
+
+  &__details {
+    grid-area: details;
+    max-width: $max-width;
+
+    h3 {
+      font-size: $h1-font-size * 0.55;
+      border-bottom: 1px solid $color-secondary;
+      padding-bottom: 2px;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 32px;
+    }
+  }
+
+  &__media {
+    grid-area: media;
+    max-width: $max-width;
+
+    h3 {
+      font-size: $h1-font-size * 0.55;
+      border-bottom: 1px solid $color-secondary;
+      padding-bottom: 2px;
+      margin-bottom: 16px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
+  }
+}
+
+@media (width > 768px) {
+  .courses {
+    &__wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        "title title"
+        "details media";
+    }
+
+    &__title {
+      h1 {
+        font-size: $h1-font-size-md;
+      }
+
+      h2 {
+        font-size: $h1-font-size-md * 0.5;
+      }
+    }
+
+    &__details {
+      justify-self: end;
+    }
+
+    &__media {
+      justify-self: start;
+    }
+  }
+}

@@ -1,22 +1,9 @@
 ---
-import "@styles/pages/cursos/index.scss";
 import { info, cursos } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import LinkCourse from "@components/LinkCourse.astro";
 import ListItemCourse from "@components/ListItemCourse.astro";
-
-const COURSES_DESCRIPTION = [
-  `<strong>Nuestros cursos no dependen como la mayoría de otras escuelas de un día especifico o numero mínimo de candidatos para comenzar, los días y horarios son programados en función de la disponibilidad del alumno y de acuerdo con la agenda del día.</strong>`,
-  `Cursos totalmente personalizados, no mas de 6 alumnos por grupo. Nuestro objetivo, que te sientas comodo, seguro y sin presiones.`,
-  `Aprenderás en una secuencia que fija las técnicas y conocimientos partiendo de los mas simples y llegando a los mas complejos.`,
-  `Todos los cursos aplican el concepto de aprendizaje basado en el rendimiento, que significa que progresas bastándote en cumplir requisitos de ejecución concretos bajo la guía de un instructor.`,
-  `<strong>La gente difiere en sus capacidades, de fuerza, limites y debilidades, nuestro cursos son flexibles para adaptarse a estas diferencias.</strong>`,
-  `Coordiná con nosotros fecha de inicio, días, horario y cantidad de clases semanales.`,
-  `<strong>Horarios:<br />Lunes a Viernes de 10 a 22:00 hs.<br />Sábados 10 a 18 hs.<br />Domingos consultar.</strong>`,
-  `<strong>IMPORTANTE:</strong> Los cursos pueden ser intensivos, extendidos, teniendo todas las modalidades el mismo costo.`,
-  `<strong>Hacé con nosotros toda la carrera como buceador PADI.</strong>`,
-];
 ---
 
 <Layout
@@ -24,24 +11,50 @@ const COURSES_DESCRIPTION = [
   description=`Todos los cursos y especialidades de buceo PADI en un solo lugar, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
   <SectionContainer class="section-padding-block--first">
-    <div class="courses__wrapper">
-      <div class="courses__title">
-        <h1>Cursos PADI</h1>
-        <h2>La certificadora de buceo más grande del mundo</h2>
-      </div>
-      <div class="courses__details">
+    <h1>Cursos PADI</h1>
+    <h2>La certificadora de buceo más grande del mundo</h2>
+    <article>
+      <div class="col-left">
         <h3>Programá el curso a tu medida</h3>
         <ul>
-          {
-            COURSES_DESCRIPTION.map((item) => (
-              <ListItemCourse>
-                <span set:html={item} />
-              </ListItemCourse>
-            ))
-          }
+          <ListItemCourse>
+            <b
+              >Nuestros cursos no dependen como la mayoría de otras escuelas de un día especifico o numero mínimo de
+              candidatos para comenzar, los días y horarios son programados en función de la disponibilidad del alumno y
+              de acuerdo con la agenda del día.</b
+            >
+          </ListItemCourse>
+          <ListItemCourse>
+            Cursos totalmente personalizados, no mas de 6 alumnos por grupo. Nuestro objetivo, que te sientas comodo,
+            seguro y sin presiones.
+          </ListItemCourse>
+          <ListItemCourse>
+            Aprenderás en una secuencia que fija las técnicas y conocimientos partiendo de los mas simples y llegando a
+            los mas complejos.
+          </ListItemCourse>
+          <ListItemCourse>
+            Todos los cursos aplican el concepto de aprendizaje basado en el rendimiento, que significa que progresas
+            bastándote en cumplir requisitos de ejecución concretos bajo la guía de un instructor.
+          </ListItemCourse>
+          <ListItemCourse>
+            <b
+              >La gente difiere en sus capacidades, de fuerza, limites y debilidades, nuestro cursos son flexibles para
+              adaptarse a estas diferencias.</b
+            >
+          </ListItemCourse>
+          <ListItemCourse>
+            Coordiná con nosotros fecha de inicio, días, horario y cantidad de clases semanales.
+          </ListItemCourse>
+          <ListItemCourse>
+            <b>Horarios:<br />Lunes a Viernes de 10 a 22:00 hs.<br />Sábados 10 a 18 hs.<br />Domingos consultar.</b>
+          </ListItemCourse>
+          <ListItemCourse>
+            <b>IMPORTANTE:</b> Los cursos pueden ser intensivos, extendidos, teniendo todas las modalidades el mismo costo.
+          </ListItemCourse>
+          <ListItemCourse><b>Hacé con nosotros toda la carrera como buceador PADI.</b></ListItemCourse>
         </ul>
       </div>
-      <div class="courses__media">
+      <div class="col-right">
         <h3>Cursos & Especialidades</h3>
         <ul>
           <li><LinkCourse course={cursos.owd} /></li>
@@ -53,6 +66,82 @@ const COURSES_DESCRIPTION = [
           <li><LinkCourse course={cursos.eand} /></li>
         </ul>
       </div>
-    </div>
+    </article>
   </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  $h1-font-size: 54px;
+  $h1-font-size-md: 64px;
+  $max-width: 480px;
+
+  h1 {
+    font-size: $h1-font-size;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: $h1-font-size * 0.45;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: $h1-font-size * 0.5;
+    border-bottom: 1px solid $color-secondary;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+
+  article {
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 48px;
+
+    .col-left {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+    }
+
+    .col-right {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+      }
+    }
+  }
+
+  @media (width > 768px) {
+    h1 {
+      font-size: $h1-font-size-md;
+    }
+
+    h2 {
+      font-size: $h1-font-size-md * 0.45;
+    }
+
+    h3 {
+      font-size: $h1-font-size-md * 0.5;
+    }
+
+    article {
+      flex-direction: row;
+      column-gap: 48px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

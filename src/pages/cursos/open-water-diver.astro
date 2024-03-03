@@ -1,13 +1,164 @@
 ---
-import { info, cursos } from "../../data/data.json";
+import { info, cursos, prices } from "../../data/data.json";
 import Layout from "../../layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import ListItemCourse from "@components/ListItemCourse.astro";
+import Carousel from "@components/Carousel.astro";
 ---
 
 <Layout
   title=`${cursos.owd.name} | ${info.name}`
   description=`Curso ${cursos.owd.name} - ${cursos.owd.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>OPEN WATER DIVER</h1>
-  </section>
+  <SectionContainer class="section-padding-block--first">
+    <h1>{cursos.owd.name}</h1>
+    <h2>{cursos.owd.description}</h2>
+    <article>
+      <div class="col-left">
+        <h3>Estructura del curso</h3>
+        <ul>
+          <ListItemCourse>
+            <b>El curso PADI Open Water Diver se compone de tres apartados:</b>
+            <ol>
+              <li>Desarrollo de conocimientos (5 clases teóricas).</li>
+              <li>Inmersiones en pileta (5 clases prácticas).</li>
+              <li>Inmersiones en aguas abiertas.</li>
+            </ol>
+          </ListItemCourse>
+          <ListItemCourse>
+            Precio: <b>Consultar!</b><br />
+            <u>Incluye:</u> Apartados 1 y 2, desarrollos teóricos y prácticos.<br />
+            <u>No incluye:</u> Apartado 3, inmersiones en aguas abiertas. Contamos con distintas opciones que se adaptan
+            a tus tiempos y tu economía.
+          </ListItemCourse>
+          <ListItemCourse>
+            Certificación: <b>{prices.certification}</b> (Certificación Online, exclusivo Atlantida Diving School).
+          </ListItemCourse>
+        </ul>
+        <h4>1. Desarrollo de conocimientos</h4>
+        <p>
+          Establece los fundamentos y la información básica que todos los buceadores necesitan conocer para divertirse
+          buceando con seguridad.
+        </p>
+        <p>
+          Está dividido en cinco apartados que realizarás principalmente a tu propio tiempo y conveniencia utilizando el
+          manual y video del Open Water Diver.
+        </p>
+        <h4>2. Inmersiones en pileta</h4>
+        <p>
+          Durante las inmersiones en pileta aplicarás las bases, aprenderás y practicarás técnicas y procedimientos de
+          buceo.
+        </p>
+        <p>Realizarás todo en una piscina bajo la supervisión de tu instructor.</p>
+        <p>
+          Hay cinco inmersiones en pileta que se corresponden con los cinco apartados de desarrollo de conocimientos.
+        </p>
+        <p>
+          <b
+            >Recomendamos hacer el mismo día las clases teóricas y prácticas. Duración aproximada entre 2:30hs. a
+            3:00hs.</b
+          >
+        </p>
+      </div>
+      <div class="col-right">
+        <h3>Nuestro centro de buceo</h3>
+        <Carousel />
+        <h3>Nuestro centro de buceo</h3>
+        <Carousel />
+        <h3>Nuestro centro de buceo</h3>
+        <Carousel />
+      </div>
+    </article>
+  </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  $h1-font-size: 54px;
+  $h1-font-size-md: 64px;
+  $max-width: 480px;
+
+  h1 {
+    font-size: $h1-font-size;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: $h1-font-size * 0.45;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: $h1-font-size * 0.5;
+    border-bottom: 1px solid $color-secondary;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+    padding-top: 32px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ol {
+    padding-left: 32px;
+  }
+
+  article {
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 48px;
+
+    .col-left {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+    }
+
+    .col-right {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+      }
+    }
+  }
+
+  @media (width > 768px) {
+    h1 {
+      font-size: $h1-font-size-md;
+    }
+
+    h2 {
+      font-size: $h1-font-size-md * 0.45;
+    }
+
+    h3 {
+      font-size: $h1-font-size-md * 0.5;
+    }
+
+    article {
+      flex-direction: row;
+      column-gap: 48px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

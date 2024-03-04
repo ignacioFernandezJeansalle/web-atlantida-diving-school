@@ -3,7 +3,7 @@ interface Props {
   items: string[];
   pagination: boolean;
   controls: boolean;
-  interval: number;
+  interval: string;
 }
 const { items, pagination, controls, interval } = Astro.props;
 ---
@@ -182,6 +182,17 @@ const { items, pagination, controls, interval } = Astro.props;
   const CLASS_NAME_PREV = "carousel__item--prev";
 
   class CarouselV2 extends HTMLElement {
+    items: HTMLCollectionOf<HTMLElement>;
+    btnPagination: HTMLCollectionOf<HTMLElement>;
+    btnNext: HTMLCollectionOf<HTMLElement>;
+    btnPrev: HTMLCollectionOf<HTMLElement>;
+    interval: number;
+    intervalId: number;
+    orderIndex: number;
+    isMoving: boolean;
+    numberOfItems: number;
+    withPagination: boolean;
+
     constructor() {
       super();
 
@@ -190,7 +201,7 @@ const { items, pagination, controls, interval } = Astro.props;
       this.btnNext = this.getElementsByClassName(SELECTOR_BTN_NEXT) as HTMLCollectionOf<HTMLElement>;
       this.btnPrev = this.getElementsByClassName(SELECTOR_BTN_PREV) as HTMLCollectionOf<HTMLElement>;
 
-      this.interval = this.dataset.interval;
+      this.interval = parseInt(this.dataset.interval || "10000", 10);
       this.intervalId = 0;
       this.orderIndex = -1;
       this.isMoving = false;

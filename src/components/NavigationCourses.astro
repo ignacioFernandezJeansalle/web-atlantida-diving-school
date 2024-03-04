@@ -1,0 +1,31 @@
+<nav class="pagination">
+  <div class="pagination__previous">
+    <slot name="previous" />
+  </div>
+  <div class="pagination__next">
+    <slot name="next" />
+  </div>
+</nav>
+
+<style lang="scss">
+  .pagination {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+
+    &__previous {
+      align-self: flex-start;
+    }
+
+    &__next {
+      align-self: flex-end;
+    }
+  }
+
+  @media (width > 768px) {
+    .pagination {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>

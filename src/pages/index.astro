@@ -4,7 +4,7 @@ import { info, links, cursos, trips } from "@data/data.json";
 
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
-import CarouselHome from "@components/CarouselHome.astro";
+import Carouselv2 from "@components/Carouselv2.astro";
 import LinkButton from "@components/LinkButton.astro";
 import LinkCourse from "@components/LinkCourse.astro";
 import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
@@ -39,7 +39,21 @@ import ScubaMask from "@icons/ScubaMask.astro";
       </a>
     </div>
     <div class="homepage-hero__carousel">
-      <CarouselHome />
+      <Carouselv2
+        items={[
+          `<h2 class="item-carousel--title">EXPERIENCIA</h2>
+           <p class="item-carousel--description">Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br />Desde 1986, ${new Date().getFullYear() - 1986} años ininterrumpidos dictando cursos de buceo. Más de 6000 alumnos certificados.</p>`,
+          `<h2 class="item-carousel--title">DISPONIBILIDAD</h2>
+           <p class="item-carousel--description">Programá el curso de buceo según tu disponibilidad. Con nosotros podés elegir día, horario y cantidad de clases semanales. Lunes a Sábados.</p>`,
+          `<h2 class="item-carousel--title">COMODIDAD</h2>
+           <p class="item-carousel--description">Cursos de buceo totalmente personalizados de 1 a 6 alumnos como máximo. Nuestro objetivo es tu comodidad y que te sientas seguro y sin presiones. Siempre hay un instructor para vos.</p>`,
+          `<h2 class="item-carousel--title">PROMOCION</h2>
+           <p class="item-carousel--description">Inscribite AHORA con un 2x1. Uno paga y dos hacen el curso de buceo Open Water Diver.</p>`,
+        ]}
+        pagination={true}
+        controls={false}
+        interval={10000}
+      />
     </div>
   </section>
 
@@ -147,9 +161,9 @@ import ScubaMask from "@icons/ScubaMask.astro";
         <p>Cursos de buceo totalmente personalizados, no más de 6 alumnos por grupo.</p>
         <p>Coordiná con nosotros fecha de inicio, días, horario y cantidad de clases semanales.</p>
         <ul>
-          <li><span><ScubaMask /> Lunes a Viernes de 10:00 a 22:00 hs.</span></li>
-          <li><span><ScubaMask /> Sábados de 10:00 a 18:00 hs.</span></li>
-          <li><span><ScubaMask /> Domingos consultar.</span></li>
+          <li><span><ScubaMask />Lunes a Viernes de 10:00 a 22:00 hs.</span></li>
+          <li><span><ScubaMask />Sábados de 10:00 a 18:00 hs.</span></li>
+          <li><span><ScubaMask />Domingos consultar.</span></li>
         </ul>
       </div>
       <LinkButton href="/contacto" colorPrimary={false}>

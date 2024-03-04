@@ -3,7 +3,7 @@ import { info, cursos, prices } from "../../data/data.json";
 import Layout from "../../layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import ListItemCourse from "@components/ListItemCourse.astro";
-import Carousel from "@components/Carousel.astro";
+import Carouselv2 from "@components/Carouselv2.astro";
 ---
 
 <Layout
@@ -62,11 +62,50 @@ import Carousel from "@components/Carousel.astro";
       </div>
       <div class="col-right">
         <h3>Nuestro centro de buceo</h3>
-        <Carousel />
-        <h3>Nuestro centro de buceo</h3>
-        <Carousel />
-        <h3>Nuestro centro de buceo</h3>
-        <Carousel />
+        <h4>Pileta climatizada</h4>
+        <Carouselv2
+          items={[
+            `<img class="item-carousel--img" src="/img/cursos/owd/pileta001.webp" alt="Pileta climatizada" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/pileta002.webp" alt="Pileta climatizada" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/pileta003.webp" alt="Pileta climatizada" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/pileta004.webp" alt="Pileta climatizada" />`,
+          ]}
+          pagination={true}
+          controls={true}
+          interval={10000}
+        />
+
+        <h4>Aula para clases teóricas</h4>
+        <Carouselv2
+          items={[
+            `<img class="item-carousel--img" src="/img/cursos/owd/aula001.webp" alt="Aula para clases teóricas" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/aula002.webp" alt="Aula para clases teóricas" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/aula003.webp" alt="Aula para clases teóricas" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/aula004.webp" alt="Aula para clases teóricas" />`,
+          ]}
+          pagination={true}
+          controls={true}
+          interval={10000}
+        />
+
+        <h4>Equipos y carga de aire</h4>
+        <Carouselv2
+          items={[
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos001.webp" alt="Equipos y carga de aire" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos002.webp" alt="Equipos y carga de aire" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos003.webp" alt="Equipos y carga de aire" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos004.webp" alt="Equipos y carga de aire" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos005.webp" alt="Equipos y carga de aire" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos006.webp" alt="Equipos y carga de aire" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos007.webp" alt="Equipos y carga de aire" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos008.webp" alt="Equipos y carga de aire" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos009.webp" alt="Equipos y carga de aire" />`,
+            `<img class="item-carousel--img" src="/img/cursos/owd/equipos010.webp" alt="Equipos y carga de aire" />`,
+          ]}
+          pagination={true}
+          controls={true}
+          interval={10000}
+        />
       </div>
     </article>
   </SectionContainer>

@@ -1,60 +1,78 @@
 ---
-// <slot name="after-header" />
+interface Props {
+  items: string[];
+  pagination: boolean;
+  controls: boolean;
+  interval: number;
+}
+const { items, pagination, controls, interval } = Astro.props;
 ---
 
-<div class="carousel__container">
-  <ul class="carousel__content">
-    <li class="carousel__item active">
-      <img src="/img/cursos/owd/pileta001.webp" alt="Pileta climatizada" />
-    </li>
-    <li class="carousel__item">
-      <img src="/img/cursos/owd/pileta002.webp" alt="Pileta climatizada" />
-    </li>
-    <li class="carousel__item">
-      <img src="/img/cursos/owd/pileta003.webp" alt="Pileta climatizada" />
-    </li>
-    <li class="carousel__item">
-      <img src="/img/cursos/owd/pileta004.webp" alt="Pileta climatizada" />
-    </li>
-  </ul>
-  <nav class="carousel__pagination">
-    <button class="active"></button>
-    <button></button>
-    <button></button>
-    <button></button>
-  </nav>
-  <div class="carousel__controls">
-    <button id="carousel__controls-prev" class="carousel__controls-prev"
-      ><svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M15 6l-6 6l6 6"></path></svg
-      ></button
-    >
-    <button id="carousel__controls-next" class="carousel__controls-next"
-      ><svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        fill="none"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg
-      ></button
-    >
+<carousel-v2 data-interval={interval}>
+  <div class="carousel__container">
+    <ul class="carousel__content">
+      {
+        items.map((item: string, index: number) => {
+          const className = index === 0 ? "carousel__item active" : "carousel__item";
+          return <li class={className} set:html={item} />;
+        })
+      }
+    </ul>
+    {
+      pagination && (
+        <nav class="carousel__pagination">
+          {items.map((item: string, index: number) => {
+            const className = index === 0 ? "active" : "";
+            return <button class={className} />;
+          })}
+        </nav>
+      )
+    }
+    {
+      controls && (
+        <div class="carousel__controls">
+          <button id="carousel__controls-prev" class="carousel__controls-prev">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M15 6l-6 6l6 6" />
+              </>
+            </svg>
+          </button>
+          <button id="carousel__controls-next" class="carousel__controls-next">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+              </>
+            </svg>
+          </button>
+        </div>
+      )
+    }
   </div>
-</div>
+</carousel-v2>
 
 <style lang="scss">
-  @import "../styles/variables";
+  @import "@styles/variables";
 
   button {
     cursor: pointer;
@@ -63,8 +81,8 @@
   .carousel {
     &__container {
       position: relative;
-      /* width: 100%;
-      height: 100%; */
+      width: 100%;
+      height: 100%;
     }
 
     &__content {
@@ -94,25 +112,6 @@
       &--prev {
         display: block;
       }
-
-      // SACAR AFUERA
-      &--title {
-        font-size: clamp(30px, 3.5vw, 56px);
-        text-align: left;
-        margin-bottom: 0;
-      }
-      // SACAR AFUERA
-      &--description {
-        padding-right: 16px;
-        font-size: clamp(14px, 2.8vw, 28px);
-      }
-      // SACAR AFUERA
-      // SACAR AFUERA
-      & img {
-        display: block;
-        width: 100%;
-      }
-      // SACAR AFUERA
     }
 
     &__pagination {
@@ -169,22 +168,11 @@
   .active.carousel__item--start {
     transform: translateX(-100%);
   }
-
-  @media (width > 768px) {
-    .carousel__item--title {
-      font-size: clamp(38px, 3vw, 56px);
-    }
-
-    .carousel__item--description {
-      font-size: clamp(16px, 1.5vw, 28px);
-    }
-  }
 </style>
 
 <script>
-  const SELECTOR_CAROUSEL = "carousel__container";
   const SELECTOR_ITEM = "carousel__item";
-  const SELECTOR_BTN_PAGINATION = "carousel__pagination";
+  const SELECTOR_PAGINATION = "carousel__pagination";
   const SELECTOR_BTN_NEXT = "carousel__controls-next";
   const SELECTOR_BTN_PREV = "carousel__controls-prev";
   const CLASS_NAME_ACTIVE = "active";
@@ -192,33 +180,21 @@
   const CLASS_NAME_END = "carousel__item--end";
   const CLASS_NAME_NEXT = "carousel__item--next";
   const CLASS_NAME_PREV = "carousel__item--prev";
-  const INTERVAL = 5000;
 
-  class Carousel {
-    items: HTMLCollectionOf<HTMLElement>;
-    btnPagination: HTMLCollectionOf<HTMLElement>;
-    btnPrev: HTMLCollectionOf<HTMLElement>;
-    btnNext: HTMLCollectionOf<HTMLElement>;
-    intervalId: number;
-    orderIndex: number;
-    isMoving: boolean;
-    numberOfItems: number;
-    withPagination: boolean;
+  class CarouselV2 extends HTMLElement {
+    constructor() {
+      super();
 
-    constructor(
-      items: HTMLCollectionOf<HTMLElement>,
-      btnPagination: HTMLCollectionOf<HTMLElement>,
-      btnPrev: HTMLCollectionOf<HTMLElement>,
-      btnNext: HTMLCollectionOf<HTMLElement>
-    ) {
-      this.items = items;
-      this.btnPagination = btnPagination;
-      this.btnPrev = btnPrev;
-      this.btnNext = btnNext;
+      this.items = this.getElementsByClassName(SELECTOR_ITEM) as HTMLCollectionOf<HTMLElement>;
+      this.btnPagination = this.getElementsByClassName(SELECTOR_PAGINATION) as HTMLCollectionOf<HTMLElement>;
+      this.btnNext = this.getElementsByClassName(SELECTOR_BTN_NEXT) as HTMLCollectionOf<HTMLElement>;
+      this.btnPrev = this.getElementsByClassName(SELECTOR_BTN_PREV) as HTMLCollectionOf<HTMLElement>;
+
+      this.interval = this.dataset.interval;
       this.intervalId = 0;
       this.orderIndex = -1;
       this.isMoving = false;
-      this.numberOfItems = items.length;
+      this.numberOfItems = this.items.length;
       this.withPagination = this.btnPagination.length > 0 && this.btnPagination[0].children.length > 0;
 
       this._addEventListener();
@@ -233,7 +209,7 @@
             if (!this.isMoving) {
               clearInterval(this.intervalId);
               this._move(i);
-              this.intervalId = setInterval(this._loop, INTERVAL);
+              this.intervalId = setInterval(this._loop, this.interval);
             }
           });
         }
@@ -245,7 +221,7 @@
           if (!this.isMoving) {
             clearInterval(this.intervalId);
             this._move((this.orderIndex -= 1));
-            this.intervalId = setInterval(this._loop, INTERVAL);
+            this.intervalId = setInterval(this._loop, this.interval);
           }
         });
       }
@@ -256,7 +232,7 @@
           if (!this.isMoving) {
             clearInterval(this.intervalId);
             this._move((this.orderIndex += 1));
-            this.intervalId = setInterval(this._loop, INTERVAL);
+            this.intervalId = setInterval(this._loop, this.interval);
           }
         });
       }
@@ -316,23 +292,9 @@
     _loop = () => {
       clearInterval(this.intervalId);
       this._move((this.orderIndex += 1));
-      this.intervalId = setInterval(this._loop, INTERVAL);
+      this.intervalId = setInterval(this._loop, this.interval);
     };
   }
 
-  const carousels = document.getElementsByClassName(SELECTOR_CAROUSEL) as HTMLCollectionOf<HTMLElement>;
-
-  if (carousels.length > 0) {
-    let c = [];
-
-    for (let i = 0; i < carousels.length; i++) {
-      const items = carousels[i].getElementsByClassName(SELECTOR_ITEM) as HTMLCollectionOf<HTMLElement>;
-      const btnPagination = carousels[i].getElementsByClassName(
-        SELECTOR_BTN_PAGINATION
-      ) as HTMLCollectionOf<HTMLElement>;
-      const btnNext = carousels[i].getElementsByClassName(SELECTOR_BTN_NEXT) as HTMLCollectionOf<HTMLElement>;
-      const btnPrev = carousels[i].getElementsByClassName(SELECTOR_BTN_PREV) as HTMLCollectionOf<HTMLElement>;
-      c.push(new Carousel(items, btnPagination, btnPrev, btnNext));
-    }
-  }
+  customElements.define("carousel-v2", CarouselV2);
 </script>

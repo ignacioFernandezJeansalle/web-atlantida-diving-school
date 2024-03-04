@@ -1,13 +1,193 @@
 ---
-import { info, cursos } from "../../data/data.json";
-import Layout from "../../layouts/Layout.astro";
+import { info, cursos, prices } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import ListItemCourse from "@components/ListItemCourse.astro";
 ---
 
 <Layout
   title=`${cursos.aowd.name} | ${info.name}`
   description=`Curso ${cursos.aowd.name} - ${cursos.aowd.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>ADVANCED OPEN WATER DIVER</h1>
-  </section>
+  <SectionContainer class="section-padding-block--first">
+    <h1>{cursos.aowd.name}</h1>
+    <h2>{cursos.aowd.description}</h2>
+    <article>
+      <div class="col-left">
+        <h3>Estructura del curso</h3>
+        <ul>
+          <ListItemCourse>
+            <b><b>El programa Adventures In Diving ofrece dos opciones de titulación:</b></b>
+            <ol>
+              <li>
+                <b><u>PADI Adventure Diver:</u></b> El buceador que realiza tres inmersiones de aventura cualesquiera.
+              </li>
+              <li>
+                <b><u>Advanced Open Water Diver (Recomendado):</u></b> El buceador que realiza una "Inmersión Profunda",
+                una "Inmersión de Navegación" y tres inmersiones de aventura cualesquiera, cinco en total.
+              </li>
+            </ol>
+          </ListItemCourse>
+          <ListItemCourse>
+            <b>El curso PADI Advanced Open Water Diver se compone de tres apartados:</b>
+            <ol>
+              <li>Desarrollo de conocimientos (teoría de 5 buceos de aventura).</li>
+              <li>Entrenamiento en pileta (2 clases prácticas).</li>
+              <li>Entrenamiento en aguas abiertas.</li>
+            </ol>
+          </ListItemCourse>
+          <ListItemCourse>
+            Precio: <b>Consultar!</b><br />
+            <u>Incluye:</u> Apartados 1 y 2, desarrollos teóricos y prácticos.<br />
+            <u>No incluye:</u> Apartado 3, inmersiones en aguas abiertas. Contamos con distintas opciones que se adaptan
+            a tus tiempos y tu economía.
+          </ListItemCourse>
+          <ListItemCourse>
+            Certificación: <b>{prices.certification}</b> (Certificación Online, exclusivo Atlantida Diving School).
+          </ListItemCourse>
+          <ListItemCourse>
+            <b
+              >Al realizar éstas inmersiones desarrollarás técnicas que harán que el buceo sea más divertido y más
+              versátil. Aumentará el tipo de inmersiones que podrás realizar.</b
+            >
+          </ListItemCourse>
+        </ul>
+        <div class="highlight-background">
+          <h4>Inmersiones de aventura</h4>
+          <ul style="display: block;">
+            <li>Inmersión de altitud.</li>
+            <li>Inmersión de identificación de peces.</li>
+            <li>Inmersión desde barco.</li>
+            <li>Inmersión profunda.</li>
+            <li>Inmersión con vehículo de propulsión de buceo.</li>
+            <li>Inmersión en corrientes.</li>
+            <li>Inmersión con traje seco.</li>
+            <li>Inmersión multinivel y con computador.</li>
+            <li>Inmersión nocturna.</li>
+            <li>Inmersión de dominio de flotabilidad.</li>
+            <li>Inmersión de búsqueda y recuperación.</li>
+            <li>Inmersión naturalista subacuático.</li>
+            <li>Inmersión de navegación subacuática.</li>
+            <li>Inmersión de fotografía subacuática.</li>
+            <li>Inmersión de vídeo subacuático.</li>
+            <li>Inmersión en barcos hundidos.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-right">
+        <ul>
+          <li><img src="/img/cursos/aowd/aowd005.webp" alt="Buceo nocturno" /></li>
+          <li><img src="/img/cursos/aowd/aowd006.webp" alt="Buceo profundo" /></li>
+          <li><img src="/img/cursos/aowd/aowd004.webp" alt="Buceo desde barco" /></li>
+          <li><img src="/img/cursos/aowd/aowd002.webp" alt="Buceo profundo" /></li>
+          <li><img src="/img/cursos/aowd/aowd003.webp" alt="Buceo en barcos hundidos" /></li>
+        </ul>
+      </div>
+    </article>
+  </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  $h1-font-size: 54px;
+  $h1-font-size-md: 64px;
+  $max-width: 480px;
+
+  h1 {
+    font-size: $h1-font-size;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: $h1-font-size * 0.45;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: $h1-font-size * 0.5;
+    border-bottom: 1px solid $color-secondary;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ol {
+    padding-left: 32px;
+  }
+
+  article {
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 48px;
+
+    .col-left {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+
+      div {
+        margin-top: 40px;
+        padding: 24px;
+        border-radius: 4px;
+        box-shadow: $box-shadow-primary;
+      }
+    }
+
+    .col-right {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+
+        li img {
+          display: block;
+          width: 100%;
+          border-radius: 4px;
+          aspect-ratio: 16/9;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  @media (width > 768px) {
+    h1 {
+      font-size: $h1-font-size-md;
+    }
+
+    h2 {
+      font-size: $h1-font-size-md * 0.45;
+    }
+
+    h3 {
+      font-size: $h1-font-size-md * 0.5;
+    }
+
+    article {
+      flex-direction: row;
+      column-gap: 48px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

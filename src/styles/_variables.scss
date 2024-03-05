@@ -12,9 +12,8 @@ $nav-height: 64px;
 $nav-padding-block: 6px;
 $nav-height-content: $nav-height - $nav-padding-block * 2;
 
-//layout => sections
-$section-padding-top: 32px;
-$section-padding-block: 96px;
+//padding
+$padding-base: 16px;
 
 // font
 $font-family: "Nunito Variable", sans-serif;

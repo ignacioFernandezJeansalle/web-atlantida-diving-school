@@ -14,7 +14,7 @@ import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
   title=`${cursos.owd.name} | ${info.name}`
   description=`Curso ${cursos.owd.name} - ${cursos.owd.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <SectionContainer class="section-padding-block--first">
+  <SectionContainer class="pt-3 pb-2">
     <h1>{cursos.owd.name}</h1>
     <h2>{cursos.owd.description}</h2>
     <article>
@@ -130,7 +130,7 @@ import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
     </article>
   </SectionContainer>
 
-  <SectionContainer class="section-padding-block--first">
+  <SectionContainer class="pt-2 pb-6">
     <NavigationCourses>
       <LinkButton href="/cursos" colorPrimary={false} slot="previous">
         <ArrowNarrowLeft /> Cursos

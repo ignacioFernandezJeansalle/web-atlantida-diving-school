@@ -1,0 +1,90 @@
+---
+interface Props {
+  images: {
+    src: string;
+    alt: string;
+  }[];
+}
+
+const { images } = Astro.props;
+const numberOfImages = images.length;
+---
+
+<div class="slider">
+  <div class="slide-track">
+    {images.map((image) => <img class="slide" src={image.src} alt={image.alt} />)}
+    {images.map((image) => <img class="slide" src={image.src} alt={image.alt} />)}
+  </div>
+</div>
+
+<style lang="scss" define:vars={{ numberOfImages }}>
+  @import "@styles/variables";
+
+  $width-slide: 410px;
+  $column-gap: 16px;
+  $width-slide-track: calc(($width-slide + $column-gap) * var(--numberOfImages) * 2 - $column-gap);
+  $translateX: calc(($width-slide + $column-gap) * var(--numberOfImages) * -1);
+  $animationSpeed: calc(7s * var(--numberOfImages));
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX($translateX);
+    }
+  }
+
+  .slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    /* &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 32px;
+      top: 0;
+      bottom: 0;
+      height: auto;
+      z-index: 2;
+    }
+
+    &::before {
+      background: linear-gradient(to right, rgba(242, 242, 242, 1) 40%, rgba(242, 242, 242, 0) 100%);
+      left: 0;
+    }
+
+    &::after {
+      background: linear-gradient(to left, rgba(242, 242, 242, 1) 40%, rgba(242, 242, 242, 0) 100%);
+      right: 0;
+    } */
+
+    .slide-track {
+      animation: scroll $animationSpeed linear infinite;
+      display: flex;
+      column-gap: $column-gap;
+      width: $width-slide-track;
+
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+
+    .slide {
+      width: $width-slide;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+  }
+
+  /* @media (width <= 768px) {
+    .slider {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  } */
+</style>

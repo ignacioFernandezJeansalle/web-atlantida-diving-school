@@ -2,16 +2,37 @@
 import { info, cursos, prices } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
+import CarouselInfinite from "@components/CarouselInfinite.astro";
 import ListItemCourse from "@components/ListItemCourse.astro";
+import NavigationCourses from "@components/NavigationCourses.astro";
+import LinkButton from "@components/LinkButton.astro";
+import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
+import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
 ---
 
 <Layout
   title=`${cursos.aowd.name} | ${info.name}`
   description=`Curso ${cursos.aowd.name} - ${cursos.aowd.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <SectionContainer class="section-padding-block--first">
+  <SectionContainer class="pt-3 pb-2">
     <h1>{cursos.aowd.name}</h1>
     <h2>{cursos.aowd.description}</h2>
+  </SectionContainer>
+
+  <section class="pt-1 pb-2">
+    <CarouselInfinite
+      images={[
+        { src: "/img/cursos/aowd/aowd002.webp", alt: "Buceo profundo" },
+        { src: "/img/cursos/aowd/aowd003.webp", alt: "Buceo en barcos hundidos" },
+        { src: "/img/cursos/aowd/aowd001.webp", alt: "Buceo en barcos hundidos" },
+        { src: "/img/cursos/aowd/aowd005.webp", alt: "Buceo nocturno" },
+        { src: "/img/cursos/aowd/aowd004.webp", alt: "Buceo desde barco" },
+        { src: "/img/cursos/aowd/aowd006.webp", alt: "Buceo profundo" },
+      ]}
+    />
+  </section>
+
+  <SectionContainer class="pt-2 pb-2">
     <article>
       <div class="col-left">
         <h3>Estructura del curso</h3>
@@ -52,38 +73,40 @@ import ListItemCourse from "@components/ListItemCourse.astro";
             >
           </ListItemCourse>
         </ul>
-        <div class="highlight-background">
-          <h4>Inmersiones de aventura</h4>
-          <ul style="display: block;">
-            <li>Inmersión de altitud.</li>
-            <li>Inmersión de identificación de peces.</li>
-            <li>Inmersión desde barco.</li>
-            <li>Inmersión profunda.</li>
-            <li>Inmersión con vehículo de propulsión de buceo.</li>
-            <li>Inmersión en corrientes.</li>
-            <li>Inmersión con traje seco.</li>
-            <li>Inmersión multinivel y con computador.</li>
-            <li>Inmersión nocturna.</li>
-            <li>Inmersión de dominio de flotabilidad.</li>
-            <li>Inmersión de búsqueda y recuperación.</li>
-            <li>Inmersión naturalista subacuático.</li>
-            <li>Inmersión de navegación subacuática.</li>
-            <li>Inmersión de fotografía subacuática.</li>
-            <li>Inmersión de vídeo subacuático.</li>
-            <li>Inmersión en barcos hundidos.</li>
-          </ul>
-        </div>
       </div>
       <div class="col-right">
+        <h3>Inmersiones de aventura</h3>
         <ul>
-          <li><img src="/img/cursos/aowd/aowd005.webp" alt="Buceo nocturno" /></li>
-          <li><img src="/img/cursos/aowd/aowd006.webp" alt="Buceo profundo" /></li>
-          <li><img src="/img/cursos/aowd/aowd004.webp" alt="Buceo desde barco" /></li>
-          <li><img src="/img/cursos/aowd/aowd002.webp" alt="Buceo profundo" /></li>
-          <li><img src="/img/cursos/aowd/aowd003.webp" alt="Buceo en barcos hundidos" /></li>
+          <li>Altitud</li>
+          <li>Identificación de peces</li>
+          <li>Desde barco</li>
+          <li>Profundo</li>
+          <li>Con vehículo de propulsión de buceo</li>
+          <li>En corrientes</li>
+          <li>Traje seco</li>
+          <li>Multinivel y con computador</li>
+          <li>Nocturno</li>
+          <li>Dominio de flotabilidad</li>
+          <li>De búsqueda y recuperación</li>
+          <li>Naturalista subacuático</li>
+          <li>Navegación subacuática</li>
+          <li>Fotografía subacuática</li>
+          <li>Vídeo subacuático</li>
+          <li>Barcos hundidos</li>
         </ul>
       </div>
     </article>
+  </SectionContainer>
+
+  <SectionContainer class="pt-2 pb-6">
+    <NavigationCourses>
+      <LinkButton href="/cursos/open-water-diver" colorPrimary={false} slot="previous">
+        <ArrowNarrowLeft /> Open Water Diver
+      </LinkButton>
+      <LinkButton href="/cursos/emergency-first-response" colorPrimary={false} slot="next">
+        Emergency First Response <ArrowNarrowRight />
+      </LinkButton>
+    </NavigationCourses>
   </SectionContainer>
 </Layout>
 
@@ -126,7 +149,6 @@ import ListItemCourse from "@components/ListItemCourse.astro";
   }
 
   article {
-    padding-top: 48px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,17 +177,8 @@ import ListItemCourse from "@components/ListItemCourse.astro";
       max-width: $max-width;
 
       ul {
-        display: flex;
-        flex-direction: column;
-        row-gap: 24px;
-
-        li img {
-          display: block;
-          width: 100%;
-          border-radius: 4px;
-          aspect-ratio: 16/9;
-          object-fit: cover;
-        }
+        padding-left: 18px;
+        list-style: circle;
       }
     }
   }

@@ -8,15 +8,17 @@ import NavigationCourses from "@components/NavigationCourses.astro";
 import LinkButton from "@components/LinkButton.astro";
 import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
 import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
+const NAME = cursos.aowd.name;
+const DESCRIPTION = cursos.aowd.description;
 ---
 
 <Layout
-  title=`${cursos.aowd.name} | ${info.name}`
-  description=`Curso ${cursos.aowd.name} - ${cursos.aowd.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  title=`Curso ${NAME} | ${info.name}`
+  description=`Curso ${NAME} - ${DESCRIPTION} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
   <SectionContainer class="pt-3 pb-2">
-    <h1>{cursos.aowd.name}</h1>
-    <h2>{cursos.aowd.description}</h2>
+    <h1>{NAME}</h1>
+    <h2>{DESCRIPTION}</h2>
   </SectionContainer>
 
   <section class="pt-1 pb-2">
@@ -38,7 +40,7 @@ import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
         <h3>Estructura del curso</h3>
         <ul>
           <ListItemCourse>
-            <b><b>El programa Adventures In Diving ofrece dos opciones de titulación:</b></b>
+            <b>El programa Adventures In Diving ofrece dos opciones de titulación:</b>
             <ol>
               <li>
                 <b><u>PADI Adventure Diver:</u></b> El buceador que realiza tres inmersiones de aventura cualesquiera.

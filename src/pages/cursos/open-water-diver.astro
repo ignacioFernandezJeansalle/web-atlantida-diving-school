@@ -8,15 +8,17 @@ import NavigationCourses from "@components/NavigationCourses.astro";
 import LinkButton from "@components/LinkButton.astro";
 import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
 import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
+const NAME = cursos.owd.name;
+const DESCRIPTION = cursos.owd.description;
 ---
 
 <Layout
-  title=`${cursos.owd.name} | ${info.name}`
-  description=`Curso ${cursos.owd.name} - ${cursos.owd.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  title=`Curso ${NAME} | ${info.name}`
+  description=`Curso ${NAME} - ${DESCRIPTION} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
   <SectionContainer class="pt-3 pb-2">
-    <h1>{cursos.owd.name}</h1>
-    <h2>{cursos.owd.description}</h2>
+    <h1>{NAME}</h1>
+    <h2>{DESCRIPTION}</h2>
     <article>
       <div class="col-left">
         <h3>Estructura del curso</h3>

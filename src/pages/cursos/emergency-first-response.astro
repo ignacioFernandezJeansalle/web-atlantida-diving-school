@@ -1,13 +1,185 @@
 ---
-import { info, cursos } from "../../data/data.json";
-import Layout from "../../layouts/Layout.astro";
+import { info, cursos, prices } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import CarouselInfinite from "@components/CarouselInfinite.astro";
+import ListItemCourse from "@components/ListItemCourse.astro";
+import NavigationCourses from "@components/NavigationCourses.astro";
+import LinkButton from "@components/LinkButton.astro";
+import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
+import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
+const NAME = cursos.efr.name;
+const DESCRIPTION = cursos.efr.description;
 ---
 
 <Layout
-  title=`${cursos.efr.name} | ${info.name}`
-  description=`Curso ${cursos.efr.name} - ${cursos.efr.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  title=`Curso ${NAME} | ${info.name}`
+  description=`Curso ${NAME} - ${DESCRIPTION} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>EMERGENCY FIRST RESPONSE</h1>
+  <SectionContainer class="pt-3 pb-2">
+    <h1>{NAME}</h1>
+    <h2>{DESCRIPTION}</h2>
+  </SectionContainer>
+
+  <section class="pt-1 pb-2">
+    <CarouselInfinite
+      images={[
+        { src: "/img/cursos/efr/efr001.webp", alt: "Personas practicando primeros auxilios" },
+        { src: "/img/cursos/efr/efr002.webp", alt: "Personas practicando primeros auxilios" },
+        { src: "/img/cursos/efr/efr003.webp", alt: "Personas practicando primeros auxilios" },
+        { src: "/img/cursos/efr/efr004.webp", alt: "Personas practicando primeros auxilios" },
+      ]}
+    />
   </section>
+
+  <SectionContainer class="pt-2 pb-2">
+    <article>
+      <div class="col-left">
+        <h3>Estructura del curso</h3>
+        <ul>
+          <ListItemCourse>
+            <b
+              >Este programa está formado por dos módulos principales que se pueden enseñar en serie o como cursos
+              independientes:</b
+            >
+            <ol>
+              <li>Emergency First Response - Atención Primaria.</li>
+              <li>Emergency First Response - Atención Secundaria.</li>
+            </ol>
+          </ListItemCourse>
+          <ListItemCourse>
+            <b>Duración: 2 clases teóricas y prácticas.</b><br />El curso puede ser intensivo, extendido, grupal o
+            personalizado teniendo todas las modalidades el mismo costo.
+          </ListItemCourse>
+          <ListItemCourse>
+            Precio: <b>Consultar!</b><br />
+            <u>No incluye:</u> Manual original.<br />
+            <b>PROMOCION:</b> Abonando los cursos de Rescate y EFR juntos.
+          </ListItemCourse>
+          <ListItemCourse>
+            Certificación: <b>{prices.certification}</b>
+          </ListItemCourse>
+        </ul>
+      </div>
+      <div class="col-right">
+        <h3>¿Por qué hacerlo?</h3>
+        <ul>
+          <ListItemCourse>
+            Juntos, los cursos brindan instrucción completa en RCP y primeros auxilios, así como también incluyen
+            secciones opcionales (pero de cualquier modo recomendadas) en manejo de desfibrilador externo automatizado
+            (AED) y oxígeno para emergencias.
+          </ListItemCourse>
+          <ListItemCourse>
+            Emergency First Response le proporciona las herramientas necesarias para aplicar RCP y primeros auxilios,
+            sea o no un buceador. Estará preparado para manejar adecuadamente situaciones que podrían poner en peligro
+            la vida.
+          </ListItemCourse>
+          <ListItemCourse>
+            No se requiere certificación de buceo.<br />No hay límite de edad mínima.
+          </ListItemCourse>
+          <ListItemCourse>Es obligatorio si querés ser <b>Rescue Diver</b></ListItemCourse>
+        </ul>
+      </div>
+    </article>
+  </SectionContainer>
+
+  <SectionContainer class="pt-2 pb-6">
+    <NavigationCourses>
+      <LinkButton href="/cursos/advanced-open-water-diver" colorPrimary={false} slot="previous">
+        <ArrowNarrowLeft /> Advanced Open Water Diver
+      </LinkButton>
+      <LinkButton href="/cursos/rescue-diver" colorPrimary={false} slot="next">
+        Rescue Diver <ArrowNarrowRight />
+      </LinkButton>
+    </NavigationCourses>
+  </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  $h1-font-size: 54px;
+  $h1-font-size-md: 64px;
+  $max-width: 480px;
+
+  h1 {
+    font-size: $h1-font-size;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: $h1-font-size * 0.45;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: $h1-font-size * 0.5;
+    border-bottom: 1px solid $color-secondary;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ol {
+    padding-left: 32px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 48px;
+
+    .col-left {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+    }
+
+    .col-right {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+    }
+  }
+
+  @media (width > 768px) {
+    h1 {
+      font-size: $h1-font-size-md;
+    }
+
+    h2 {
+      font-size: $h1-font-size-md * 0.45;
+    }
+
+    h3 {
+      font-size: $h1-font-size-md * 0.5;
+    }
+
+    article {
+      flex-direction: row;
+      column-gap: 48px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

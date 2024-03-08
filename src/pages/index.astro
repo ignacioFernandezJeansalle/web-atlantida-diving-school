@@ -5,6 +5,7 @@ import { info, links, cursos, trips } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import Carouselv2 from "@components/Carouselv2.astro";
+import LiteYoutube from "@components/LiteYoutube.astro";
 import LinkButton from "@components/LinkButton.astro";
 import LinkCourse from "@components/LinkCourse.astro";
 import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
@@ -68,17 +69,11 @@ import ScubaMask from "@icons/ScubaMask.astro";
         </LinkButton>
       </div>
       <div class="homepage-school__video">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/jYtcw44LoO0?si=2vbJtbUOd8WQ_kos"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        >
-        </iframe>
+        <LiteYoutube
+          videoId="jYtcw44LoO0"
+          title="Un día de cursos en Atlántida"
+          backgroundImage="/img/thumbnail-youtube/un-dia-de-cursos.webp"
+        />
       </div>
     </div>
   </SectionContainer>
@@ -102,25 +97,19 @@ import ScubaMask from "@icons/ScubaMask.astro";
   <!-- Sección de intro al Buda -->
   <SectionContainer class="pt-6 pb-6">
     <div class="homepage-checkout__container">
-      <div class="homepage-checkout__video">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/ldvs8O1WYXQ?si=CwCnnpLauleW1Q2-"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        >
-        </iframe>
-      </div>
       <div class="homepage-checkout__title">
         <h2>EL BUDA</h2>
         <h3>Espejo de agua</h3>
         <LinkButton href="/buda" colorPrimary={false}>
           Conocé El Buda <ArrowNarrowRight />
         </LinkButton>
+      </div>
+      <div class="homepage-checkout__video">
+        <LiteYoutube
+          videoId="ldvs8O1WYXQ"
+          title="Certificación Open Water Diver en el Buda"
+          backgroundImage="/img/thumbnail-youtube/el-buda.webp"
+        />
       </div>
     </div>
   </SectionContainer>

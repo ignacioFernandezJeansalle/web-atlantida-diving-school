@@ -1,7 +1,6 @@
 ---
 import "@styles/pages/index.scss";
 import { info, links, cursos, trips } from "@data/data.json";
-
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import Carouselv2 from "@components/Carouselv2.astro";
@@ -10,6 +9,18 @@ import LinkButton from "@components/LinkButton.astro";
 import LinkCourse from "@components/LinkCourse.astro";
 import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
 import ScubaMask from "@icons/ScubaMask.astro";
+const CAROUSEL = [
+  `<h2 class="item-carousel--title">EXPERIENCIA</h2>
+     <p class="item-carousel--description">Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br />Desde 1986, ${
+       new Date().getFullYear() - 1986
+     } años ininterrumpidos dictando cursos de buceo. Más de 6000 alumnos certificados.</p>`,
+  `<h2 class="item-carousel--title">DISPONIBILIDAD</h2>
+     <p class="item-carousel--description">Programá el curso de buceo según tu disponibilidad. Con nosotros podés elegir día, horario y cantidad de clases semanales. Lunes a Sábados.</p>`,
+  `<h2 class="item-carousel--title">COMODIDAD</h2>
+     <p class="item-carousel--description">Cursos de buceo totalmente personalizados de 1 a 6 alumnos como máximo. Nuestro objetivo es tu comodidad y que te sientas seguro y sin presiones. Siempre hay un instructor para vos.</p>`,
+  /*`<h2 class="item-carousel--title">PROMOCION</h2>
+     <p class="item-carousel--description">Inscribite AHORA con un 2x1. Uno paga y dos hacen el curso de buceo Open Water Diver.</p>`,*/
+];
 ---
 
 <Layout
@@ -40,27 +51,13 @@ import ScubaMask from "@icons/ScubaMask.astro";
       </a>
     </div>
     <div class="homepage-hero__carousel">
-      <Carouselv2
-        items={[
-          `<h2 class="item-carousel--title">EXPERIENCIA</h2>
-           <p class="item-carousel--description">Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br />Desde 1986, ${new Date().getFullYear() - 1986} años ininterrumpidos dictando cursos de buceo. Más de 6000 alumnos certificados.</p>`,
-          `<h2 class="item-carousel--title">DISPONIBILIDAD</h2>
-           <p class="item-carousel--description">Programá el curso de buceo según tu disponibilidad. Con nosotros podés elegir día, horario y cantidad de clases semanales. Lunes a Sábados.</p>`,
-          `<h2 class="item-carousel--title">COMODIDAD</h2>
-           <p class="item-carousel--description">Cursos de buceo totalmente personalizados de 1 a 6 alumnos como máximo. Nuestro objetivo es tu comodidad y que te sientas seguro y sin presiones. Siempre hay un instructor para vos.</p>`,
-          `<h2 class="item-carousel--title">PROMOCION</h2>
-           <p class="item-carousel--description">Inscribite AHORA con un 2x1. Uno paga y dos hacen el curso de buceo Open Water Diver.</p>`,
-        ]}
-        pagination={true}
-        controls={false}
-        interval="10000"
-      />
+      <Carouselv2 items={CAROUSEL} pagination={true} controls={false} interval="10000" />
     </div>
   </section>
 
   <!-- Sección de presentación de nuestro centro de buceo -->
   <SectionContainer class="pt-6 pb-6">
-    <div class="homepage-school__container">
+    <article class="homepage-school__container">
       <div class="homepage-school__title">
         <h1>ATLANTIDA</h1>
         <h2>Escuela de buceo</h2>
@@ -75,12 +72,12 @@ import ScubaMask from "@icons/ScubaMask.astro";
           backgroundImage="/img/thumbnail-youtube/un-dia-de-cursos.webp"
         />
       </div>
-    </div>
+    </article>
   </SectionContainer>
 
   <!-- Sección de introducción a los cursos y especialidades -->
   <SectionContainer class="pt-6 pb-6 highlight-background">
-    <div class="homepage-courses__container">
+    <article class="homepage-courses__container">
       <h2 class="homepage-courses__title">Cursos de buceo & especialidades</h2>
       <div class="homepage-courses__links">
         <LinkCourse course={cursos.owd} />
@@ -91,12 +88,12 @@ import ScubaMask from "@icons/ScubaMask.astro";
       <LinkButton href="/cursos" colorPrimary={false}>
         Todos los cursos <ArrowNarrowRight />
       </LinkButton>
-    </div>
+    </article>
   </SectionContainer>
 
   <!-- Sección de intro al Buda -->
   <SectionContainer class="pt-6 pb-6">
-    <div class="homepage-checkout__container">
+    <article class="homepage-checkout__container">
       <div class="homepage-checkout__title">
         <h2>EL BUDA</h2>
         <h3>Espejo de agua</h3>
@@ -111,12 +108,12 @@ import ScubaMask from "@icons/ScubaMask.astro";
           backgroundImage="/img/thumbnail-youtube/el-buda.webp"
         />
       </div>
-    </div>
+    </article>
   </SectionContainer>
 
   <!-- Sección de intro a viajes -->
   <SectionContainer class="pt-6 pb-6 highlight-background">
-    <div class="homepage-trips__container">
+    <article class="homepage-trips__container">
       <h2 class="homepage-trips__title">Viajes y salidas de buceo</h2>
       <div class="homepage-trips__gallery">
         {
@@ -130,12 +127,12 @@ import ScubaMask from "@icons/ScubaMask.astro";
       <LinkButton href="/viajes" colorPrimary={false}>
         + Viajes <ArrowNarrowRight />
       </LinkButton>
-    </div>
+    </article>
   </SectionContainer>
 
   <!-- Sección de contacto -->
   <SectionContainer class="pt-6 pb-6">
-    <div class="homepage-contact__container">
+    <article class="homepage-contact__container">
       <h2 class="homepage-contact__title">ESTUDIA CON NOSOTROS</h2>
       <div class="homepage-contact__info">
         <p>
@@ -158,6 +155,6 @@ import ScubaMask from "@icons/ScubaMask.astro";
       <LinkButton href="/contacto" colorPrimary={false}>
         Contacto <ArrowNarrowRight />
       </LinkButton>
-    </div>
+    </article>
   </SectionContainer>
 </Layout>

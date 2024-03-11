@@ -1,13 +1,200 @@
 ---
-import { info, cursos } from "../../data/data.json";
-import Layout from "../../layouts/Layout.astro";
+import { info, cursos, prices } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import CarouselInfinite from "@components/CarouselInfinite.astro";
+import ListItemCourse from "@components/ListItemCourse.astro";
+import NavigationCourses from "@components/NavigationCourses.astro";
+import LinkButton from "@components/LinkButton.astro";
+import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
+import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
+const NAME = cursos.ts.name;
+const DESCRIPTION = cursos.ts.description;
 ---
 
 <Layout
-  title=`${cursos.ts.name} | ${info.name}`
-  description=`Especialidad ${cursos.ts.name} - ${cursos.ts.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  title=`Curso ${NAME} | ${info.name}`
+  description=`Curso ${NAME} - ${DESCRIPTION} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>TRAJE SECO</h1>
+  <SectionContainer class="pt-3 pb-2">
+    <h1>{NAME}</h1>
+    <h2>{DESCRIPTION}</h2>
+  </SectionContainer>
+
+  <section class="pt-1 pb-2">
+    <CarouselInfinite
+      images={[
+        { src: "/img/cursos/ts/ts001.webp", alt: "Viaje a la patagonia con traje seco" },
+        { src: "/img/cursos/ts/ts002.webp", alt: "Instructor certificando alumnos con traje seco" },
+        { src: "/img/cursos/ts/ts003.webp", alt: "Staff de la escuela usando traje seco" },
+        { src: "/img/cursos/ts/ts004.webp", alt: "Alumnos felices certificando traje seco en El Buda" },
+        {
+          src: "/img/cursos/ts/ts005.webp",
+          alt: "Alumna repasando junto a su instructor la teoría antes de certificar en aguas abiertas en El Buda",
+        },
+        {
+          src: "/img/cursos/ts/ts006.webp",
+          alt: "Alumnos haciendo verificación pre inmersión con traje seco en El Buda",
+        },
+      ]}
+    />
   </section>
+
+  <SectionContainer class="pt-2 pb-2">
+    <article>
+      <div class="col-left">
+        <h3>Estructura del curso</h3>
+        <ul>
+          <ListItemCourse>
+            <b>La especialidad de Traje Seco se compone de tres apartados:</b>
+            <ol>
+              <li>Desarrollo de conocimientos (1 clase teórica).</li>
+              <li>Entrenamiento en pileta (1 clase práctica).</li>
+              <li>Entrenamiento en aguas abiertas.</li>
+            </ol>
+          </ListItemCourse>
+          <ListItemCourse>
+            Precio: <b>Consultar!</b><br />
+            <u>Incluye:</u> Apartados 1 y 2, desarrollo teórico y práctico. Traje Seco para entrenamiento en pileta.<br
+            />
+            <u>No incluye:</u> Manual original.<br />
+            <b>PROMOCION:</b> Apartado 3, inmersiones en aguas abiertas. Contamos con distintas opciones que se adaptan a
+            tus tiempos y tu economía. Manual.
+          </ListItemCourse>
+          <ListItemCourse>
+            Certificación: <b>{prices.certification}</b> (Certificación Online, exclusivo Atlantida Diving School).
+          </ListItemCourse>
+        </ul>
+      </div>
+      <div class="col-right">
+        <h3>El agua fría no es un problema</h3>
+        <div class="highlight-background">
+          <p>
+            <b>El problema no es el agua fría, sino pasar frío.</b> Un traje seco soluciona este problema manteniendo al
+            buceador completamente seco.
+          </p>
+          <p>
+            Esto se consigue mediante el uso de cremalleras estancas y manguitos (de neopreno o látex) en cuello y puños
+            que impiden el paso del agua al interior del traje. De esta manera, excepto cabeza y manos, el buceador se
+            mantiene a lo largo de la inmersión completamente <b>seco y caliente</b>.
+          </p>
+          <p>
+            Habitualmente se acepta que estando el agua por debajo de los 16ºC ó 18ºC el uso de un traje seco se hace
+            casi necesario. Por supuesto es imprescindible para la práctica del <b>BUCEO BAJO EL HIELO</b>.
+          </p>
+          <p>
+            El traje seco nos permitirá disfrutar de nuestra afición favorita durante todo el año sin las incomodidades
+            producidas por el frío, ya sea en el agua o bien en superficie mientras nos trasladamos en la embarcación
+            hacia el punto de buceo.
+          </p>
+          <p class="mb-0">
+            Todos los que se aventuran a probar un traje seco descubren el placer que proporciona <b
+              >bucear seco y caliente</b
+            >. La próxima vez que veas sonreir distendidos y relajados a los compañeros de inmersión que llevan traje
+            seco, con el agua helada del invierno, ya sabrás cual es la razón.
+          </p>
+        </div>
+      </div>
+    </article>
+  </SectionContainer>
+
+  <SectionContainer class="pt-2 pb-6">
+    <NavigationCourses>
+      <LinkButton href="/cursos/divemaster" colorPrimary={false} slot="previous">
+        <ArrowNarrowLeft /> Divemaster
+      </LinkButton>
+      <LinkButton href="/cursos/enriched-air-nitrox-diver" colorPrimary={false} slot="next">
+        Enriched Air Nitrox Diver <ArrowNarrowRight />
+      </LinkButton>
+    </NavigationCourses>
+  </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  $h1-font-size: 54px;
+  $h1-font-size-md: 64px;
+  $max-width: 480px;
+
+  h1 {
+    font-size: $h1-font-size;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: $h1-font-size * 0.45;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: $h1-font-size * 0.5;
+    border-bottom: 1px solid $color-secondary;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ol {
+    padding-left: 32px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 48px;
+
+    .col-left {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+    }
+
+    .col-right {
+      width: 100%;
+      max-width: $max-width;
+
+      div {
+        padding: 24px;
+        border-radius: 4px;
+        box-shadow: $box-shadow-primary;
+      }
+    }
+  }
+
+  @media (width > 768px) {
+    h1 {
+      font-size: $h1-font-size-md;
+    }
+
+    h2 {
+      font-size: $h1-font-size-md * 0.45;
+    }
+
+    h3 {
+      font-size: $h1-font-size-md * 0.5;
+    }
+
+    article {
+      flex-direction: row;
+      column-gap: 48px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

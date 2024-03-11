@@ -1,13 +1,200 @@
 ---
-import { info, cursos } from "../../data/data.json";
-import Layout from "../../layouts/Layout.astro";
+import { info, cursos, prices } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import Carouselv2 from "@components/Carouselv2.astro";
+import ListItemCourse from "@components/ListItemCourse.astro";
+import LiteYoutube from "@components/LiteYoutube.astro";
+import NavigationCourses from "@components/NavigationCourses.astro";
+import LinkButton from "@components/LinkButton.astro";
+import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
+import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
+const NAME = cursos.rd.name;
+const DESCRIPTION = cursos.rd.description;
 ---
 
 <Layout
-  title=`${cursos.rd.name} | ${info.name}`
-  description=`Curso ${cursos.rd.name} - ${cursos.rd.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  title=`Curso ${NAME} | ${info.name}`
+  description=`Curso ${NAME} - ${DESCRIPTION} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>RESCUE DIVER</h1>
-  </section>
+  <SectionContainer class="pt-3 pb-2">
+    <h1>{NAME}</h1>
+    <h2>{DESCRIPTION}</h2>
+    <article>
+      <div class="col-left">
+        <h3>Estructura del curso</h3>
+        <ul>
+          <ListItemCourse>
+            <b>El curso PADI Rescue Diver se compone de tres apartados:</b>
+            <ol>
+              <li>Desarrollo de conocimientos (5 clases teóricas).</li>
+              <li>Entrenamiento en pileta (5 clases prácticas).</li>
+              <li>Entrenamiento en aguas abiertas.</li>
+            </ol>
+          </ListItemCourse>
+          <ListItemCourse>
+            Precio: <b>Consultar!</b><br />
+            <u>Incluye:</u> Apartados 1 y 2, desarrollos teóricos y prácticos. Tabla de manejo de accidentes.<br />
+            <u>No incluye:</u> Apartado 3, inmersiones en aguas abiertas. Contamos con distintas opciones que se adaptan
+            a tus tiempos y tu economía.
+          </ListItemCourse>
+          <ListItemCourse>
+            Certificación: <b>{prices.certification}</b> (Certificación Online, exclusivo Atlantida Diving School).
+          </ListItemCourse>
+        </ul>
+        <div class="highlight-background">
+          <h4>Desarrollo de conocimientos</h4>
+          <p>
+            Cada uno de ellos juega un importante papel en el aprendizaje de buceo para cumplir los objetivos
+            necesarios.
+          </p>
+          <p>
+            El curso <b>PADI Rescue Diver</b> es un paso importante y crucial en el desarrollo de los conocimientos y experiencias
+            del buceador más allá de un nivel puramente recreativo.
+          </p>
+          <p>
+            Los buceadores de rescate aprenden a ver más allá de si mismos para tener en cuenta la seguridad y bienestar
+            de otros buceadores.
+          </p>
+          <p>
+            <b><u>IMPORTANTE:</u></b> El buzo estudiante de un curso de rescate debe haber completado un curso en RCP dentro
+            de los últimos 24 meses para poder ser certificado como PADI Rescue Diver.
+          </p>
+        </div>
+      </div>
+      <div class="col-right">
+        <h3>Entrenamiento Rescue Diver</h3>
+        <div>
+          <LiteYoutube
+            videoId="O8a3jJ3veIo"
+            title="Certificación Rescue Diver con Atlántida en Angra dos Reis"
+            backgroundImage="/img/thumbnail-youtube/rescue-diver.webp"
+          />
+        </div>
+
+        <Carouselv2
+          items={[
+            `<img class="item-carousel--img" src="/img/cursos/rd/rd001.webp" alt="Certificación rescue diver en cantera de Tandil" />`,
+            `<img class="item-carousel--img" src="/img/cursos/rd/rd002.webp" alt="Certificación rescue diver en espejo de agua El Buda" />`,
+            `<img class="item-carousel--img" src="/img/cursos/rd/rd003.webp" alt="Práctica curso rescue diver en pileta" />`,
+            `<img class="item-carousel--img" src="/img/cursos/rd/rd004.webp" alt="Práctica curso rescue diver en pileta" />`,
+            `<img class="item-carousel--img" src="/img/cursos/rd/rd005.webp" alt="Práctica curso rescue diver en pileta" />`,
+            `<img class="item-carousel--img" src="/img/cursos/rd/rd006.webp" alt="Certificación rescue diver en cantera de Tandil" />`,
+          ]}
+          pagination={false}
+          controls={true}
+          interval="10000"
+        />
+      </div>
+    </article>
+  </SectionContainer>
+
+  <SectionContainer class="pt-2 pb-6">
+    <NavigationCourses>
+      <LinkButton href="/cursos/emergency-first-response" colorPrimary={false} slot="previous">
+        <ArrowNarrowLeft /> Emergency First Response
+      </LinkButton>
+      <LinkButton href="/cursos/divemaster" colorPrimary={false} slot="next">
+        Divemaster <ArrowNarrowRight />
+      </LinkButton>
+    </NavigationCourses>
+  </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  $h1-font-size: 54px;
+  $h1-font-size-md: 64px;
+  $max-width: 480px;
+
+  h1 {
+    font-size: $h1-font-size;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: $h1-font-size * 0.45;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: $h1-font-size * 0.5;
+    border-bottom: 1px solid $color-secondary;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ol {
+    padding-left: 32px;
+  }
+
+  article {
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 48px;
+
+    .col-left {
+      width: 100%;
+      max-width: $max-width;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+
+      div {
+        margin-top: 40px;
+        padding: 24px;
+        border-radius: 4px;
+        box-shadow: $box-shadow-primary;
+      }
+    }
+
+    .col-right {
+      width: 100%;
+      max-width: $max-width;
+
+      div {
+        width: 100%;
+        max-width: 480px;
+        box-shadow: $box-shadow-primary;
+        margin-bottom: 48px;
+      }
+    }
+  }
+
+  @media (width > 768px) {
+    h1 {
+      font-size: $h1-font-size-md;
+    }
+
+    h2 {
+      font-size: $h1-font-size-md * 0.45;
+    }
+
+    h3 {
+      font-size: $h1-font-size-md * 0.5;
+    }
+
+    article {
+      flex-direction: row;
+      column-gap: 48px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

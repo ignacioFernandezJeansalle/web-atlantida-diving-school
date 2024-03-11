@@ -1,13 +1,246 @@
 ---
-import { info, cursos } from "../../data/data.json";
-import Layout from "../../layouts/Layout.astro";
+import { info, cursos, prices } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import CarouselInfinite from "@components/CarouselInfinite.astro";
+import ListItemCourse from "@components/ListItemCourse.astro";
+import NavigationCourses from "@components/NavigationCourses.astro";
+import LinkButton from "@components/LinkButton.astro";
+import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
+import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
+const NAME = cursos.dm.name;
+const DESCRIPTION = cursos.dm.description;
 ---
 
 <Layout
-  title=`${cursos.dm.name} | ${info.name}`
-  description=`Curso ${cursos.dm.name} - ${cursos.dm.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  title=`Curso ${NAME} | ${info.name}`
+  description=`Curso ${NAME} - ${DESCRIPTION} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>DIVEMASTER</h1>
+  <SectionContainer class="pt-3 pb-2">
+    <h1>{NAME}</h1>
+    <h2>{DESCRIPTION}</h2>
+  </SectionContainer>
+
+  <section class="pt-1 pb-2">
+    <CarouselInfinite
+      images={[
+        { src: "/img/cursos/dm/dm001.webp", alt: "Instructor formando a un divemaster" },
+        { src: "/img/cursos/dm/dm002.webp", alt: "Divemaster dando teoría en el aula" },
+        { src: "/img/cursos/dm/dm003.webp", alt: "Divemaster tomando tiempos en un curso de apnea" },
+        { src: "/img/cursos/dm/dm004.webp", alt: "Divemaster acompañando a un buzo en un nuevo sitio de buceo" },
+        { src: "/img/cursos/dm/dm005.webp", alt: "Divemaster cargando tanques" },
+        { src: "/img/cursos/dm/dm006.webp", alt: "Divemaster dando un bautismo de buceo" },
+        { src: "/img/cursos/dm/dm007.webp", alt: "Divemaster dando un bautismo de buceo" },
+        {
+          src: "/img/cursos/dm/dm008.webp",
+          alt: "Divemaster acompañando a instructor en una clase en pileta con 5 alumnos",
+        },
+      ]}
+    />
   </section>
+
+  <SectionContainer class="pt-2 pb-2">
+    <article>
+      <div class="col-left">
+        <div class="highlight-background">
+          <h4>¿Qué pueden hacer los PADI Divemasters?</h4>
+          <ul>
+            <li>
+              Trabajar en centros de buceo locales, barcos de buceo con alojamiento, yates y ubicaciones de resorts
+              exóticos.
+            </li>
+            <li>Ayudar a los PADI Instructors con los estudiantes.</li>
+            <li>Dirigir a los buceadores con scuba PADI en los recorridos de buceo guiados.</li>
+            <li>Enseñar y certificar a los PADI Skin Divers.</li>
+            <li>Enseñar programas PADI Discover Snorkeling.</li>
+            <li>Realizar programas de PADI Scuba Review para buceadores certificados.</li>
+            <li>Dirigir a buceadores certificados en experiencias de Discover Local Diving.</li>
+            <li>
+              Enseñar programas de Emergency First Response después de concluir correctamente un curso para instructores
+              de Emergency First Response.
+            </li>
+          </ul>
+        </div>
+        <div class="highlight-background">
+          <h4>¿Cuánto dura?</h4>
+          <ul>
+            <li>12 a 14 clases (teórico/prácticas).</li>
+            <li>Consultar por cursos intensivos.</li>
+          </ul>
+        </div>
+        <div class="highlight-background">
+          <h4>¿Qué materiales se necesitan?</h4>
+          <ul>
+            <li>Manual del divemaster.</li>
+            <li>Enciclopedia del buceo recreativo.</li>
+            <li>Cuaderno de trabajo de conocimientos del buceo.</li>
+            <li>RDP en tres versiones (tabla, wheel y electrónica).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-right">
+        <div class="highlight-background">
+          <h4>¿Qué necesito para comenzar?</h4>
+          <ul>
+            <li>Certificación como PADI Advanced Open Water Diver o similar de otra organización de entrenamiento.</li>
+            <li>Certificación como PADI Rescue Diver o similar de otra organización de entrenamiento.</li>
+            <li>Una declaración médica firmada por un médico dentro de los últimos 12 meses.</li>
+            <li>
+              Al menos 40 inmersiones registradas en la bitácora de buceo para empezar el curso y 60 inmersiones para
+              conseguir la certificación.
+            </li>
+            <li>Ser mayor de 18 años.</li>
+          </ul>
+        </div>
+        <div class="highlight-background">
+          <h4>¿Qué voy a hacer?</h4>
+          <ul>
+            <li>Aprender habilidades de liderazgo en el buceo.</li>
+            <li>Completar habilidades acuáticas y ejercicios de resistencia en aguas confinadas y aguas abiertas.</li>
+            <li>
+              Ejercicios de entrenamiento para poner a prueba la capacidad de organización y de solución de problemas.
+            </li>
+            <li>Un internado o serie de ejercicios de entrenamiento práctico.</li>
+          </ul>
+        </div>
+        <ul class="list-course">
+          <ListItemCourse>
+            Precio: <b>Consultar!</b><br />
+            Reserva: 50% + saldo al inicio del curso.<br />
+            <u>No incluye:</u> Materiales. Costo de afiliación.
+          </ListItemCourse>
+          <ListItemCourse>
+            Certificación: <b>{prices.certification}</b> (Certificación Online, exclusivo Atlantida Diving School).
+          </ListItemCourse>
+        </ul>
+      </div>
+    </article>
+  </SectionContainer>
+
+  <SectionContainer class="pt-2 pb-6">
+    <NavigationCourses>
+      <LinkButton href="/cursos/rescue-diver" colorPrimary={false} slot="previous">
+        <ArrowNarrowLeft /> Rescue Diver
+      </LinkButton>
+      <LinkButton href="/cursos/traje-seco" colorPrimary={false} slot="next">
+        Traje seco <ArrowNarrowRight />
+      </LinkButton>
+    </NavigationCourses>
+  </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  $h1-font-size: 54px;
+  $h1-font-size-md: 64px;
+  $max-width: 480px;
+
+  h1 {
+    font-size: $h1-font-size;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: $h1-font-size * 0.45;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: $h1-font-size * 0.5;
+    border-bottom: 1px solid $color-secondary;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ol {
+    padding-left: 32px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0px;
+
+    .col-left {
+      width: 100%;
+      max-width: $max-width;
+
+      div {
+        margin-bottom: 32px;
+        padding: 24px;
+        border-radius: 4px;
+        box-shadow: $box-shadow-primary;
+
+        ul {
+          padding-left: 20px;
+          list-style: circle;
+
+          li {
+            padding-block: 4px;
+          }
+        }
+      }
+    }
+
+    .col-right {
+      width: 100%;
+      max-width: $max-width;
+
+      div {
+        margin-bottom: 32px;
+        padding: 24px;
+        border-radius: 4px;
+        box-shadow: $box-shadow-primary;
+
+        ul {
+          padding-left: 20px;
+          list-style: circle;
+
+          li {
+            padding-block: 4px;
+          }
+        }
+      }
+
+      .list-course {
+        padding-top: 16px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+    }
+  }
+
+  @media (width > 768px) {
+    h1 {
+      font-size: $h1-font-size-md;
+    }
+
+    h2 {
+      font-size: $h1-font-size-md * 0.45;
+    }
+
+    h3 {
+      font-size: $h1-font-size-md * 0.5;
+    }
+
+    article {
+      flex-direction: row;
+      column-gap: 48px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

@@ -1,13 +1,242 @@
 ---
-import { info, cursos } from "../../data/data.json";
-import Layout from "../../layouts/Layout.astro";
+import { info, cursos, prices } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import CarouselInfinite from "@components/CarouselInfinite.astro";
+import ListItemCourse from "@components/ListItemCourse.astro";
+import NavigationCourses from "@components/NavigationCourses.astro";
+import LinkButton from "@components/LinkButton.astro";
+import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
+import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
+const NAME = cursos.eand.name;
+const DESCRIPTION = cursos.eand.description;
 ---
 
 <Layout
-  title=`${cursos.eand.name} | ${info.name}`
-  description=`Curso ${cursos.eand.name} - ${cursos.eand.description} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  title=`Curso ${NAME} | ${info.name}`
+  description=`Curso ${NAME} - ${DESCRIPTION} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>ENRICHED AIR NITROX DIVER</h1>
-  </section>
+  <SectionContainer class="pt-3 pb-2">
+    <h1>{NAME}</h1>
+    <h2>{DESCRIPTION}</h2>
+  </SectionContainer>
+
+  <SectionContainer class="pt-2 pb-2">
+    <article>
+      <div class="col-left">
+        <h3>Estructura del curso</h3>
+        <ul class="list-course">
+          <ListItemCourse>
+            La especialidad de Nitrox se compone de 1 clase teórica de desarrollo de conocimientos.
+          </ListItemCourse>
+          <ListItemCourse>
+            Precio: <b>Consultar!</b><br />
+            <u>No incluye:</u> Trámite de certificación.
+          </ListItemCourse>
+          <ListItemCourse>
+            Certificación: <b>{prices.certification}</b> (Certificación Online, exclusivo Atlantida Diving School).
+          </ListItemCourse>
+        </ul>
+        <div class="highlight-background">
+          <h4>¿Qué es el Nitrox?</h4>
+          <p>
+            La palabra Nitrox hace referencia a una mezcla de nitrógeno y oxígeno. Así pues, cada uno de nosotros ha
+            respirado Nitrox, incluso antes de ser buceador, ya que el aire es una mezcla Nitrox al contener estos dos
+            elementos.
+          </p>
+          <p>
+            Enriched Air Nitrox significa una mezcla gaseosa utilizada para buceo a la que se le ha añadido un
+            porcentaje de O<sub>2</sub> superior al encontrado en el aire que habitualmente respiramos.
+          </p>
+          <p>
+            Enriched Air Nitrox se conoce también por las sigla EANx, donde "x" es el porcentaje de O<sub>2</sub> de la mezcla:
+            por ejemplo EAN40 (40% de O<sub>2</sub>).
+          </p>
+          <p>
+            <b
+              >Una apreciación importante, es decir que habitualmente el buceador usa mezclas de aire enriquecido, ya
+              que una mezcla llamada Nitrox, puede ser una mezcla con un porcentaje de O<sub>2</sub> inferior al 21%. Ésta
+              sería una mezcla hipóxica, no apta para el buceo. En cambio una mezcla de aire enriquecido, es una mezcla hiperóxica,
+              es decir, con un porcentaje de O<sub>2</sub> superior al del aire. El aire es lo que llamamos una mezcla normóxica
+              (79%-21%).</b
+            >
+          </p>
+        </div>
+      </div>
+      <div class="col-right">
+        <div class="highlight-background">
+          <h4>¿Por qué bucear con nitrox?</h4>
+          <p>
+            A menudo el buceador busca poder permanecer mayor tiempo en el fondo, lo que suele traducirse en tener que
+            planificar inmersiones que requieren largas y a veces complicadas paradas de descompresión.
+          </p>
+          <p>
+            Usar aire enriquecido consigue que el tiempo en el fondo pueda ser más largo y con descompresiones más
+            cortas o nulas. Acorta el tiempo de intervalo en superficie entre inmersiones y reduce el tiempo de espera
+            para volar, ya que el nitrógeno residual es menor.
+            <br />Menor cansancio durante y después de las inmersiones, al respirar mayor porcentaje de oxígeno.
+          </p>
+          <p>
+            El aire enriquecido es especialmente beneficioso cuando se hacen varias inmersiones en un mismo día, por
+            ejemplo durante un crucero de buceo. Según las estadísticas, el 80% de los accidentes de descompresión
+            suceden en inmersiones sucesivas.<br />
+            En el caso de un buceador que usando aire haya realizado distintas inmersiones en un breve periodo de tiempo,
+            si hubiese realizado las mismas inmersiones usando nitrox, no solamente la descompresión sería significativamente
+            menor, sino que tendría mucho menos nitrógeno disuelto en el cuerpo.
+          </p>
+          <p>
+            Como resultado, muchos buceadores comprueban que no están físicamente tan cansados después de una serie de
+            inmersiones usando nitrox como cuando realizan varios buceos usando aire.
+          </p>
+          <p>
+            Existe una amplia variedad de cursos de buceo con uso de mezclas, cada vez más de moda entre los cursos que
+            imparten las distintas escuelas.<br />
+            El buceo con mezcla de gases, es aquel que usa un medio de respiración diferente al aire, gas respirado habitualmente
+            en nuestras inmersiones.
+          </p>
+          <p>
+            <b
+              >De todas las opciones posibles, la que está teniendo mayor aceptación entre los buceadores, es el uso de
+              mezclas nitrox o aire enriquecido (Enriched Air Nitrox), nombre inventado por la NOAA (National Oceanic
+              and Athmospheric Administration).</b
+            >
+          </p>
+        </div>
+      </div>
+    </article>
+  </SectionContainer>
+
+  <SectionContainer class="pt-2 pb-6">
+    <NavigationCourses>
+      <LinkButton href="/cursos/traje-seco" colorPrimary={false} slot="previous">
+        <ArrowNarrowLeft /> Traje seco
+      </LinkButton>
+      <LinkButton href="/contacto" colorPrimary={false} slot="next">
+        Contacto <ArrowNarrowRight />
+      </LinkButton>
+    </NavigationCourses>
+  </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  $h1-font-size: 54px;
+  $h1-font-size-md: 64px;
+  $max-width: 480px;
+
+  h1 {
+    font-size: $h1-font-size;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: $h1-font-size * 0.45;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: $h1-font-size * 0.5;
+    border-bottom: 1px solid $color-secondary;
+    padding-bottom: 2px;
+    margin-bottom: 24px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid $color-secondary;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ol {
+    padding-left: 32px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0px;
+
+    .col-left {
+      width: 100%;
+      max-width: $max-width;
+
+      div {
+        margin-bottom: 32px;
+        padding: 24px;
+        border-radius: 4px;
+        box-shadow: $box-shadow-primary;
+
+        ul {
+          padding-left: 20px;
+          list-style: circle;
+
+          li {
+            padding-block: 4px;
+          }
+        }
+      }
+
+      .list-course {
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+        margin-bottom: 32px;
+      }
+    }
+
+    .col-right {
+      width: 100%;
+      max-width: $max-width;
+
+      div {
+        margin-bottom: 32px;
+        padding: 24px;
+        border-radius: 4px;
+        box-shadow: $box-shadow-primary;
+
+        ul {
+          padding-left: 20px;
+          list-style: circle;
+
+          li {
+            padding-block: 4px;
+          }
+        }
+      }
+
+      .list-course {
+        padding-top: 16px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 32px;
+      }
+    }
+  }
+
+  @media (width > 768px) {
+    h1 {
+      font-size: $h1-font-size-md;
+    }
+
+    h2 {
+      font-size: $h1-font-size-md * 0.45;
+    }
+
+    h3 {
+      font-size: $h1-font-size-md * 0.5;
+    }
+
+    article {
+      flex-direction: row;
+      column-gap: 48px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+  }
+</style>

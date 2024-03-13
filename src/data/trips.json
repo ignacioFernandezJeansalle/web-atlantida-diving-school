@@ -1,6 +1,27 @@
 {
   "trips": [
     {
+      "id": "202212-01",
+      "name": "Angra Dos Reis, diciembre 2022",
+      "img": "202212-angra-dos-reis.webp",
+      "withTitle": true,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202211-01",
+      "name": "Filipinas, noviembre 2022",
+      "img": "202211-filipinas.webp",
+      "withTitle": true,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202208-01",
+      "name": "Puerto Lopez, agosto 2022",
+      "img": "202208-puerto-lopez.webp",
+      "withTitle": true,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202206-01",
       "name": "Angra Dos Reis, julio 2022",
       "img": "202206-angra-dos-reis.webp",

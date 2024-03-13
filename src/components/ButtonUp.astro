@@ -1,0 +1,82 @@
+<div id="button-up" class="button-up hide">
+  <button id="scroll-to-top" aria-label="Volver al inicio de la página">
+    <svg
+      aria-label="Subir al inicio de la página"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-up"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 5l0 14"></path><path d="M18 11l-6 -6"
+      ></path><path d="M6 11l6 -6"></path></svg
+    >
+  </button>
+</div>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  .hide {
+    display: none;
+  }
+
+  .button-up {
+    position: fixed;
+    bottom: 0;
+    left: -8px;
+    z-index: 100;
+    padding: 16px;
+
+    & button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 44px;
+      border: 2px solid $color-primary;
+      background: $color-primary;
+      color: $font-color-min;
+      border-radius: 4px;
+      cursor: pointer;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease;
+
+      &:hover {
+        background: $font-color-min;
+        color: $color-primary;
+      }
+    }
+  }
+</style>
+
+<script>
+  let timeout = 0;
+  const $div = document.getElementById("button-up") as HTMLDivElement;
+  const $button = document.getElementById("scroll-to-top") as HTMLButtonElement;
+
+  function toggleScrollToTop() {
+    const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    const HIDE = scrollTop <= 500;
+    $div && $div.classList.toggle("hide", HIDE);
+  }
+
+  function scrollHandler() {
+    if (!timeout) {
+      timeout = requestAnimationFrame(() => {
+        toggleScrollToTop();
+        timeout = 0;
+      });
+    }
+  }
+
+  window.addEventListener("scroll", scrollHandler);
+
+  $button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>

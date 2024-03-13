@@ -236,16 +236,9 @@
   &__gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(0px, 380px));
-    gap: 32px;
+    gap: 4px;
     width: 100%;
     justify-content: center;
-
-    img {
-      display: block;
-      width: 100%;
-      border-radius: 4px;
-      box-shadow: $box-shadow-primary;
-    }
   }
 }
 

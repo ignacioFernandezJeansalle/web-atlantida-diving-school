@@ -1,6 +1,7 @@
 ---
 import "@styles/pages/index.scss";
-import { info, links, cursos, trips } from "@data/data.json";
+import { info, links, cursos } from "@data/data.json";
+import { trips } from "@data/trips.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import Carouselv2 from "@components/Carouselv2.astro";
@@ -9,6 +10,8 @@ import LinkButton from "@components/LinkButton.astro";
 import LinkCourse from "@components/LinkCourse.astro";
 import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
 import ScubaMask from "@icons/ScubaMask.astro";
+import ImgTrip from "@components/ImgTrip.astro";
+
 const CAROUSEL = [
   `<h2 class="item-carousel--title">EXPERIENCIA</h2>
      <p class="item-carousel--description">Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br />Desde 1986, ${
@@ -118,9 +121,7 @@ const CAROUSEL = [
       <div class="homepage-trips__gallery">
         {
           trips.slice(0, 6).map((trip) => {
-            const src = `/img/viajes/${trip.img}`;
-            const alt = `${trip.city}, ${trip.country}`;
-            return <img src={src} alt={alt} loading="lazy" />;
+            return <ImgTrip trip={trip} />;
           })
         }
       </div>

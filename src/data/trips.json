@@ -1,6 +1,76 @@
 {
   "trips": [
     {
+      "id": "202403-01",
+      "name": "Bonaire, marzo 2024",
+      "img": "202403-bonaire.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202312-01",
+      "name": "Angra Dos Reis, diciembre 2023",
+      "img": "202312-angra-dos-reis.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202311-01",
+      "name": "Mar Rojo, noviembre 2023",
+      "img": "202311-mar-rojo.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202310-01",
+      "name": "Recife, octubre 2023",
+      "img": "202310-recife.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202309-01",
+      "name": "Canteras El Terrible, septiembre 2023",
+      "img": "202309-canteras-el-terrible.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202308-02",
+      "name": "Puerto Lopez, agosto 2023",
+      "img": "202308-puerto-lopez-2.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202308-01",
+      "name": "Puerto Lopez, agosto 2023",
+      "img": "202308-puerto-lopez-1.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202307-01",
+      "name": "Puerto Lopez, julio 2023",
+      "img": "202307-puerto-lopez.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202304-01",
+      "name": "Ilha Grande, abril 2023",
+      "img": "202304-ilha-grande.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "202303-01",
+      "name": "Roatán, marzo 2023",
+      "img": "202303-roatan.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202212-01",
       "name": "Angra Dos Reis, diciembre 2022",
       "img": "202212-angra-dos-reis.webp",

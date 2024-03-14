@@ -1,21 +1,34 @@
 ---
-import { info } from "@data/data.json";
+import { info, links } from "@data/data.json";
 import { trips } from "@data/trips.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import ImgTrip from "@components/ImgTrip.astro";
 import ButtonUp from "@components/ButtonUp.astro";
+import InstagramIcon from "@icons/InstagramIcon.astro";
+import FacebookIcon from "@icons/FacebookIcon.astro";
 ---
 
 <Layout
   title=`Viajes ${info.name}`
   description=`Viajá con nosotros a disfrutar de los mejores sitios de buceo del mundo, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <SectionContainer class="pt-3 pb-6">
+  <SectionContainer class="pt-3 pb-3">
     <h1 class="pb-3">
       {`Cumplimos ${new Date().getFullYear() - 1986} años llevando gente a bucear!!!`}
     </h1>
+    <h4>Seguinos en nuestras redes sociales y recibí todas las novedades de nuestros viajes</h4>
+    <div class="social-networks pt-1">
+      <a href={links.instagram} target="_blank" aria-label="Instagram" rel="noopener">
+        <InstagramIcon class="social-networks__icons" />
+      </a>
+      <a href={links.facebook} target="_blank" aria-label="Facebook" rel="noopener">
+        <FacebookIcon class="social-networks__icons" />
+      </a>
+    </div>
+  </SectionContainer>
 
+  <SectionContainer class="pt-0 pb-3">
     <div class="trips__gallery">
       {
         trips.map((trip) => {
@@ -25,11 +38,165 @@ import ButtonUp from "@components/ButtonUp.astro";
     </div>
   </SectionContainer>
 
+  <SectionContainer class="pt-3 pb-6">
+    <h4 class="pb-2">Y muchos destinos más...</h4>
+    <div class="trips__old">
+      <article>
+        <h5>📅 2016</h5>
+        <ul>
+          <li>Angra Dos Reis</li>
+          <li>Bahamas, Nassau</li>
+          <li>Canteras El Terrible</li>
+          <li>Curazao</li>
+          <li>Isla de Pascua</li>
+          <li>Puerto Lopez</li>
+          <li>Puerto Madryn</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2015</h5>
+        <ul>
+          <li>Angra Dos Reis</li>
+          <li>Bahamas, Nassau</li>
+          <li>Canteras El Terrible</li>
+          <li>Fernando de Noronha</li>
+          <li>Isla de Pascua</li>
+          <li>Las Grutas</li>
+          <li>Puerto Madryn</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2014</h5>
+        <ul>
+          <li>Angra Dos Reis</li>
+          <li>Canteras El Terrible</li>
+          <li>Isla de Pascua</li>
+          <li>Islas Galápagos</li>
+          <li>Puerto Lopez</li>
+          <li>Puerto Pirámides</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2013</h5>
+        <ul>
+          <li>Angra Dos Reis</li>
+          <li>Aruba</li>
+          <li>Canteras El Terrible</li>
+          <li>Isla de Pascua</li>
+          <li>Islas Galápagos</li>
+          <li>Puerto Madryn</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2012</h5>
+        <ul>
+          <li>Canteras El Terrible</li>
+          <li>Isla de Pascua</li>
+          <li>Islas Galápagos</li>
+          <li>Pichidangui</li>
+          <li>Puerto Madryn</li>
+          <li>Saint Marteen, Saba</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2011</h5>
+        <ul>
+          <li>Angra Dos Reis</li>
+          <li>Cabo Frío</li>
+          <li>Canteras El Terrible</li>
+          <li>Curazao</li>
+          <li>Puerto Madryn</li>
+          <li>Roatán</li>
+          <li>San Andrés</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2010</h5>
+        <ul>
+          <li>Angra Dos Reis</li>
+          <li>Canteras El Terrible</li>
+          <li>Juan Dolio</li>
+          <li>Mar Rojo</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2009</h5>
+        <ul>
+          <li>Angra Dos Reis</li>
+          <li>Canteras El Terrible</li>
+          <li>Fernando de Noronha</li>
+          <li>Las Grutas</li>
+          <li>Puerto Madryn</li>
+          <li>Villa La Angostura</li>
+          <li>Zapallar</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2008</h5>
+        <ul>
+          <li>Arraial Do Cabo</li>
+          <li>Canteras El Terrible</li>
+          <li>Mar Rojo</li>
+          <li>Puerto Madryn</li>
+          <li>San Andrés</li>
+          <li>Villa La Angostura</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2007</h5>
+        <ul>
+          <li>Arraial Do Cabo</li>
+          <li>Canteras El Terrible</li>
+          <li>Ilha Bela</li>
+          <li>Playa del Carmen</li>
+          <li>Puerto Madryn</li>
+          <li>Villa Traful</li>
+        </ul>
+      </article>
+      <article>
+        <h5>📅 2006</h5>
+        <ul>
+          <li>Mendoza, La Niña Encantada</li>
+          <li>San Andrés</li>
+          <li>Ilha Bela</li>
+          <li>Puerto Madryn</li>
+          <li>Las Grutas</li>
+          <li>Córdoba, Segunda Usina</li>
+        </ul>
+      </article>
+    </div>
+  </SectionContainer>
+
   <ButtonUp />
 </Layout>
 
 <style lang="scss">
   @import "@styles/variables";
+
+  h4 {
+    max-width: 768px;
+    margin: auto;
+    text-align: center;
+    text-wrap: balance;
+    font-size: 24px;
+  }
+
+  .social-networks {
+    display: flex;
+    justify-content: center;
+    column-gap: 16px;
+
+    &__icons {
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+      color: $color-body-primary;
+    }
+
+    a:hover {
+      opacity: 0.7;
+    }
+  }
 
   .trips__gallery {
     display: grid;
@@ -37,5 +204,34 @@ import ButtonUp from "@components/ButtonUp.astro";
     gap: 4px;
     width: 100%;
     justify-content: center;
+  }
+
+  .trips__old {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(0px, 260px));
+    gap: 32px;
+    width: 100%;
+    justify-content: center;
+
+    article {
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: $box-shadow-primary;
+
+      h5 {
+        font-size: 18px;
+        margin-bottom: 16px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        padding-bottom: 16px;
+        li {
+          border-bottom: 1px solid $color-footer;
+        }
+      }
+    }
   }
 </style>

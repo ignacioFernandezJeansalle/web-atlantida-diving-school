@@ -512,9 +512,72 @@
       "facebookAlbum": ""
     },
     {
-      "id": "201611-01",
+      "id": "201611-02",
       "name": "Canteras El Terrible, noviembre 2016",
       "img": "201611-cantera-el-terrible.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201611-01",
+      "name": "Curazao, noviembre 2016",
+      "img": "201611-curazao.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201609-01",
+      "name": "Canteras El Terrible, septiembre 2016",
+      "img": "201609-canteras-el-terrible.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201608-02",
+      "name": "Puerto Lopez, agosto 2016",
+      "img": "201608-puerto-lopez-2.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201608-01",
+      "name": "Puerto Lopez, agosto 2016",
+      "img": "201608-puerto-lopez-1.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201607-01",
+      "name": "Puerto Lopez, julio 2016",
+      "img": "201607-puerto-lopez.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201606-01",
+      "name": "Bahamas - Nassau, junio 2016",
+      "img": "201606-bahamas.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201603-03",
+      "name": "Isla de Pascuas, marzo 2016",
+      "img": "201603-isla-de-pascuas.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201603-02",
+      "name": "Puerto Madryn, marzo 2016",
+      "img": "201603-puerto-madryn.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201603-01",
+      "name": "Canteras El Terrible, marzo 2016",
+      "img": "201603-canteras-el-terrible.webp",
       "withTitle": false,
       "facebookAlbum": ""
     }

@@ -1,6 +1,7 @@
 ---
 import { info, cursos } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
+import TitlePage from "@components/TitlePage.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import LinkCourse from "@components/LinkCourse.astro";
 import ListItemCourse from "@components/ListItemCourse.astro";
@@ -10,9 +11,11 @@ import ListItemCourse from "@components/ListItemCourse.astro";
   title=`Cursos y especialidades ${info.name}`
   description=`Todos los cursos y especialidades de buceo PADI en un solo lugar, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <SectionContainer class="pt-3 pb-6">
-    <h1>Cursos PADI</h1>
-    <h2>La certificadora de buceo más grande del mundo</h2>
+  <SectionContainer class="pt-3 pb-3">
+    <TitlePage title="Cursos PADI" subtitle="La certificadora de buceo más grande del mundo" />
+  </SectionContainer>
+
+  <SectionContainer class="pt-0 pb-6">
     <article>
       <div class="col-left">
         <h3>Programá el curso a tu medida</h3>
@@ -73,33 +76,20 @@ import ListItemCourse from "@components/ListItemCourse.astro";
 <style lang="scss">
   @import "@styles/variables";
 
-  $h1-font-size: 54px;
-  $h1-font-size-md: 64px;
-  $max-width: 480px;
-
-  h1 {
-    font-size: $h1-font-size;
-    text-wrap: balance;
-  }
-
-  h2 {
-    font-size: $h1-font-size * 0.45;
-    text-wrap: balance;
-  }
-
   h3 {
-    font-size: $h1-font-size * 0.5;
+    font-size: 32px;
     border-bottom: 1px solid $color-secondary;
     padding-bottom: 2px;
     margin-bottom: 24px;
   }
 
   article {
-    padding-top: 48px;
+    $max-width: 480px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    row-gap: 48px;
+    gap: 48px;
 
     .col-left {
       width: 100%;
@@ -125,22 +115,8 @@ import ListItemCourse from "@components/ListItemCourse.astro";
   }
 
   @media (width > 768px) {
-    h1 {
-      font-size: $h1-font-size-md;
-    }
-
-    h2 {
-      font-size: $h1-font-size-md * 0.45;
-    }
-
-    h3 {
-      font-size: $h1-font-size-md * 0.5;
-    }
-
     article {
       flex-direction: row;
-      column-gap: 48px;
-      justify-content: center;
       align-items: flex-start;
     }
   }

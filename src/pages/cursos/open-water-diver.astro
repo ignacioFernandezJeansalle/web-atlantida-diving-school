@@ -2,6 +2,7 @@
 import { info, cursos, prices } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
+import TitlePage from "@components/TitlePage.astro";
 import ListItemCourse from "@components/ListItemCourse.astro";
 import Carouselv2 from "@components/Carouselv2.astro";
 import NavigationCourses from "@components/NavigationCourses.astro";
@@ -16,9 +17,11 @@ const DESCRIPTION = cursos.owd.description;
   title=`Curso ${NAME} | ${info.name}`
   description=`Curso ${NAME} - ${DESCRIPTION} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <SectionContainer class="pt-3 pb-2">
-    <h1>{NAME}</h1>
-    <h2>{DESCRIPTION}</h2>
+  <SectionContainer class="pt-3 pb-3">
+    <TitlePage title={NAME} subtitle={DESCRIPTION} />
+  </SectionContainer>
+
+  <SectionContainer class="pt-0 pb-3">
     <article>
       <div class="col-left">
         <h3>Estructura del curso</h3>
@@ -132,7 +135,7 @@ const DESCRIPTION = cursos.owd.description;
     </article>
   </SectionContainer>
 
-  <SectionContainer class="pt-2 pb-6">
+  <SectionContainer class="pt-3 pb-6">
     <NavigationCourses>
       <LinkButton href="/cursos" colorPrimary={false} slot="previous">
         <ArrowNarrowLeft /> Cursos
@@ -147,22 +150,8 @@ const DESCRIPTION = cursos.owd.description;
 <style lang="scss">
   @import "@styles/variables";
 
-  $h1-font-size: 54px;
-  $h1-font-size-md: 64px;
-  $max-width: 480px;
-
-  h1 {
-    font-size: $h1-font-size;
-    text-wrap: balance;
-  }
-
-  h2 {
-    font-size: $h1-font-size * 0.45;
-    text-wrap: balance;
-  }
-
   h3 {
-    font-size: $h1-font-size * 0.5;
+    font-size: 32px;
     border-bottom: 1px solid $color-secondary;
     padding-bottom: 2px;
     margin-bottom: 24px;
@@ -183,11 +172,12 @@ const DESCRIPTION = cursos.owd.description;
   }
 
   article {
-    padding-top: 48px;
+    $max-width: 480px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    row-gap: 48px;
+    gap: 48px;
 
     .col-left {
       width: 100%;
@@ -223,22 +213,8 @@ const DESCRIPTION = cursos.owd.description;
   }
 
   @media (width > 768px) {
-    h1 {
-      font-size: $h1-font-size-md;
-    }
-
-    h2 {
-      font-size: $h1-font-size-md * 0.45;
-    }
-
-    h3 {
-      font-size: $h1-font-size-md * 0.5;
-    }
-
     article {
       flex-direction: row;
-      column-gap: 48px;
-      justify-content: center;
       align-items: flex-start;
     }
   }

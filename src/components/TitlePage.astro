@@ -1,0 +1,22 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+}
+const { title, subtitle } = Astro.props;
+---
+
+{title !== "" && <h1 set:html={title} />}
+{subtitle !== "" && <h2 set:html={subtitle} />}
+
+<style>
+  h1 {
+    font-size: 64px;
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: 30px;
+    text-wrap: balance;
+  }
+</style>

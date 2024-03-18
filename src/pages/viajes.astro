@@ -3,6 +3,7 @@ import { info, links } from "@data/data.json";
 import { trips } from "@data/trips.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
+import TitlePage from "@components/TitlePage.astro";
 import ImgTrip from "@components/ImgTrip.astro";
 import ButtonUp from "@components/ButtonUp.astro";
 import InstagramIcon from "@icons/InstagramIcon.astro";
@@ -14,10 +15,11 @@ import FacebookIcon from "@icons/FacebookIcon.astro";
   description=`Viajá con nosotros a disfrutar de los mejores sitios de buceo del mundo, Tel.: ${info.phone}, mail: ${info.email}`
 >
   <SectionContainer class="pt-3 pb-3">
-    <h1 class="pb-3">
-      Cumplimos <span class="yearsSince1986"></span> años llevando gente a bucear!!!
-    </h1>
-    <h4>Seguinos en nuestras redes sociales y recibí todas las novedades de nuestros viajes</h4>
+    <TitlePage
+      title="Viajes de buceo por todo el mundo"
+      subtitle=`Más de <span class="yearsSince1986"></span> años llevando gente a bucear!!!`
+    />
+    <h4 class="pt-3">Seguinos en nuestras redes sociales y recibí todas las novedades de nuestros viajes</h4>
     <div class="social-networks pt-1">
       <a href={links.instagram} target="_blank" aria-label="Instagram" rel="noopener">
         <InstagramIcon class="social-networks__icons" />

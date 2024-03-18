@@ -1,13 +1,15 @@
 ---
-import { info } from "../data/data.json";
-import Layout from "../layouts/Layout.astro";
+import { info } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import TitlePage from "@components/TitlePage.astro";
 ---
 
 <Layout
   title=`Contacto ${info.name}`
   description=`Ponte en contacto con nosotros y empezá hoy tu curso de buceo PADI, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>CONTACTO</h1>
-  </section>
+  <SectionContainer class="pt-3 pb-3">
+    <TitlePage title="Contacto" subtitle="Atlántida Diving School" />
+  </SectionContainer>
 </Layout>

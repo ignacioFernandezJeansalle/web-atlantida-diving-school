@@ -1,13 +1,18 @@
 ---
-import { info } from "../data/data.json";
-import Layout from "../layouts/Layout.astro";
+import { info } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import TitlePage from "@components/TitlePage.astro";
 ---
 
 <Layout
   title=`Nosotros ${info.name}`
   description=`Formación y experiencia del staff de ${info.name}, Centro Internacional de Buceo, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
 >
-  <section>
-    <h1>NOSOTROS</h1>
-  </section>
+  <SectionContainer class="pt-3 pb-3">
+    <TitlePage
+      title="¿Por qué hacerlo con nostoros?"
+      subtitle=`Hace más de <span class="yearsSince1986"></span> años que formamos buzos recreativos!`
+    />
+  </SectionContainer>
 </Layout>

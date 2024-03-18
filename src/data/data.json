@@ -70,5 +70,37 @@
   },
   "prices": {
     "certification": "U$S 100.-"
-  }
+  },
+  "nosotros": [
+    {
+      "name": "Carlos Cúneo",
+      "description": "Director",
+      "number": "#65739",
+      "picture": "carlos-cuneo.webp"
+    },
+    {
+      "name": "Leo Cúneo",
+      "description": "Instructor",
+      "number": "#358017",
+      "picture": "leo-cuneo.webp"
+    },
+    {
+      "name": "Nacho Fernández",
+      "description": "Instructor",
+      "number": "#432488",
+      "picture": "nacho-fernandez.webp"
+    },
+    {
+      "name": "Andy Olmedo",
+      "description": "Instructora",
+      "number": "#520618",
+      "picture": "andy-olmedo.webp"
+    },
+    {
+      "name": "Maxi Ruich",
+      "description": "Instructor",
+      "number": "#523471",
+      "picture": "maxi-ruich.webp"
+    }
+  ]
 }

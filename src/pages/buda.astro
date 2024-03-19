@@ -1,8 +1,11 @@
 ---
-import { info } from "../data/data.json";
+import { info, links } from "../data/data.json";
 import Layout from "../layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import TitlePage from "@components/TitlePage.astro";
+import ListItemBuda from "@/components/ListItemBuda.astro";
+import LinkButton from "@components/LinkButton.astro";
+import WhatsappIcon from "@icons/WhatsappIcon.astro";
 ---
 
 <Layout
@@ -10,6 +13,98 @@ import TitlePage from "@components/TitlePage.astro";
   description=`Certificate con nosotros en nuestra cantera El Buda a solo 50Km de CABA, Tel.: ${info.phone}, mail: ${info.email}`
 >
   <SectionContainer class="pt-3 pb-3">
-    <TitlePage title="EL BUDA" subtitle="Espejo de agua para práctica y certificaciones de buceo" />
+    <TitlePage
+      title="Espejo de agua El Buda"
+      subtitle="Nuestro propio lugar para práctica y certificaciones de buceo"
+    />
+  </SectionContainer>
+
+  <SectionContainer class="pt-0 pb-3">
+    <article>
+      <ul>
+        <ListItemBuda> <b>Ubicación:</b> Benavidez, a 50 minutos de CABA. </ListItemBuda>
+        <ListItemBuda
+          ><b>Más rápido:</b> Sábados y domingos o cualquier día de la semana. Sin necesidad de viajar para certificar.</ListItemBuda
+        >
+        <ListItemBuda
+          ><b>Personalizado:</b> Solo grupos reducidos y con un máximo de dos personas por instructor.</ListItemBuda
+        >
+        <ListItemBuda> <b>Incluye:</b> Tanques y lastres. </ListItemBuda>
+        <ListItemBuda> <b>Profundidad maxima:</b> 12 metros. </ListItemBuda>
+      </ul>
+      <ul>
+        <ListItemBuda
+          >Contamos con un recorrido llamado <b>El camino de las viejas</b> por la cantida de viejas del agua que se ven
+          y <b>dos plataformas</b> para realizar los ejercicios. La pared sur nos permite hacer un recorrido desde las plataformas
+          hasta la playa.</ListItemBuda
+        >
+        <ListItemBuda><b>Comodidades:</b> Estacionamiento, baños, quinchos, bar, kayaks, etc.</ListItemBuda>
+        <ListItemBuda
+          >En tu visita está incluído el almuerzo: hamburguesa, papas fritas y bebida sin alcohol. Además de la remera
+          de regalo y la bitacora para los que certifican y completan las 4 inmersiones.</ListItemBuda
+        >
+      </ul>
+    </article>
+  </SectionContainer>
+
+  <SectionContainer class="pt-0 pb-6">
+    <picture>
+      <source media="(max-width: 576px)" srcset="/img/buda/hero-mobile-sm.webp" />
+      <source media="(max-width: 768px)" srcset="/img/buda/hero-mobile.webp" />
+      <source media="(max-width: 992px)" srcset="/img/buda/hero-desktop-md.webp" />
+      <source media="(max-width: 1200px)" srcset="/img/buda/hero-desktop-lg.webp" />
+      <source media="(max-width: 1400px)" srcset="/img/buda/hero-desktop-xl.webp" />
+      <source media="(min-width: 1401px)" srcset="/img/buda/hero-desktop-xxl.webp" />
+      <img src="/img/buda/hero-mobile-sm.webp" alt="Instructor de Atlántida, Leo Cuneo, buceando" loading="eager" />
+    </picture>
+    <div class="button">
+      <LinkButton href={links.whatsapp} colorPrimary={false} target="_blank">
+        Contacto <WhatsappIcon />
+      </LinkButton>
+    </div>
   </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  article {
+    padding-inline: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+    }
+  }
+
+  picture {
+    img {
+      display: block;
+      width: 100%;
+      box-shadow: $box-shadow-primary;
+    }
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+  }
+
+  @media (width > 768px) {
+    article {
+      padding-inline: 32px;
+      flex-direction: row;
+      gap: 72px;
+    }
+  }
+</style>

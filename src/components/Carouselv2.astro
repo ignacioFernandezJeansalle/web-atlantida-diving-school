@@ -23,7 +23,7 @@ const { items, pagination, controls, interval } = Astro.props;
         <nav class="carousel__pagination">
           {items.map((item: string, index: number) => {
             const className = index === 0 ? "active" : "";
-            return <button class={className} />;
+            return <button class={className} aria-label={`Activar slide ${index + 1}`} />;
           })}
         </nav>
       )

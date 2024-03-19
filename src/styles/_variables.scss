@@ -44,29 +44,3 @@ $color-footer: #d9d9d9;
 //shadow
 $box-shadow-primary: 0 4px 8px 0 rgba(0, 104, 120, 0.35);
 $box-shadow-secondary: 0 4px 8px 0 rgba(220, 0, 84, 0.35);
-
-//--color-text-ligth: rgb(250, 250, 250);
-//--color-text-ligth-hover: rgb(229, 229, 229);
-//--color-text-dark: rgb(10, 10, 10);
-//--color-text-dark-hover: var(--color-primary);
-//--color-primary-body: #f2f2f2;
-//--color-secondary-body: #eaeaea;
-//--color-footer: #d9d9d9;
-
-/************* HASTA ACA *****************/
-
-/***** form *****/
-$form-font-family: $font-family;
-$form-font-style: $font-style;
-$form-font-weight: 300;
-$form-letter-spacing: $font-letter-spacing;
-$form-color: $font-color-max;
-
-//placeholder
-$form-placeholder-font-weight: 200;
-
-//focus
-$form-focus-outline: $color-secondary solid thin;
-
-/***** button *****/
-$button-bg-color: $color-secondary;

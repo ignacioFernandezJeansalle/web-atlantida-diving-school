@@ -54,7 +54,7 @@ import CardNosotros from "@components/CardNosotros.astro";
     </ul>
   </SectionContainer>
 
-  <SectionContainer class="pt-3 pb-3">
+  <SectionContainer class="pt-3 pb-4 highlight-background">
     <h3 class="pb-3">Certificadora PADI ¿Qué significa?</h3>
     <ul class="grid padi">
       <li>
@@ -116,6 +116,7 @@ import CardNosotros from "@components/CardNosotros.astro";
 
   .padi {
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr));
+    background: $color-body-primary;
   }
 
   .cards {

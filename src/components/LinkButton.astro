@@ -2,13 +2,14 @@
 interface Props {
   href: string;
   colorPrimary: boolean;
+  target?: string;
 }
-const { href, colorPrimary } = Astro.props;
+const { href, colorPrimary, target } = Astro.props;
 const color = colorPrimary ? "primary" : "secondary";
 ---
 
 <div>
-  <a class={color} href={href}>
+  <a class={color} href={href} target={target}>
     <span>
       <slot />
     </span>

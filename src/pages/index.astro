@@ -9,6 +9,7 @@ import LiteYoutube from "@components/LiteYoutube.astro";
 import LinkButton from "@components/LinkButton.astro";
 import LinkCourse from "@components/LinkCourse.astro";
 import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
+import WhatsappIcon from "@icons/WhatsappIcon.astro";
 import ScubaMask from "@icons/ScubaMask.astro";
 import ImgTrip from "@components/ImgTrip.astro";
 
@@ -151,8 +152,8 @@ const CAROUSEL = [
           <li><span><ScubaMask />Domingos consultar.</span></li>
         </ul>
       </div>
-      <LinkButton href="/contacto" colorPrimary={false}>
-        Contacto <ArrowNarrowRight />
+      <LinkButton href={links.whatsapp} colorPrimary={false} target="_blank">
+        Contacto <WhatsappIcon />
       </LinkButton>
     </article>
   </SectionContainer>

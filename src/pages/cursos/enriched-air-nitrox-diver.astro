@@ -1,12 +1,12 @@
 ---
-import { info, cursos, prices } from "@data/data.json";
+import { info, links, cursos, prices } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import TitlePage from "@components/TitlePage.astro";
 import ListItemCourse from "@components/ListItemCourse.astro";
 import NavigationCourses from "@components/NavigationCourses.astro";
 import LinkButton from "@components/LinkButton.astro";
-import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
+import WhatsappIcon from "@icons/WhatsappIcon.astro";
 import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
 const NAME = cursos.eand.name;
 const DESCRIPTION = cursos.eand.description;
@@ -110,8 +110,8 @@ const DESCRIPTION = cursos.eand.description;
       <LinkButton href="/cursos/traje-seco" colorPrimary={false} slot="previous">
         <ArrowNarrowLeft /> Traje seco
       </LinkButton>
-      <LinkButton href="/contacto" colorPrimary={false} slot="next">
-        Contacto <ArrowNarrowRight />
+      <LinkButton href={links.whatsapp} colorPrimary={false} target="_blank" slot="next">
+        Contacto <WhatsappIcon />
       </LinkButton>
     </NavigationCourses>
   </SectionContainer>

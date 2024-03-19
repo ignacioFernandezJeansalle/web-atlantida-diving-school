@@ -8,9 +8,10 @@ const { videoId, title, backgroundImage } = Astro.props;
 ---
 
 <lite-youtube videoid={videoId} style={`background-image: url('${backgroundImage}');`} role="button">
-  <a href={`https://youtube.com/watch?v=${videoId}`} class="lty-playbtn" title="Reproducir">
+  <button class="lty-playbtn" title="Reproducir">
+    <!-- si es un <a> ==> href={`https://youtube.com/watch?v=${videoId}`} -->
     <span class="lyt-visually-hidden">{title}</span>
-  </a>
+  </button>
 </lite-youtube>
 
 <script>
@@ -314,14 +315,14 @@ const { videoId, title, backgroundImage } = Astro.props;
     position: absolute;
     cursor: pointer;
     z-index: 1;
-    filter: grayscale(100%);
+    filter: none;
     transition: filter 0.1s cubic-bezier(0, 0, 0.2, 1);
     border: 0;
   }
 
   lite-youtube:hover > .lty-playbtn,
   lite-youtube .lty-playbtn:focus {
-    filter: none;
+    filter: brightness(0.85);
   }
 
   /* Post-click styles */

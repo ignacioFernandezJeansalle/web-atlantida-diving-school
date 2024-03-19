@@ -16,11 +16,12 @@ body {
 
 @font-face {
   font-family: "OstrichSans-Heavy";
-  src: url("/fonts/OstrichSans-Heavy.otf");
+  src: url("/fonts/OstrichSans-Heavy.otf") format("opentype");
+  font-display: swap;
 }
 
 :is(h1, h2, h3) {
-  font-family: "OstrichSans-Heavy";
+  font-family: "OstrichSans-Heavy", sans-serif;
   text-align: center;
 }
 

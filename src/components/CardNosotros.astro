@@ -1,0 +1,52 @@
+---
+const { individuo } = Astro.props;
+const { name, description, number, picture } = individuo;
+---
+
+<article>
+  <img src=`/public/img/nosotros/${picture}` alt=`${description} ${name}` />
+  <div>
+    <h5>{name}</h5>
+    <h4>{description}</h4>
+    <p>{number}</p>
+  </div>
+</article>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  article {
+    display: flex;
+    flex-direction: column;
+    box-shadow: $box-shadow-primary;
+    border-radius: 4px;
+    overflow: hidden;
+    background: $color-body-secondary;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 280px;
+    }
+
+    div {
+      padding: 16px;
+      text-align: center;
+
+      h5 {
+        font-size: 24px;
+      }
+
+      h4 {
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      p {
+        font-size: 16px;
+        font-weight: 700;
+      }
+    }
+  }
+</style>

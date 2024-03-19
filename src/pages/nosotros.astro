@@ -1,8 +1,9 @@
 ---
-import { info } from "@data/data.json";
+import { info, nosotros } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import TitlePage from "@components/TitlePage.astro";
+import CardNosotros from "@components/CardNosotros.astro";
 ---
 
 <Layout
@@ -15,4 +16,114 @@ import TitlePage from "@components/TitlePage.astro";
       subtitle=`Hace más de <span class="yearsSince1986"></span> años que formamos buzos recreativos!`
     />
   </SectionContainer>
+
+  <SectionContainer class="pt-0 pb-3">
+    <ul class="grid">
+      <li>
+        <span>
+          Porque Atlántida existe desde 1986! Lo más importante a tener en cuenta al elegir un curso o un viaje de buceo
+          es la <b>formación y experiencia de los instructores y guías</b> que te llevarán a bucear.
+        </span>
+      </li>
+      <li>
+        <span>
+          Porque por nuestras aulas ya han pasado <b>7500 alumnos</b> certificados en todos los niveles y ya hemos hecho
+          más de <b>150 viajes</b> a todo el mundo!
+        </span>
+      </li>
+      <li>
+        <span>
+          Porque con nosotros vas a poder realizar el curso a tu conveniencia. No trabajamos con grupos grandes, el
+          curso no depende de un día específico ya que <b>nos encanta el trato personalizado</b>, así que solo tenemos
+          que coordinar día, horario, cantidad de clases semanales y arrancar!
+        </span>
+      </li>
+      <li>
+        <span>
+          Porque <b>nos apasiona lo que hacemos</b>. Amamos el buceo, amamos el mar y nos sobran las ganas para hacer
+          que más personas también se apasionen por lo mismo.
+        </span>
+      </li>
+      <li>
+        <span>
+          Porque nos encanta que las clases sean divertidas, siempre van a sobrar risas, va a ser un momento de
+          desconexión de la semana y además vas a llevarte amigos. Y porque nuestro principal objetivo es que te sientas
+          cómodo, seguro y sin presiones.
+        </span>
+      </li>
+    </ul>
+  </SectionContainer>
+
+  <SectionContainer class="pt-3 pb-3">
+    <h3 class="pb-3">Certificadora PADI ¿Qué significa?</h3>
+    <ul class="grid padi">
+      <li>
+        <span>
+          <b>PADI</b> es la certificadora internacional de buceo recreativo de mayor reconocimiento a nivel mundial. Desde
+          sus comienzos y hasta el día de hoy ha sido líder y ejemplo para las demás certificadoras y por eso es la <b
+            >más reconocida en todo el mundo.</b
+          >
+        </span>
+      </li>
+      <li>
+        <span>
+          En Atlántida ofrecemos los distintos cursos de buceo, utilizando la metodología PADI, lo cual te permitirá
+          bucear en la parte del mundo que desees. <b>Todos nuestros instructores son instructores PADI</b>.
+        </span>
+      </li>
+      <li>
+        <span>
+          <b>Nos encantaría que formes parte de la familia Atlántida</b>. Pero si elegís bucear con otros, te
+          recomendamos que consultes que certificadora utilizan y que te asegures que sea reconocida a nivel
+          internacional!
+        </span>
+      </li>
+    </ul>
+  </SectionContainer>
+
+  <SectionContainer class="pt-3 pb-6">
+    <h3 class="pb-3">Nuestro staff</h3>
+    <div class="cards">
+      {nosotros.map((individuo) => <CardNosotros individuo={individuo} />)}
+    </div>
+  </SectionContainer>
 </Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  .grid {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 350px), 1fr));
+    gap: 8px;
+
+    li {
+      display: flex;
+      align-items: center;
+      padding: 32px;
+      font-size: 18px;
+      box-shadow: 0px 1px 2px 0 rgba(0, 104, 120, 0.35);
+    }
+
+    li:nth-child(1) {
+      grid-row: span 2;
+      background: rgba($color-primary, 0.9);
+      color: $font-color-min;
+      font-size: 24px;
+    }
+  }
+
+  .padi {
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr));
+  }
+
+  .cards {
+    max-width: 992px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 48px;
+  }
+</style>

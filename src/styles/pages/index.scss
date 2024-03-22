@@ -11,6 +11,8 @@
     img {
       display: block;
       width: 100%;
+      height: auto; /* PROBANDO */
+      aspect-ratio: 768 / 550; /* PROBANDO */
     }
   }
 
@@ -29,6 +31,8 @@
       img {
         display: block;
         width: 100%;
+        height: auto;
+        aspect-ratio: 200 / 218;
       }
     }
 
@@ -38,6 +42,8 @@
       img {
         display: block;
         width: 100%;
+        height: auto;
+        aspect-ratio: 283 / 100;
       }
     }
   }
@@ -70,6 +76,18 @@
       left: 16px;
       width: 29%;
     }
+  }
+}
+
+@media (width > 576px) {
+  .homepage-hero__background img {
+    aspect-ratio: 850 / 720;
+  }
+}
+
+@media (width > 768px) {
+  .homepage-hero__background img {
+    aspect-ratio: 992 / 447;
   }
 }
 

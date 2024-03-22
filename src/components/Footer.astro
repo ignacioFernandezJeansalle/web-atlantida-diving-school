@@ -35,7 +35,7 @@ import TwitterIcon from "@icons/TwitterIcon.astro";
       <p>{info.email}</p>
     </div>
 
-    <a class="footer__logo-Padi" href={links.padi} target="_blank" aria-label="PADI" rel="noopener">
+    <a class="footer__logo-padi" href={links.padi} target="_blank" aria-label="PADI" rel="noopener">
       <img src="/img/logo-padi-transp-black.webp" alt="Logo PADI" title="Logo PADI" />
     </a>
   </div>
@@ -46,7 +46,7 @@ import TwitterIcon from "@icons/TwitterIcon.astro";
         href={links.developer}
         target="_blank"
         aria-label="Linkedin"
-        rel="noopener">[ Nacho FJ ]</a
+        rel="noopener">/* Nacho FJ */</a
       > - Todas las fotografías utilizadas en esta página son propiedad exclusiva de Atlantida Diving School, el uso no autorizado
       de las mismas está penado por la ley.
     </p>
@@ -54,7 +54,7 @@ import TwitterIcon from "@icons/TwitterIcon.astro";
 </footer>
 
 <style lang="scss">
-  @import "../styles/variables";
+  @import "@styles/variables";
 
   .footer {
     background: $color-footer;
@@ -92,6 +92,14 @@ import TwitterIcon from "@icons/TwitterIcon.astro";
 
     &__contact-info {
       text-align: center;
+    }
+
+    &__logo-padi {
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 44 / 60;
+      }
     }
 
     &__legal {

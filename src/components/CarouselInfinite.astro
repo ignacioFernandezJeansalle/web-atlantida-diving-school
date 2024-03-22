@@ -11,80 +11,57 @@ const numberOfImages = images.length;
 ---
 
 <div class="slider">
-  <div class="slide-track">
-    {images.map((image) => <img class="slide" src={image.src} alt={image.alt} />)}
-    {images.map((image) => <img class="slide" src={image.src} alt={image.alt} />)}
-  </div>
+  <ul>
+    {
+      images.map((image) => (
+        <li>
+          <img class="slide" src={image.src} alt={image.alt} />
+        </li>
+      ))
+    }
+  </ul>
+  <ul aria-hidden="true">
+    {
+      images.map((image) => (
+        <li>
+          <img class="slide" src={image.src} alt={image.alt} />
+        </li>
+      ))
+    }
+  </ul>
 </div>
 
-<style lang="scss" define:vars={{ numberOfImages }}>
-  @import "@styles/variables";
+<style define:vars={{ numberOfImages }}>
+  .slider {
+    display: flex;
+    --gap: 16px;
+    gap: var(--gap);
+    overflow: hidden;
+  }
 
-  $width-slide: 410px;
-  $column-gap: 16px;
-  $width-slide-track: calc(($width-slide + $column-gap) * var(--numberOfImages) * 2 - $column-gap);
-  $translateX: calc(($width-slide + $column-gap) * var(--numberOfImages) * -1);
-  $animationSpeed: calc(7s * var(--numberOfImages));
+  .slider ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--gap);
+
+    animation: scroll calc(5s * var(--numberOfImages)) linear infinite;
+  }
+
+  /* .slider:hover ul {
+    animation-play-state: paused;
+  } */
 
   @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX($translateX);
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
 
-  .slider {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-
-    /* &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 32px;
-      top: 0;
-      bottom: 0;
-      height: auto;
-      z-index: 2;
-    }
-
-    &::before {
-      background: linear-gradient(to right, rgba(242, 242, 242, 1) 40%, rgba(242, 242, 242, 0) 100%);
-      left: 0;
-    }
-
-    &::after {
-      background: linear-gradient(to left, rgba(242, 242, 242, 1) 40%, rgba(242, 242, 242, 0) 100%);
-      right: 0;
-    } */
-
-    .slide-track {
-      animation: scroll $animationSpeed linear infinite;
-      display: flex;
-      column-gap: $column-gap;
-      width: $width-slide-track;
-
-      /* &:hover {
-        animation-play-state: paused;
-      } */
-    }
-
-    .slide {
-      width: $width-slide;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-    }
+  .slide {
+    width: 410px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
   }
-
-  /* @media (width <= 768px) {
-    .slider {
-      &::before,
-      &::after {
-        display: none;
-      }
-    }
-  } */
 </style>

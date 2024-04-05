@@ -31,7 +31,7 @@ const { items, pagination, controls, interval } = Astro.props;
     {
       controls && (
         <div class="carousel__controls">
-          <button id="carousel__controls-prev" class="carousel__controls-prev">
+          <button class="carousel__controls-prev" aria-label="Ir al slide anterior">
             <svg
               width="24"
               height="24"
@@ -48,7 +48,7 @@ const { items, pagination, controls, interval } = Astro.props;
               </>
             </svg>
           </button>
-          <button id="carousel__controls-next" class="carousel__controls-next">
+          <button class="carousel__controls-next" aria-label="Ir al slide siguiente">
             <svg
               width="24"
               height="24"

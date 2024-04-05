@@ -4,10 +4,10 @@ const { name, description, number, picture } = individuo;
 ---
 
 <article>
-  <img src=`/public/img/nosotros/${picture}` alt=`${description} ${name}` />
+  <img src=`/img/nosotros/${picture}` alt=`${description} ${name}` />
   <div>
-    <h5>{name}</h5>
-    <h4>{description}</h4>
+    <h4>{name}</h4>
+    <h5>{description}</h5>
     <p>{number}</p>
   </div>
 </article>
@@ -27,6 +27,7 @@ const { name, description, number, picture } = individuo;
       display: block;
       width: 100%;
       height: auto;
+      aspect-ratio: 435 / 500;
       max-width: 280px;
     }
 
@@ -34,11 +35,11 @@ const { name, description, number, picture } = individuo;
       padding: 16px;
       text-align: center;
 
-      h5 {
+      h4 {
         font-size: 24px;
       }
 
-      h4 {
+      h5 {
         font-size: 18px;
         font-weight: 400;
       }

@@ -53,12 +53,11 @@ import WhatsappIcon from "@icons/WhatsappIcon.astro";
       <source media="(max-width: 768px)" srcset="/img/buda/hero-mobile.webp" />
       <source media="(max-width: 992px)" srcset="/img/buda/hero-desktop-md.webp" />
       <source media="(max-width: 1200px)" srcset="/img/buda/hero-desktop-lg.webp" />
-      <source media="(max-width: 1400px)" srcset="/img/buda/hero-desktop-xl.webp" />
-      <source media="(min-width: 1401px)" srcset="/img/buda/hero-desktop-xxl.webp" />
+      <source media="(min-width: 1201px)" srcset="/img/buda/hero-desktop-xl.webp" />
       <img src="/img/buda/hero-mobile-sm.webp" alt="Instructor de Atlántida, Leo Cuneo, buceando" loading="eager" />
     </picture>
     <div class="button">
-      <LinkButton href={links.whatsapp} colorPrimary={false} target="_blank">
+      <LinkButton href={links.whatsapp} colorPrimary={true} target="_blank">
         Contacto <WhatsappIcon />
       </LinkButton>
     </div>
@@ -89,6 +88,8 @@ import WhatsappIcon from "@icons/WhatsappIcon.astro";
     img {
       display: block;
       width: 100%;
+      height: auto;
+      aspect-ratio: 768 / 415;
       box-shadow: $box-shadow-primary;
     }
   }
@@ -100,11 +101,41 @@ import WhatsappIcon from "@icons/WhatsappIcon.astro";
     margin-top: 48px;
   }
 
+  @media (width > 576px) {
+    picture {
+      img {
+        aspect-ratio: 850 / 460;
+      }
+    }
+  }
+
   @media (width > 768px) {
     article {
       padding-inline: 32px;
       flex-direction: row;
       gap: 72px;
+    }
+
+    picture {
+      img {
+        aspect-ratio: 992 / 538;
+      }
+    }
+  }
+
+  @media (width > 992px) {
+    picture {
+      img {
+        aspect-ratio: 1200 / 652;
+      }
+    }
+  }
+
+  @media (width > 1200px) {
+    picture {
+      img {
+        aspect-ratio: 1400 / 761;
+      }
     }
   }
 </style>

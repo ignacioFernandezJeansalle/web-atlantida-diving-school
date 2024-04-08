@@ -77,7 +77,7 @@ import ListItemCourse from "@components/ListItemCourse.astro";
   @import "@styles/variables";
 
   h3 {
-    font-size: 32px;
+    font-size: 24px;
     border-bottom: 1px solid $color-secondary;
     padding-bottom: 2px;
     margin-bottom: 24px;
@@ -115,6 +115,10 @@ import ListItemCourse from "@components/ListItemCourse.astro";
   }
 
   @media (width > 768px) {
+    h3 {
+      font-size: 32px;
+    }
+
     article {
       flex-direction: row;
       align-items: flex-start;

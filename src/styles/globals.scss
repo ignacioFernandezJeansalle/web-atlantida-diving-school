@@ -14,14 +14,9 @@ body {
   background: $color-body-primary;
 }
 
-@font-face {
-  font-family: "OstrichSans-Heavy";
-  src: url("/fonts/OstrichSans-Heavy.otf") format("opentype");
-  font-display: swap;
-}
-
 :is(h1, h2, h3) {
-  font-family: "OstrichSans-Heavy", sans-serif;
+  font-family: "Ostrich Sans", sans-serif;
+  font-weight: 900;
   text-align: center;
 }
 

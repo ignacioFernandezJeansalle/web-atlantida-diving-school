@@ -1,5 +1,5 @@
 ---
-import { info, nosotros } from "@data/data.json";
+import { info, nosotros, links } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import TitlePage from "@components/TitlePage.astro";
@@ -54,7 +54,13 @@ import CardNosotros from "@components/CardNosotros.astro";
   </SectionContainer>
 
   <SectionContainer class="pt-3 pb-4 highlight-background">
-    <h3 class="pb-3">Certificadora PADI</h3>
+    <div class="pb-3 title-padi">
+      <h3 class="">Certificadora</h3>
+      <a href={links.padi} target="_blank" aria-label="PADI" rel="noopener">
+        <img src="/img/logo-padi-transp-color-horiz.webp" alt="Logo PADI" title="Logo PADI" />
+      </a>
+    </div>
+
     <ul class="grid padi">
       <li>
         <span>
@@ -116,6 +122,20 @@ import CardNosotros from "@components/CardNosotros.astro";
   .padi {
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 500px), 1fr));
     background: $color-body-primary;
+  }
+
+  .title-padi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 16px;
+    row-gap: 8px;
+
+    a img {
+      height: 56px;
+      width: auto;
+    }
   }
 
   .cards {

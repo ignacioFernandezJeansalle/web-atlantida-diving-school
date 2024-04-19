@@ -69,7 +69,8 @@
     "dan": "https://apps.dan.org/join-dan/?do=dw&rc=w36730"
   },
   "prices": {
-    "certification": "U$S 100.-"
+    "certificationAndManual": "U$S 100.-",
+    "certification": "U$S 80.-"
   },
   "nosotros": [
     {

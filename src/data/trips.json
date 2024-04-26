@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202404-01",
+      "name": "Isla de Pascua, abril 2024",
+      "img": "202404-isla-de-pascua.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202403-01",
       "name": "Bonaire, marzo 2024",
       "img": "202403-bonaire.webp",
@@ -562,8 +569,8 @@
     },
     {
       "id": "201603-03",
-      "name": "Isla de Pascuas, marzo 2016",
-      "img": "201603-isla-de-pascuas.webp",
+      "name": "Isla de Pascua, marzo 2016",
+      "img": "201603-isla-de-pascua.webp",
       "withTitle": false,
       "facebookAlbum": ""
     },

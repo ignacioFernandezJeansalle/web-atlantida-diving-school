@@ -11,8 +11,9 @@ import Footer from "@components/Footer.astro";
 interface Props {
   title: string;
   description: string;
+  canonicalURL: string;
 }
-const { title, description } = Astro.props;
+const { title, description, canonicalURL } = Astro.props;
 ---
 
 <!doctype html>
@@ -27,6 +28,7 @@ const { title, description } = Astro.props;
       name="keywords"
       content="BUCEO, BUCEO PADI ARGENTINA, Cursos de Buceo, Viajes de Buceo, Escuela de Buceo PADI en Capital Federal, Clases de Buceo, Buceo en Argentina, Open Water Diver, PADI Dive Center, Atlantida Diving School, SCUBA, centro internacional de buceo, cursos, viajes buceo, salidas, diving, dive, divecenter, buenos aires buceo, puerto madryn, buceo en patagonia, argentina, buceo en caribe, buceo en brasil, equipos de buceo, tanque, chalecos, trajes, neoprene, reguladores, buzo, bucear, aprender, la cuba de campo de mayo, buceo profesional, advanced, rescate, divemaster, instructor, nitrox, buceo profundo, experiencia, videosub, fotosub, efr, primeros auxilio, canteras salto uruguay, el terrible, padi divecheck, orca, ballenas, cozumel, submarinismo, agua, pileta climatizada, temporada verano, oxigeno, camara hiperbarica"
     />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href="/favicon.png" />
   </head>
   <body>

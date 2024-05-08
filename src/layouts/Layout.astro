@@ -12,8 +12,10 @@ interface Props {
   title: string;
   description: string;
   canonicalURL: string;
+  ogTitle: string;
+  ogDescription: string;
 }
-const { title, description, canonicalURL } = Astro.props;
+const { title, description, canonicalURL, ogTitle, ogDescription } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,6 +25,9 @@ const { title, description, canonicalURL } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={ogDescription} />
+    <meta property="og:image" content="https://www.divingschool.com.ar/img/home/slide-background-mobile-sm.webp" />
     <meta name="author" content="Ignacio Fernández Jeansalle" />
     <meta
       name="keywords"

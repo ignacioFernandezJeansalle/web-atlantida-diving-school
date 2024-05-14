@@ -1,0 +1,186 @@
+---
+import { info, cursos, links } from "@data/data.json";
+import { removeAccents } from "@utils/removeAccents";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import TitlePage from "@components/TitlePage.astro";
+import NavigationCourses from "@components/NavigationCourses.astro";
+import LinkButton from "@components/LinkButton.astro";
+import WhatsappIcon from "@icons/WhatsappIcon.astro";
+import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
+import CameraIcon from "@icons/CameraIcon.astro";
+import VideoIcon from "@icons/VideoIcon.astro";
+import ScubaMask from "@icons/ScubaMask.astro";
+
+const NAME = cursos.fotografia.name;
+const DESCRIPTION = cursos.fotografia.description;
+const NAME_NORM = removeAccents(NAME);
+const DESCRIPTION_NORM = removeAccents(DESCRIPTION);
+---
+
+<Layout
+  title=`Curso ${NAME} | ${info.name}`
+  description=`Curso ${NAME} | ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  canonicalURL="https://www.divingschool.com.ar/cursos/fotografia/"
+  ogTitle="¿Quérés scar fotos en el fondo del mar?"
+  ogDescription="Convertite en fotógrafo subacuático, sumate a la mejor escuela de Argentina."
+>
+  <SectionContainer class="pt-3 pb-3">
+    <TitlePage title={NAME_NORM} subtitle={DESCRIPTION_NORM} />
+  </SectionContainer>
+
+  <SectionContainer class="pt-0 pb-3">
+    <div class="description-course">
+      <ul class="col">
+        <li class="pb-2">
+          El curso de video y fotografía submarina está adaptado a los tiempos que corren. Hoy en día es casi imposible
+          pensar en hacer fotos y no hacer videos. Ambos oficios, el de fotógrafo y camarógrafo están íntimamente
+          ligados y supone un desafío la realización de ambas actividades. Por este motivo, <b
+            >el curso de video y fotografía subacuática está dividido en dos partes:</b
+          >
+        </li>
+        <li><CameraIcon /></li>
+        <li class="pb-2">
+          La <b>primera parte</b> está dedicada a conocer en detalle como está conformado un equipo de foto/video submarino,
+          que cámaras son las más convenientes en cada caso, analizar estos equipos y conocer sus funciones. La luz bajo
+          el agua sufre transformaciones grandísimas debido al medio acuático, veremos la forma correcta de actuar utilizando
+          la luz ambiente y artificial. Te daremos muchos consejos pre y post inmersión para que tu equipo y vos estén bajo
+          un entorno seguro durante las inmersiones. En la práctica que haremos al terminar la primera clase aplicaremos
+          lo incorporado y luego al salir editaremos algunas fotografías tomadas por los alumnos.
+        </li>
+      </ul>
+      <ul class="col">
+        <li><VideoIcon /></li>
+        <li class="pb-2">
+          La <b>segunda parte</b>, centrada en el video, aborda aspectos clave como el manejo de la cámara, la
+          composición y el uso del argumento y el guión, lo que proporciona una comprensión completa de cómo crear
+          videos submarinos de calidad. La edición de un reel al finalizar la segunda parte es una manera efectiva de
+          reunir y mostrar el trabajo realizado durante el curso. Con este curso mejorarás notablemente tus habilidades,
+          las fotografías y videos que grabes darán un salto de calidad.
+        </li>
+        <li><ScubaMask /></li>
+        <li class="pb-2">
+          Precio: <b>Consultar!</b><br />
+          <u>Incluye:</u> Todos los equipos de buceo para las prácticas en la pileta.
+        </li>
+      </ul>
+    </div>
+  </SectionContainer>
+
+  <SectionContainer class="pt-0 pb-3">
+    <ul class="grid">
+      <li class="vertical">
+        <img
+          src="/img/cursos/fotografia/fotografia004.webp"
+          alt="Alumno haciendo el curso de fotografía en pileta y fotografiando objetos."
+        />
+      </li>
+      <li>
+        <img
+          src="/img/cursos/fotografia/fotografia001.webp"
+          alt="Alumno haciendo el curso de fotografía en pileta y fotografiando objetos"
+        />
+      </li>
+      <li>
+        <img
+          src="/img/cursos/fotografia/fotografia002.webp"
+          alt="Alumno haciendo el curso de fotografía en pileta y fotografiando objetos"
+        />
+      </li>
+      <li>
+        <img
+          src="/img/cursos/fotografia/fotografia003.webp"
+          alt="Alumno haciendo el curso de fotografía en pileta y fotografiando objetos"
+        />
+      </li>
+      <li class="vertical">
+        <img
+          src="/img/cursos/fotografia/fotografia006.webp"
+          alt="Alumno haciendo el curso de fotografía en pileta y fotografiando objetos"
+        />
+      </li>
+      <li>
+        <img
+          src="/img/cursos/fotografia/fotografia007.webp"
+          alt="Alumno haciendo el curso de fotografía en pileta y fotografiando objetos"
+        />
+      </li>
+      <li>
+        <img
+          src="/img/cursos/fotografia/fotografia012.webp"
+          alt="Alumno haciendo el curso de fotografía en pileta y fotografiando objetos"
+        />
+      </li>
+    </ul>
+  </SectionContainer>
+
+  <SectionContainer class="pt-3 pb-6">
+    <NavigationCourses>
+      <LinkButton href="/cursos/enriched-air-nitrox-diver" colorPrimary={true} slot="previous">
+        <ArrowNarrowLeft /> Enriched Air Nitrox Diver
+      </LinkButton>
+      <LinkButton href={links.whatsapp} colorPrimary={true} target="_blank" slot="next">
+        Contacto <WhatsappIcon />
+      </LinkButton>
+    </NavigationCourses>
+  </SectionContainer>
+</Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  .description-course {
+    display: flex;
+    flex-direction: column;
+    max-width: 480px;
+    margin-inline: auto;
+  }
+
+  .grid {
+    max-width: 480px;
+    margin-inline: auto;
+    display: grid;
+    place-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+    grid-auto-rows: min-content;
+    gap: 4px;
+
+    li {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    li:last-child {
+      display: none;
+    }
+
+    .vertical {
+      grid-row: span 2;
+    }
+  }
+
+  @media (width > 768px) {
+    .description-course {
+      flex-direction: row;
+      max-width: none;
+      column-gap: 64px;
+
+      .col {
+        width: 50%;
+      }
+    }
+
+    .grid {
+      max-width: none;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+      grid-template-columns: 1fr 1fr 1fr;
+
+      li:last-child {
+        display: list-item;
+      }
+    }
+  }
+</style>

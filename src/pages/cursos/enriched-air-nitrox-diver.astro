@@ -6,8 +6,8 @@ import TitlePage from "@components/TitlePage.astro";
 import ListItemCourse from "@components/ListItemCourse.astro";
 import NavigationCourses from "@components/NavigationCourses.astro";
 import LinkButton from "@components/LinkButton.astro";
-import WhatsappIcon from "@icons/WhatsappIcon.astro";
 import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
+import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
 const NAME = cursos.eand.name;
 const DESCRIPTION = cursos.eand.description;
 ---
@@ -112,8 +112,9 @@ const DESCRIPTION = cursos.eand.description;
       <LinkButton href="/cursos/traje-seco" colorPrimary={true} slot="previous">
         <ArrowNarrowLeft /> Traje seco
       </LinkButton>
-      <LinkButton href={links.whatsapp} colorPrimary={true} target="_blank" slot="next">
-        Contacto <WhatsappIcon />
+      <LinkButton href="/cursos/fotografia" colorPrimary={true} slot="next">
+        Fotografía subacuática
+        <ArrowNarrowRight />
       </LinkButton>
     </NavigationCourses>
   </SectionContainer>

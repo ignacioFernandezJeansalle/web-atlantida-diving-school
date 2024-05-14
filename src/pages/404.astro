@@ -1,0 +1,57 @@
+---
+import { info, links, cursos } from "@data/data.json";
+import Layout from "@layouts/Layout.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+---
+
+<Layout
+  title=`Página no encontrada - Buceo ${info.name}`
+  description=`Escuela de Buceo, ${info.divecenter}, ${info.address}, Tel.: ${info.phone}, mail: ${info.email}`
+  ogTitle="¿Qué es el buceo recreativo?"
+  ogDescription="¿Nunca respiraste bajo el agua? Éste es el momento, sumate a la mejor escuela de Argentina."
+>
+  <SectionContainer class="pt-6 pb-6 e404">
+    <h1 class="pb-1">{info.name} / error 404</h1>
+    <h2 class="pb-3">Pagina no encontrada</h2>
+    <article>
+      <p class="pb-1">¡Hola! Lo sentimos, pero no pudimos encontrar lo que buscabas.</p>
+      <p>Navegá por el menú para saber más sobre {info.name} y el mundo del buceo!</p>
+    </article>
+
+    <!-- <Error
+			error="404"
+			message="Página no encontrada"
+			contextMessage="¡Hola! Lo sentimos, pero no pudimos encontrar lo que buscabas. Verifica que la dirección URL sea correcta."
+		/> -->
+  </SectionContainer>
+</Layout>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  .e404 {
+    min-height: 60svh;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  article {
+    padding: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $color-body-secondary;
+    border-radius: 4px;
+  }
+
+  p {
+    font-size: 20px;
+    text-wrap: balance;
+  }
+</style>

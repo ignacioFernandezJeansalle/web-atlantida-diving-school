@@ -1,5 +1,5 @@
 ---
-import { info, links, cursos } from "@data/data.json";
+import { info } from "@data/data.json";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 ---
@@ -17,12 +17,6 @@ import SectionContainer from "@components/SectionContainer.astro";
       <p class="pb-1">¡Hola! Lo sentimos, pero no pudimos encontrar lo que buscabas.</p>
       <p>Navegá por el menú para saber más sobre {info.name} y el mundo del buceo!</p>
     </article>
-
-    <!-- <Error
-			error="404"
-			message="Página no encontrada"
-			contextMessage="¡Hola! Lo sentimos, pero no pudimos encontrar lo que buscabas. Verifica que la dirección URL sea correcta."
-		/> -->
   </SectionContainer>
 </Layout>
 

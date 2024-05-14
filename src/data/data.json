@@ -10,7 +10,7 @@
   "cursos": {
     "owd": {
       "name": "Open Water Diver",
-      "description": "El curso inicial de buceo mas popular del mundo",
+      "description": "El curso inicial de buceo más popular del mundo",
       "page": "open-water-diver",
       "thumbnail": "open-water-diver.webp"
     },
@@ -28,7 +28,7 @@
     },
     "rd": {
       "name": "Rescue Diver",
-      "description": "Tecnicas de rescate y asistencia",
+      "description": "Técnicas de rescate y asistencia",
       "page": "rescue-diver",
       "thumbnail": "rescue-diver.webp"
     },
@@ -40,7 +40,7 @@
     },
     "ts": {
       "name": "Traje seco",
-      "description": "Disfruta de tus buceos en agua fria",
+      "description": "Disfruta de tus buceos en agua fría",
       "page": "traje-seco",
       "thumbnail": "traje-seco.webp"
     },
@@ -55,6 +55,12 @@
       "description": "Técnicas de relajación y respiración",
       "page": "apnea",
       "thumbnail": "apnea.webp"
+    },
+    "fotografia": {
+      "name": "Fotografía subacuática",
+      "description": "Un nuevo concepto en fotografía digital subacuática",
+      "page": "fotografia",
+      "thumbnail": "fotografia.webp"
     }
   },
   "links": {

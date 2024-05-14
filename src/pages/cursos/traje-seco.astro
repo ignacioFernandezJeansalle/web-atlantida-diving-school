@@ -1,5 +1,6 @@
 ---
 import { info, cursos, prices } from "@data/data.json";
+import { removeAccents } from "@utils/removeAccents";
 import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import TitlePage from "@components/TitlePage.astro";
@@ -11,6 +12,8 @@ import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
 import ArrowNarrowLeft from "@icons/ArrowNarrowLeft.astro";
 const NAME = cursos.ts.name;
 const DESCRIPTION = cursos.ts.description;
+const NAME_NORM = removeAccents(NAME);
+const DESCRIPTION_NORM = removeAccents(DESCRIPTION);
 ---
 
 <Layout
@@ -21,7 +24,7 @@ const DESCRIPTION = cursos.ts.description;
   ogDescription="Disfrutá de tus buceos en agua fría con traje seco. Sumate a la mejor escuela de Argentina."
 >
   <SectionContainer class="pt-3 pb-3">
-    <TitlePage title={NAME} subtitle={DESCRIPTION} />
+    <TitlePage title={NAME_NORM} subtitle={DESCRIPTION_NORM} />
   </SectionContainer>
 
   <section>

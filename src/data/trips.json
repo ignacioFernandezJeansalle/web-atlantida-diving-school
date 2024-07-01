@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202406-01",
+      "name": "Cozumel, junio 2024",
+      "img": "202406-cozumel.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202404-01",
       "name": "Isla de Pascua, abril 2024",
       "img": "202404-isla-de-pascua.webp",
@@ -585,6 +592,13 @@
       "id": "201603-01",
       "name": "Canteras El Terrible, marzo 2016",
       "img": "201603-canteras-el-terrible.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
+      "id": "201602-01",
+      "name": "Canteras El Terrible, febrero 2016",
+      "img": "201602-canteras-el-terrible.webp",
       "withTitle": false,
       "facebookAlbum": ""
     }

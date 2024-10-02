@@ -108,6 +108,12 @@
       "description": "Instructor",
       "number": "#523471",
       "picture": "maxi-ruich.webp"
+    },
+    {
+      "name": "Ale Prieto",
+      "description": "Instructor de fotografía y video subacuático",
+      "number": "#0006849220",
+      "picture": "ale-prieto.webp"
     }
   ]
 }

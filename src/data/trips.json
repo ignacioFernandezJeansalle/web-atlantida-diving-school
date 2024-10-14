@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202410-01",
+      "name": "Recife, octubre 2024",
+      "img": "202410-recife.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202409-01",
       "name": "Las Grutas, septiembre 2024",
       "img": "202409-las-grutas.webp",

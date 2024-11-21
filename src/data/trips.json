@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202411-01",
+      "name": "San Andrés, noviembre 2024",
+      "img": "202411-san-andres-1.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202410-01",
       "name": "Recife, octubre 2024",
       "img": "202410-recife.webp",

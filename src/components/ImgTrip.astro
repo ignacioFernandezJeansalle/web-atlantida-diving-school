@@ -6,6 +6,7 @@ interface Props {
     img: string;
     withTitle: boolean;
     facebookAlbum: string;
+    pill?: string;
   };
 }
 
@@ -15,13 +16,14 @@ const src = `/img/viajes/${trip.img}`;
 const alt = `Foto del grupo de buceadores en ${trip.name}`;
 const withTitle = trip.withTitle;
 const name = trip.name;
+const pill = trip.pill;
 ---
 
 <article>
   <img src={src} alt={alt} loading="lazy" />
   {
     !withTitle && (
-      <div>
+      <div class="title">
         <h2>{name}</h2>
         <h3>
           <span>ATLANTIDA</span> Más que una Escuela de <span>BUCEO</span>
@@ -29,6 +31,7 @@ const name = trip.name;
       </div>
     )
   }
+  {pill && <div class="pill">{pill}</div>}
 </article>
 
 <style lang="scss">
@@ -47,7 +50,7 @@ const name = trip.name;
       background: #000;
     }
 
-    div {
+    .title {
       position: absolute;
       bottom: 0;
       width: 100%;
@@ -82,6 +85,17 @@ const name = trip.name;
           font-size: 18px;
         }
       }
+    }
+
+    .pill {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      padding: 2px 8px;
+      background: rgba($color-primary, 0.75);
+      color: $font-color-min;
+      border-radius: 9999px;
+      font-size: $font-size * 0.9;
     }
   }
 </style>

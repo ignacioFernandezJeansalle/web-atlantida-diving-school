@@ -2,17 +2,19 @@
   "trips": [
     {
       "id": "202411-02",
-      "name": "San Andrés, noviembre 2024 (Grupo 2)",
+      "name": "San Andrés, noviembre 2024",
       "img": "202411-san-andres-2.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 2"
     },
     {
       "id": "202411-01",
-      "name": "San Andrés, noviembre 2024 (Grupo 1)",
+      "name": "San Andrés, noviembre 2024",
       "img": "202411-san-andres-1.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 1"
     },
     {
       "id": "202410-01",
@@ -82,14 +84,16 @@
       "name": "Puerto Lopez, agosto 2023",
       "img": "202308-puerto-lopez-2.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 2"
     },
     {
       "id": "202308-01",
       "name": "Puerto Lopez, agosto 2023",
       "img": "202308-puerto-lopez-1.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 1"
     },
     {
       "id": "202307-01",
@@ -285,14 +289,16 @@
       "name": "Puerto Lopez, agosto 2019",
       "img": "201908-puerto-lopez-2.webp",
       "withTitle": true,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 2"
     },
     {
       "id": "201908-01",
       "name": "Puerto Lopez, agosto 2019",
       "img": "201908-puerto-lopez-1.webp",
       "withTitle": true,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 1"
     },
     {
       "id": "201907-03",
@@ -453,14 +459,16 @@
       "name": "Puerto Lopez, agosto 2017",
       "img": "201708-puerto-lopez-2.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 2"
     },
     {
       "id": "201708-01",
       "name": "Puerto Lopez, agosto 2017",
       "img": "201708-puerto-lopez-1.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 1"
     },
     {
       "id": "201706-02",
@@ -523,14 +531,16 @@
       "name": "Canteras El Terrible, febrero 2017",
       "img": "201702-cantera-el-terrible-2.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 2"
     },
     {
       "id": "201702-01",
       "name": "Canteras El Terrible, febrero 2017",
       "img": "201702-cantera-el-terrible-1.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 1"
     },
     {
       "id": "201701-01",
@@ -579,14 +589,16 @@
       "name": "Puerto Lopez, agosto 2016",
       "img": "201608-puerto-lopez-2.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 2"
     },
     {
       "id": "201608-01",
       "name": "Puerto Lopez, agosto 2016",
       "img": "201608-puerto-lopez-1.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Grupo 1"
     },
     {
       "id": "201607-01",

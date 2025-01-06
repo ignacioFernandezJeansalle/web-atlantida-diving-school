@@ -1,6 +1,14 @@
 {
   "trips": [
     {
+      "id": "202412-03",
+      "name": "Angra Dos Reis, diciembre 2024",
+      "img": "202412-angra-dos-reis-3.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Grupo 3"
+    },
+    {
       "id": "202412-02",
       "name": "Angra Dos Reis, diciembre 2024",
       "img": "202412-angra-dos-reis-2.webp",

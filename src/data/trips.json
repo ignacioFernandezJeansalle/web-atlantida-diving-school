@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202506-01",
+      "name": "Cozumel, junio 2025",
+      "img": "202506-cozumel.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202505-01",
       "name": "Ilha Grande, mayo 2025",
       "img": "202505-ilha-grande.webp",

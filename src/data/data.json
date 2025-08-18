@@ -75,8 +75,9 @@
     "dan": "https://apps.dan.org/join-dan/?do=dw&rc=w36730"
   },
   "prices": {
-    "certificationAndManual": "U$S 100.-",
-    "certification": "U$S 80.-"
+    "certificationAndManual": "U$S 180.-",
+    "certification": "U$S 80.-",
+    "PADIMaterials": "U$S 100.-"
   },
   "nosotros": [
     {

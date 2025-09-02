@@ -291,7 +291,7 @@
       "id": "201912-01",
       "name": "Angra Dos Reis, diciembre 2019",
       "img": "201912-angra-dos-reis.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
@@ -500,6 +500,13 @@
       "facebookAlbum": ""
     },
     {
+      "id": "201712-01",
+      "name": "Angra Dos Reis, diciembre 2017",
+      "img": "201712-angra-dos-reis.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "201708-02",
       "name": "Puerto Lopez, agosto 2017",
       "img": "201708-puerto-lopez-2.webp",
@@ -551,23 +558,16 @@
       "facebookAlbum": ""
     },
     {
-      "id": "201703-03",
+      "id": "201703-02",
       "name": "Islas Maldivas, marzo 2017",
       "img": "201703-maldivas.webp",
       "withTitle": false,
       "facebookAlbum": ""
     },
     {
-      "id": "201703-02",
+      "id": "201703-01",
       "name": "Canteras El Terrible, marzo 2017",
       "img": "201703-cantera-el-terrible.webp",
-      "withTitle": false,
-      "facebookAlbum": ""
-    },
-    {
-      "id": "201703-01",
-      "name": "Angra Dos Reis, marzo 2017",
-      "img": "201703-angra-dos-reis.webp",
       "withTitle": false,
       "facebookAlbum": ""
     },

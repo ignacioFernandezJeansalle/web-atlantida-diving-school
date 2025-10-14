@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202510-01",
+      "name": "Angra Dos Reis, octubre 2025",
+      "img": "202510-angra-dos-reis.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202506-01",
       "name": "Cozumel, junio 2025",
       "img": "202506-cozumel.webp",

@@ -1,11 +1,13 @@
 ---
 import { info, links } from "../data/data.json";
+import { buda } from "@data/buda.json";
 import Layout from "../layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import TitlePage from "@components/TitlePage.astro";
 import ListItemBuda from "@/components/ListItemBuda.astro";
 import LinkButton from "@components/LinkButton.astro";
 import WhatsappIcon from "@icons/WhatsappIcon.astro";
+import BudaGalleryItem from "@/components/BudaGalleryItem.astro";
 ---
 
 <Layout
@@ -48,21 +50,21 @@ import WhatsappIcon from "@icons/WhatsappIcon.astro";
         >
       </ul>
     </article>
-  </SectionContainer>
 
-  <SectionContainer class="pt-0 pb-6">
-    <picture>
-      <source media="(max-width: 576px)" srcset="/img/buda/hero-mobile-sm.webp" />
-      <source media="(max-width: 768px)" srcset="/img/buda/hero-mobile.webp" />
-      <source media="(max-width: 992px)" srcset="/img/buda/hero-desktop-md.webp" />
-      <source media="(max-width: 1200px)" srcset="/img/buda/hero-desktop-lg.webp" />
-      <source media="(min-width: 1201px)" srcset="/img/buda/hero-desktop-xl.webp" />
-      <img src="/img/buda/hero-mobile-sm.webp" alt="Instructor de Atlántida, Leo Cuneo, buceando" loading="eager" />
-    </picture>
     <div class="button">
       <LinkButton href={links.whatsapp} colorPrimary={true} target="_blank">
         Contacto <WhatsappIcon />
       </LinkButton>
+    </div>
+  </SectionContainer>
+
+  <SectionContainer class="pt-0 pb-6">
+    <div class="buda__gallery">
+      {
+        buda.map((b) => {
+          return <BudaGalleryItem b={b} />;
+        })
+      }
     </div>
   </SectionContainer>
 </Layout>
@@ -87,58 +89,26 @@ import WhatsappIcon from "@icons/WhatsappIcon.astro";
     }
   }
 
-  picture {
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 768 / 415;
-      box-shadow: $box-shadow-primary;
-    }
-  }
-
   .button {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 48px;
+    margin-block: 48px;
   }
 
-  @media (width > 576px) {
-    picture {
-      img {
-        aspect-ratio: 850 / 460;
-      }
-    }
+  .buda__gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, min(100%, 400px));
+    gap: 4px;
+    width: 100%;
+    justify-content: center;
   }
 
   @media (width > 768px) {
     article {
-      padding-inline: 32px;
+      padding-inline: 48px;
       flex-direction: row;
-      gap: 72px;
-    }
-
-    picture {
-      img {
-        aspect-ratio: 992 / 538;
-      }
-    }
-  }
-
-  @media (width > 992px) {
-    picture {
-      img {
-        aspect-ratio: 1200 / 652;
-      }
-    }
-  }
-
-  @media (width > 1200px) {
-    picture {
-      img {
-        aspect-ratio: 1400 / 761;
-      }
+      gap: 64px;
     }
   }
 </style>

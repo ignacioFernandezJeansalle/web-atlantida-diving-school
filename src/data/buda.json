@@ -1,0 +1,191 @@
+{
+  "buda": [
+    {
+      "id": "202511-02",
+      "name": "Noviembre 2025",
+      "img": "202511-02.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    { "id": "202511-01", "name": "Noviembre 2025", "img": "202511-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202510-01", "name": "Octubre 2025", "img": "202510-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202509-02", "name": "Septiembre 2025", "img": "202509-02.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202509-01", "name": "Septiembre 2025", "img": "202509-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202507-01", "name": "Julio 2025", "img": "202507-01.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202505-01",
+      "name": "Mayo 2025",
+      "img": "202505-01-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    {
+      "id": "202504-02",
+      "name": "Abril 2025",
+      "img": "202504-02-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    { "id": "202504-01", "name": "Abril 2025", "img": "202504-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202503-01", "name": "Marzo 2025", "img": "202503-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202502-01", "name": "Febrero 2025", "img": "202502-01.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202501-02",
+      "name": "Enero 2025",
+      "img": "202501-02-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    {
+      "id": "202501-01",
+      "name": "Enero 2025",
+      "img": "202501-01-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    { "id": "202412-01", "name": "Diciembre 2024", "img": "202412-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202411-01", "name": "Noviembre 2024", "img": "202411-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202410-01", "name": "Octubre 2024", "img": "202410-01.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202409-02",
+      "name": "Septiembre 2024",
+      "img": "202409-02-ts.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Traje seco"
+    },
+    { "id": "202409-01", "name": "Septiembre 2024", "img": "202409-01.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202408-01",
+      "name": "Agosto 2024",
+      "img": "202408-01-ts.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Traje seco"
+    },
+    { "id": "202407-01", "name": "Julio 2024", "img": "202407-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202406-01", "name": "Junio 2024", "img": "202406-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202405-02", "name": "Mayo 2024", "img": "202405-02.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202405-01", "name": "Mayo 2024", "img": "202405-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202404-01", "name": "Abril 2024", "img": "202404-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202403-01", "name": "Marzo 2024", "img": "202403-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202402-02", "name": "Febrero 2024", "img": "202402-02.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202402-01", "name": "Febrero 2024", "img": "202402-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202401-01", "name": "Enero 2024", "img": "202401-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202312-03", "name": "Diciembre 2023", "img": "202312-03.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202312-02",
+      "name": "Diciembre 2023",
+      "img": "202312-02-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    { "id": "202312-01", "name": "Diciembre 2023", "img": "202312-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202311-01", "name": "Noviembre 2023", "img": "202311-01.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202310-01",
+      "name": "Octubre 2023",
+      "img": "202310-01-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    { "id": "202308-01", "name": "Agosto 2023", "img": "202308-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202307-01", "name": "Julio 2023", "img": "202307-01.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202305-04",
+      "name": "Mayo 2023",
+      "img": "202305-04-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    { "id": "202305-03", "name": "Mayo 2023", "img": "202305-03.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202305-02",
+      "name": "Mayo 2023",
+      "img": "202305-02-ts.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Traje seco"
+    },
+    {
+      "id": "202305-01",
+      "name": "Mayo 2023",
+      "img": "202305-01-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    { "id": "202304-01", "name": "Abril 2023", "img": "202304-01.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202303-03",
+      "name": "Marzo 2023",
+      "img": "202303-03-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    { "id": "202303-02", "name": "Marzo 2023", "img": "202303-02.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202303-01", "name": "Marzo 2023", "img": "202303-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202302-03", "name": "Febrero 2023", "img": "202302-03.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202302-02", "name": "Febrero 2023", "img": "202302-02.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202302-01", "name": "Febrero 2023", "img": "202302-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202301-02", "name": "Enero 2023", "img": "202301-02.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202301-01", "name": "Enero 2023", "img": "202301-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202212-03", "name": "Diciembre 2022", "img": "202212-03.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202212-02", "name": "Diciembre 2022", "img": "202212-02.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202212-01", "name": "Diciembre 2022", "img": "202212-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202211-02", "name": "Noviembre 2022", "img": "202211-02.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202211-01", "name": "Noviembre 2022", "img": "202211-01.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202210-02",
+      "name": "Octubre 2022",
+      "img": "202210-02-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    {
+      "id": "202210-01",
+      "name": "Octubre 2022",
+      "img": "202210-01-ts.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Traje seco"
+    },
+    { "id": "202209-01", "name": "Septiembre 2022", "img": "202209-01.webp", "withTitle": false, "facebookAlbum": "" },
+    {
+      "id": "202208-02",
+      "name": "Agosto 2022",
+      "img": "202208-02-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    {
+      "id": "202208-01",
+      "name": "Agosto 2022",
+      "img": "202208-01-p.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    {
+      "id": "202206-01",
+      "name": "Junio 2022",
+      "img": "202206-01-ts.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Traje seco"
+    },
+    { "id": "202205-01", "name": "Mayo 2022", "img": "202205-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202204-01", "name": "Abril 2022", "img": "202204-01.webp", "withTitle": false, "facebookAlbum": "" },
+    { "id": "202203-01", "name": "Marzo 2022", "img": "202203-01.webp", "withTitle": false, "facebookAlbum": "" }
+  ]
+}

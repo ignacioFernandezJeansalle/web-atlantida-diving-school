@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202510-02",
+      "name": "La Paz, Baja California Sur, octubre 2025",
+      "img": "202510-la-paz-baja-california-sur.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202510-01",
       "name": "Angra Dos Reis, octubre 2025",
       "img": "202510-angra-dos-reis.webp",

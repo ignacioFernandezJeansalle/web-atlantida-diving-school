@@ -4,6 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import TitlePage from "@components/TitlePage.astro";
 import CardNosotros from "@components/CardNosotros.astro";
+import { numberOfStudents, numberOfTrips } from "@data/const.js";
 ---
 
 <Layout
@@ -29,8 +30,8 @@ import CardNosotros from "@components/CardNosotros.astro";
       </li>
       <li>
         <span>
-          Porque por nuestras aulas ya han pasado <b>7500 alumnos</b> certificados en todos los niveles y ya hemos hecho
-          más de <b>150 viajes</b> a todo el mundo!
+          Porque por nuestras aulas ya han pasado <b>{numberOfStudents} alumnos</b> certificados en todos los niveles y ya
+          hemos hecho más de <b>{numberOfTrips} viajes</b> a todo el mundo!
         </span>
       </li>
       <li>

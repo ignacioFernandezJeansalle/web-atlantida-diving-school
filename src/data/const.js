@@ -1,6 +1,9 @@
+const numberOfStudents = 8000;
+const numberOfTrips = 170;
+
 const carouselData = [
   `<h2 class="item-carousel--title">EXPERIENCIA</h2>
-     <p class="item-carousel--description">Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br />Desde 1986, <span class="yearsSince1986"></span> años ininterrumpidos dictando cursos de buceo. Más de 7950 alumnos certificados.</p>`,
+     <p class="item-carousel--description">Lo más importante al elegir un curso de buceo es la experiencia de los Instructores.<br />Desde 1986, <span class="yearsSince1986"></span> años ininterrumpidos dictando cursos de buceo. Más de ${numberOfStudents} alumnos certificados. Más de ${numberOfTrips} viajes a todo el mundo!</p>`,
   `<h2 class="item-carousel--title">DISPONIBILIDAD</h2>
      <p class="item-carousel--description">Programá el curso de buceo según tu disponibilidad. Con nosotros podés elegir día, horario y cantidad de clases semanales. Lunes a Sábados.</p>`,
   `<h2 class="item-carousel--title">COMODIDAD</h2>
@@ -9,4 +12,4 @@ const carouselData = [
      <p class="item-carousel--description">Inscribite AHORA con un 2x1. Uno paga y dos hacen el curso de buceo Open Water Diver.</p>`,*/
 ];
 
-export { carouselData };
+export { numberOfStudents, numberOfTrips, carouselData };

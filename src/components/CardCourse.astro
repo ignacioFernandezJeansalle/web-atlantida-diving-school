@@ -1,0 +1,105 @@
+---
+interface Props {
+  course: {
+    name: string;
+    description: string;
+    page: string;
+    thumbnail: string;
+  };
+}
+const { course } = Astro.props;
+---
+
+<article>
+  <img src=`/img/cursos/${course.thumbnail}` alt={course.name + " - " + course.description} loading="lazy" />
+  <div class="content">
+    <h3>{course.name}</h3>
+    <p>{course.description}</p>
+  </div>
+  <a href=`/cursos/${course.page}`>+ info</a>
+</article>
+
+<style lang="scss">
+  @import "@styles/variables";
+
+  article {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    padding-block: 32px;
+    max-width: 300px;
+    box-shadow: $box-shadow-primary;
+    border-radius: 4px;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .content {
+      padding: 24px;
+
+      h3 {
+        font-family: $font-family;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: left;
+        color: $color-primary;
+        margin-bottom: 8px;
+      }
+
+      p {
+        max-width: 250px;
+      }
+    }
+
+    a {
+      margin-inline: 24px;
+      padding: 8px;
+      text-align: center;
+      background-color: $color-primary;
+      color: $font-color-min;
+      font-weight: 600;
+      border-radius: 4px;
+    }
+  }
+
+  /* article {
+    display: flex;
+    flex-direction: column;
+    box-shadow: $box-shadow-primary;
+    border-radius: 4px;
+    overflow: hidden;
+    background: $color-body-secondary;
+    max-width: 280px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 353 / 500;
+    }
+
+    div {
+      padding: 16px;
+      text-align: center;
+
+      h4 {
+        font-size: 24px;
+        margin-bottom: 8px;
+      }
+
+      h5 {
+        font-size: 18px;
+        font-weight: 400;
+        text-wrap: balance;
+        margin-bottom: 4px;
+      }
+
+      p {
+        font-size: 14px;
+        font-weight: 700;
+      }
+    }
+  } */
+</style>

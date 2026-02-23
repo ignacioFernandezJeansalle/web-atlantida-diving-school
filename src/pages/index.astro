@@ -13,6 +13,7 @@ import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
 import WhatsappIcon from "@icons/WhatsappIcon.astro";
 import ScubaMask from "@icons/ScubaMask.astro";
 import ImgTrip from "@components/ImgTrip.astro";
+import CardCourse from "@/components/CardCourse.astro";
 ---
 
 <Layout
@@ -41,6 +42,7 @@ import ImgTrip from "@components/ImgTrip.astro";
     <div class="homepage-hero__links">
       <a class="homepage-hero__links--padi" href={links.padi} target="_blank" aria-label="PADI" rel="noopener">
         <img src="/img/logo-padi-transp-color.webp" alt="Logo PADI" />
+        <span class="homepage-hero__links--padi-span-dive">DIVE</span><br />CENTER
       </a>
       <a class="homepage-hero__links--dan" href={links.dan} target="_blank" aria-label="DAN" rel="noopener">
         <img src="/img/dan_join_std.webp" alt="Logo DAN" />
@@ -76,6 +78,8 @@ import ImgTrip from "@components/ImgTrip.astro";
     <article class="homepage-courses__container">
       <h2 class="homepage-courses__title">Cursos de buceo & especialidades</h2>
       <div class="homepage-courses__links">
+        <!-- <CardCourse course={cursos.owd} />
+        <CardCourse course={cursos.rd} /> -->
         <LinkCourse course={cursos.owd} />
         <LinkCourse course={cursos.rd} />
         <LinkCourse course={cursos.ts} />
@@ -130,8 +134,8 @@ import ImgTrip from "@components/ImgTrip.astro";
       <h2 class="homepage-contact__title">ESTUDIA CON NOSOTROS</h2>
       <div class="homepage-contact__info">
         <p>
-          Nuestros cursos de buceo <strong>NO DEPENDEN</strong> como la mayoría de otras escuelas de un día especifico o
-          de un número mínimo de candidatos para comenzar.
+          Nuestros cursos de buceo <strong>NO DEPENDEN</strong> como la mayoría de otras escuelas de un día especifico o de
+          un número mínimo de candidatos para comenzar.
         </p>
         <p>
           Los días y horarios son programados en función de la disponibilidad del alumno y de acuerdo con la agenda del

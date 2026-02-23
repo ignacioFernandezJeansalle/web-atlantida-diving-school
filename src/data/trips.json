@@ -186,7 +186,7 @@
       "id": "202212-01",
       "name": "Angra Dos Reis, diciembre 2022",
       "img": "202212-angra-dos-reis.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
@@ -200,56 +200,56 @@
       "id": "202208-01",
       "name": "Puerto Lopez, agosto 2022",
       "img": "202208-puerto-lopez.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202206-01",
       "name": "Angra Dos Reis, julio 2022",
       "img": "202206-angra-dos-reis.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202204-01",
       "name": "Ilha Bela, abril 2022",
       "img": "202204-ilha-bela.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202203-01",
       "name": "Ezeiza, marzo 2022",
       "img": "202203-cantera-ezeiza.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202112-03",
       "name": "Tandil, diciembre 2021",
       "img": "202112-cantera-tandil-2.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202112-02",
       "name": "Tandil, diciembre 2021",
       "img": "202112-cantera-tandil-1.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202112-01",
       "name": "Angra Dos Reis, diciembre 2021",
       "img": "202112-angra-dos-reis.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202110-02",
       "name": "Las Grutas, octubre 2021",
       "img": "202110-las-grutas.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
@@ -263,49 +263,49 @@
       "id": "202104-01",
       "name": "Las Grutas, abril 2021",
       "img": "202104-las-grutas.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202103-01",
       "name": "Tandil, marzo 2021",
       "img": "202103-cantera-tandil.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202102-01",
       "name": "Tandil, febrero 2021",
       "img": "202102-cantera-tandil.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202012-02",
       "name": "Tandil, diciembre 2020",
       "img": "202012-cantera-tandil.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202012-01",
       "name": "Angra Dos Reis, diciembre 2020",
       "img": "202012-angra-dos-reis.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202003-01",
       "name": "Canteras El Terrible, marzo 2020",
       "img": "202003-cantera-el-terrible.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "202002-01",
       "name": "Canteras El Terrible, febrero 2020",
       "img": "202002-cantera-el-terrible.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
@@ -319,42 +319,42 @@
       "id": "201911-01",
       "name": "Tandil, noviembre 2019",
       "img": "201911-cantera-tandil.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201910-02",
       "name": "Puerto Lopez, octubre 2019",
       "img": "201910-puerto-madryn.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201910-01",
       "name": "Islas Maldivas, octubre 2019",
       "img": "201910-maldivas.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201909-02",
       "name": "Los Organos, Perú, septiembre 2019",
       "img": "201909-los-oraganos.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201909-01",
       "name": "Canteras El Terrible, septiembre 2019",
       "img": "201909-cantera-el-terrible.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201908-02",
       "name": "Puerto Lopez, agosto 2019",
       "img": "201908-puerto-lopez-2.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": "",
       "pill": "Grupo 2"
     },
@@ -362,7 +362,7 @@
       "id": "201908-01",
       "name": "Puerto Lopez, agosto 2019",
       "img": "201908-puerto-lopez-1.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": "",
       "pill": "Grupo 1"
     },
@@ -370,84 +370,84 @@
       "id": "201907-03",
       "name": "Esteros del Iberá, julio 2019",
       "img": "201907-esteros-del-ibera-2.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201907-02",
       "name": "Esteros del Iberá, julio 2019",
       "img": "201907-esteros-del-ibera-1.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201907-01",
       "name": "Canteras El Terrible, julio 2019",
       "img": "201907-cantera-el-terrible.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201905-01",
       "name": "Cuba de Campo de Mayo, mayo 2019",
       "img": "201905-cuba-campo-de-mayo.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201904-01",
       "name": "Islas Galápagos, abril 2019",
       "img": "201904-galapagos.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201903-02",
       "name": "Recife, marzo 2019",
       "img": "201903-recife.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201903-01",
       "name": "Tandil, marzo 2019",
       "img": "201903-cantera-tandil.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201812-01",
       "name": "Angra Dos Reis, diciembre 2018",
       "img": "201812-angra-dos-reis.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201811-03",
       "name": "Mar Rojo, noviembre 2018",
       "img": "201811-mar-rojo.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201811-02",
       "name": "Cuba de Campo de Mayo, noviembre 2018",
       "img": "201811-cuba-campo-de-mayo.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201811-01",
       "name": "Canteras El Terrible, noviembre 2018",
       "img": "201811-cantera-el-terrible.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {
       "id": "201810-02",
       "name": "Puerto Lopez, octubre 2018",
       "img": "201810-puerto-madryn.webp",
-      "withTitle": true,
+      "withTitle": false,
       "facebookAlbum": ""
     },
     {

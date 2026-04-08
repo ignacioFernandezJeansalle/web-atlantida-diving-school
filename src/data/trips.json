@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202603-01",
+      "name": "Isla de Pascua, marzo 2026",
+      "img": "202603-isla-de-pascua.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202512-01",
       "name": "Angra Dos Reis, diciembre 2025",
       "img": "202512-angra-dos-reis.webp",

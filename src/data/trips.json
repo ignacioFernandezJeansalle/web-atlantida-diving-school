@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202604-01",
+      "name": "Islas Maldivas, abril 2026",
+      "img": "202604-maldivas.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202603-01",
       "name": "Isla de Pascua, marzo 2026",
       "img": "202603-isla-de-pascua.webp",

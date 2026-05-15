@@ -1,4 +1,6 @@
 ---
+import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
+
 interface Props {
   course: {
     name: string;
@@ -12,32 +14,48 @@ const { course } = Astro.props;
 
 <article>
   <img src=`/img/cursos/${course.thumbnail}` alt={course.name + " - " + course.description} loading="lazy" />
+  <!-- <img class="logo" src="/img/logo-padi-transp-black.webp" alt="Logo PADI" title="Logo PADI" /> -->
+  <img class="logo" src="/img/logo-padi-transp-color.webp" alt="Logo PADI" title="Logo PADI" />
   <div class="content">
     <h3>{course.name}</h3>
     <p>{course.description}</p>
   </div>
-  <a href=`/cursos/${course.page}`>+ info</a>
+  <a href=`/cursos/${course.page}`>
+    <span>
+      Ver curso <ArrowNarrowRight />
+    </span>
+  </a>
 </article>
 
 <style lang="scss">
   @import "@styles/variables";
 
   article {
+    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     row-gap: 24px;
-    padding-block: 32px;
-    max-width: 300px;
+    padding-bottom: 24px;
+    max-width: 350px;
     box-shadow: $box-shadow-primary;
-    border-radius: 4px;
 
     img {
       display: block;
       width: 100%;
     }
 
+    .logo {
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      max-width: 48px;
+      //background-color: rgba(#fff, 0.2);
+      padding: 2px;
+    }
+
     .content {
-      padding: 24px;
+      padding-inline: 24px;
 
       h3 {
         font-family: $font-family;
@@ -55,51 +73,34 @@ const { course } = Astro.props;
 
     a {
       margin-inline: 24px;
-      padding: 8px;
-      text-align: center;
+      display: inline-block;
+      border-width: 2px;
+      border-style: solid;
+      border-color: $color-primary;
+      font-size: $font-size;
+      font-weight: 600;
+      width: auto;
+      height: 48px;
+      line-height: 48px;
+      padding-inline: 24px;
       background-color: $color-primary;
       color: $font-color-min;
-      font-weight: 600;
-      border-radius: 4px;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease;
+
+      &:hover {
+        background-color: $font-color-min;
+        color: $color-primary;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 8px;
+        height: 100%;
+      }
     }
   }
-
-  /* article {
-    display: flex;
-    flex-direction: column;
-    box-shadow: $box-shadow-primary;
-    border-radius: 4px;
-    overflow: hidden;
-    background: $color-body-secondary;
-    max-width: 280px;
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 353 / 500;
-    }
-
-    div {
-      padding: 16px;
-      text-align: center;
-
-      h4 {
-        font-size: 24px;
-        margin-bottom: 8px;
-      }
-
-      h5 {
-        font-size: 18px;
-        font-weight: 400;
-        text-wrap: balance;
-        margin-bottom: 4px;
-      }
-
-      p {
-        font-size: 14px;
-        font-weight: 700;
-      }
-    }
-  } */
 </style>

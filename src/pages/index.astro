@@ -8,7 +8,6 @@ import SectionContainer from "@components/SectionContainer.astro";
 import Carouselv2 from "@components/Carouselv2.astro";
 import LiteYoutube from "@components/LiteYoutube.astro";
 import LinkButton from "@components/LinkButton.astro";
-import LinkCourse from "@components/LinkCourse.astro";
 import ArrowNarrowRight from "@icons/ArrowNarrowRight.astro";
 import WhatsappIcon from "@icons/WhatsappIcon.astro";
 import ScubaMask from "@icons/ScubaMask.astro";
@@ -78,12 +77,12 @@ import CardCourse from "@/components/CardCourse.astro";
     <article class="homepage-courses__container">
       <h2 class="homepage-courses__title">Cursos de buceo & especialidades</h2>
       <div class="homepage-courses__links">
-        <!-- <CardCourse course={cursos.owd} />
-        <CardCourse course={cursos.rd} /> -->
-        <LinkCourse course={cursos.owd} />
-        <LinkCourse course={cursos.rd} />
-        <LinkCourse course={cursos.ts} />
-        <LinkCourse course={cursos.fotografia} />
+        <CardCourse course={cursos.owd} />
+        <CardCourse course={cursos.aowd} />
+        <CardCourse course={cursos.rd} />
+        <CardCourse course={cursos.ts} />
+        <CardCourse course={cursos.eand} />
+        <CardCourse course={cursos.fotografia} />
       </div>
       <LinkButton href="/cursos" colorPrimary={true}>
         Todos los cursos <ArrowNarrowRight />
@@ -103,7 +102,7 @@ import CardCourse from "@/components/CardCourse.astro";
       </div>
       <div class="homepage-checkout__video">
         <LiteYoutube
-          videoId="ldvs8O1WYXQ"
+          videoId="f_YL4xG8kno"
           title="Certificación Open Water Diver en el Buda"
           backgroundImage="/img/thumbnail-youtube/el-buda.webp"
         />

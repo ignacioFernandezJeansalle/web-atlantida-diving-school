@@ -232,7 +232,7 @@
 
   &__links {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(0px, 480px));
+    grid-template-columns: repeat(auto-fill, minmax(0px, 350px));
     gap: 32px;
     width: 100%;
     justify-content: center;

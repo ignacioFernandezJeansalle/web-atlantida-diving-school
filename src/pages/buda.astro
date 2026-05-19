@@ -20,33 +20,41 @@ import BudaGalleryItem from "@/components/BudaGalleryItem.astro";
   <SectionContainer class="pt-3 pb-3">
     <TitlePage
       title="Espejo de agua El Buda"
-      subtitle="Nuestro propio lugar para practica y certificaciones de buceo"
+      subtitle="Nuestro propio lugar para prActica y certificaciones de buceo"
     />
   </SectionContainer>
 
-  <SectionContainer class="pt-0 pb-3">
-    <article>
+  <SectionContainer class="pt-2 pb-2 highlight-background">
+    <article class="intro">
+      <h3>Tener nuestro propio espejo de agua no es un detalle… es una gran diferencia.</h3>
+      <p>
+        Sin viajes largos ni necesidad de hospedaje, nuestros alumnos realizan sus salidas de certificación en un
+        entorno pensado 100% para aprender, disfrutar y, sobre todo, sentirse seguros. Contamos con un acceso tipo
+        muelle que simula situaciones reales de ingreso al agua y dos plataformas sumergidas ideales para practicar
+        ejercicios con tranquilidad, control y confianza.
+      </p>
+      <p>
+        Todo está preparado para que la experiencia sea completa: comodidad, logística simple y hasta un espacio para
+        relajarse y almorzar entre buceos. Porque aprender a bucear no debería ser estresante… debería ser una
+        experiencia segura, cómoda y bien guiada desde el primer momento.
+      </p>
+    </article>
+  </SectionContainer>
+
+  <SectionContainer class="pt-2 pb-3">
+    <article class="list">
       <ul>
-        <ListItemBuda> <b>Ubicación:</b> Benavidez, a 50 minutos de CABA. </ListItemBuda>
+        <ListItemBuda> <b>Ubicación:</b> Un oasis a solo 50 minutos de CABA. Benavidez.</ListItemBuda>
         <ListItemBuda
-          ><b>Más rápido:</b> Sábados y domingos o cualquier día de la semana. Sin necesidad de viajar para certificar.</ListItemBuda
+          ><b>Más rápido:</b> Para certificar cualquier día de la semana, sin necesidad de largos viajes ni reserva de hospedaje.</ListItemBuda
         >
         <ListItemBuda
-          ><b>Personalizado:</b> Solo grupos reducidos y con un máximo de dos personas por instructor.</ListItemBuda
-        >
-        <ListItemBuda> <b>Incluye:</b> Tanques y lastres. </ListItemBuda>
-        <ListItemBuda> <b>Profundidad maxima:</b> 12 metros. </ListItemBuda>
-      </ul>
-      <ul>
-        <ListItemBuda
-          >Contamos con un recorrido llamado <b>El camino de las viejas</b> por la cantida de viejas del agua que se ven
-          y <b>dos plataformas</b> para realizar los ejercicios. La pared sur nos permite hacer un recorrido desde las plataformas
-          hasta la playa.</ListItemBuda
+          ><b>Personalizado:</b> Solo grupos reducidos y con un máximo de dos alumnos por instructor, más un divemaster.</ListItemBuda
         >
         <ListItemBuda><b>Comodidades:</b> Estacionamiento, baños, quinchos, bar, kayaks, etc.</ListItemBuda>
         <ListItemBuda
-          >En tu visita está incluído el almuerzo: hamburguesa, papas fritas y bebida sin alcohol. Además de la remera
-          de regalo y la bitacora para los que certifican y completan las 4 inmersiones.</ListItemBuda
+          >En tu jornada de certificación están incluidos 2 días de buceo, tanques y lastres, almuerzo y, además, una
+          remera de regalo y la bitácora para quienes certifiquen y completen las 4 inmersiones.</ListItemBuda
         >
       </ul>
     </article>
@@ -72,13 +80,28 @@ import BudaGalleryItem from "@/components/BudaGalleryItem.astro";
 <style lang="scss">
   @import "@styles/variables";
 
-  article {
-    padding-inline: 16px;
+  $max-width: 880px;
+
+  .intro {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 16px;
+    gap: 12px;
+    max-width: $max-width;
+    margin-inline: auto;
+
+    h3 {
+      font-family: "Nunito Variable", sans-serif;
+      font-style: normal;
+      letter-spacing: normal;
+      font-size: 18px;
+      text-align: left;
+      font-weight: bold;
+    }
+  }
+
+  .list {
+    max-width: $max-width;
+    margin-inline: auto;
 
     ul {
       display: flex;
@@ -93,7 +116,7 @@ import BudaGalleryItem from "@/components/BudaGalleryItem.astro";
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-block: 48px;
+    margin-top: 48px;
   }
 
   .buda__gallery {
@@ -102,13 +125,5 @@ import BudaGalleryItem from "@/components/BudaGalleryItem.astro";
     gap: 4px;
     width: 100%;
     justify-content: center;
-  }
-
-  @media (width > 768px) {
-    article {
-      padding-inline: 48px;
-      flex-direction: row;
-      gap: 64px;
-    }
   }
 </style>

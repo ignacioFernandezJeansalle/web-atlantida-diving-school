@@ -71,8 +71,8 @@ const DESCRIPTION_NORM = removeAccents(DESCRIPTION);
         <h3>El agua fria no es un problema</h3>
         <div class="highlight-background">
           <p>
-            <b>El problema no es el agua fría, sino pasar frío.</b> Un traje seco soluciona este problema manteniendo al
-            buceador completamente seco.
+            <b>El problema no es el agua fría, sino pasar frío.</b> Un traje seco soluciona este problema manteniendo al buceador
+            completamente seco.
           </p>
           <p>
             Esto se consigue mediante el uso de cremalleras estancas y manguitos (de neopreno o látex) en cuello y puños
@@ -116,9 +116,17 @@ const DESCRIPTION_NORM = removeAccents(DESCRIPTION);
 
   h3 {
     font-size: 24px;
-    border-bottom: 1px solid $color-secondary;
     padding-bottom: 2px;
     margin-bottom: 24px;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(220, 0, 84, 0.4) 20%,
+      rgba(220, 0, 84, 0.4) 80%,
+      transparent 100%
+    );
+    border-image-slice: 1;
   }
 
   h4 {

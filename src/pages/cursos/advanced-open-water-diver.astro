@@ -49,8 +49,8 @@ const DESCRIPTION = cursos.aowd.description;
                 <b><u>PADI Adventure Diver:</u></b> El buceador que realiza tres inmersiones de aventura cualesquiera.
               </li>
               <li>
-                <b><u>Advanced Open Water Diver (Recomendado):</u></b> El buceador que realiza una "Inmersión Profunda",
-                una "Inmersión de Navegación" y tres inmersiones de aventura cualesquiera, cinco en total.
+                <b><u>Advanced Open Water Diver (Recomendado):</u></b> El buceador que realiza una "Inmersión Profunda", una
+                "Inmersión de Navegación" y tres inmersiones de aventura cualesquiera, cinco en total.
               </li>
             </ol>
           </ListItemCourse>
@@ -65,8 +65,8 @@ const DESCRIPTION = cursos.aowd.description;
           <ListItemCourse>
             Precio: <b>Consultar!</b><br />
             <u>Incluye:</u> Apartados 1 y 2, desarrollos teóricos y prácticos.<br />
-            <u>No incluye:</u> Apartado 3, inmersiones en aguas abiertas. Contamos con distintas opciones que se adaptan
-            a tus tiempos y tu economía.
+            <u>No incluye:</u> Apartado 3, inmersiones en aguas abiertas. Contamos con distintas opciones que se adaptan a
+            tus tiempos y tu economía.
           </ListItemCourse>
           <ListItemCourse>
             Acceso a materiales PADI: <b>{prices.PADIMaterials}</b>
@@ -120,9 +120,17 @@ const DESCRIPTION = cursos.aowd.description;
 
   h3 {
     font-size: 24px;
-    border-bottom: 1px solid $color-secondary;
     padding-bottom: 2px;
     margin-bottom: 24px;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(220, 0, 84, 0.4) 20%,
+      rgba(220, 0, 84, 0.4) 80%,
+      transparent 100%
+    );
+    border-image-slice: 1;
   }
 
   h4 {

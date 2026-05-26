@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202605-01",
+      "name": "Ilha Grande, mayo 2026",
+      "img": "202605-ilha-grande.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202604-01",
       "name": "Islas Maldivas, abril 2026",
       "img": "202604-maldivas.webp",

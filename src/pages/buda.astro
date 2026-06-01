@@ -8,6 +8,7 @@ import ListItemBuda from "@/components/ListItemBuda.astro";
 import LinkButton from "@components/LinkButton.astro";
 import WhatsappIcon from "@icons/WhatsappIcon.astro";
 import BudaGalleryItem from "@/components/BudaGalleryItem.astro";
+import LiteYoutube from "@components/LiteYoutube.astro";
 ---
 
 <Layout
@@ -66,7 +67,19 @@ import BudaGalleryItem from "@/components/BudaGalleryItem.astro";
     </div>
   </SectionContainer>
 
-  <SectionContainer class="pt-0 pb-6">
+  <SectionContainer class="pt-0 pb-3">
+    <article class="video">
+      <div>
+        <LiteYoutube
+          videoId="f_YL4xG8kno"
+          title="Certificación Open Water Diver en el Buda"
+          backgroundImage="/img/thumbnail-youtube/el-buda.webp"
+        />
+      </div>
+    </article>
+  </SectionContainer>
+
+  <SectionContainer class="pt-1 pb-6">
     <div class="buda__gallery">
       {
         buda.map((b) => {
@@ -117,6 +130,17 @@ import BudaGalleryItem from "@/components/BudaGalleryItem.astro";
     justify-content: center;
     align-items: center;
     margin-top: 48px;
+  }
+
+  .video {
+    display: flex;
+    justify-content: center;
+
+    div {
+      width: 100%;
+      max-width: 480px;
+      box-shadow: $box-shadow-primary;
+    }
   }
 
   .buda__gallery {

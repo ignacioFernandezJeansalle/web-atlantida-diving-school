@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202606-01",
+      "name": "Roatán, junio 2026",
+      "img": "202606-roatan.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202605-01",
       "name": "Ilha Grande, mayo 2026",
       "img": "202605-ilha-grande.webp",

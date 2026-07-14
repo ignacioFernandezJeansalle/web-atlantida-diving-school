@@ -1,6 +1,14 @@
 {
   "buda": [
     {
+      "id": "202607-01",
+      "name": "Julio 2026",
+      "img": "202607-01.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "Personalizado"
+    },
+    {
       "id": "202604-03",
       "name": "Abril 2026",
       "img": "202604-03.webp",
@@ -12,7 +20,8 @@
       "name": "Abril 2026",
       "img": "202604-02.webp",
       "withTitle": false,
-      "facebookAlbum": ""
+      "facebookAlbum": "",
+      "pill": "Personalizado"
     },
     {
       "id": "202604-01",

@@ -1,6 +1,14 @@
 {
   "trips": [
     {
+      "id": "202608-01",
+      "name": "Roatán, junio 2026, ¡Solo mujeres!",
+      "img": "202608-roatan.webp",
+      "withTitle": false,
+      "facebookAlbum": "",
+      "pill": "😍"
+    },
+    {
       "id": "202606-01",
       "name": "Roatán, junio 2026",
       "img": "202606-roatan.webp",

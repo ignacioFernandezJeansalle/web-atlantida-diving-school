@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202609-01",
+      "name": "Fernando de Noronha, septiembre 2026",
+      "img": "202609-fernando-de-noronha.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202608-01",
       "name": "Roatán, agosto 2026, ¡Solo mujeres!",
       "img": "202608-roatan.webp",

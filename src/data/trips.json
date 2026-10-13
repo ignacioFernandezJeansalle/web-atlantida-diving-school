@@ -1,6 +1,13 @@
 {
   "trips": [
     {
+      "id": "202610-01",
+      "name": "Providencia, octubre 2026",
+      "img": "202610-providencia.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202609-01",
       "name": "Fernando de Noronha, septiembre 2026",
       "img": "202609-fernando-de-noronha.webp",

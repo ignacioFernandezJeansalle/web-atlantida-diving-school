@@ -1,6 +1,13 @@
 {
   "buda": [
     {
+      "id": "202610-01",
+      "name": "Octubre 2026",
+      "img": "202610-01.webp",
+      "withTitle": false,
+      "facebookAlbum": ""
+    },
+    {
       "id": "202609-01",
       "name": "Septiembre 2026",
       "img": "202609-01.webp",
